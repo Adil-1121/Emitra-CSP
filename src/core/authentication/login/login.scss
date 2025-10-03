@@ -1,0 +1,226 @@
+@use "sass:color";
+
+$main-color: rebeccapurple;
+$light-color: #d6b3f7;
+$icon-color: #8e44ad;
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .left-panel {
+        flex: 1;
+        background-color: $light-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        padding: 2rem;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        .register-btn {
+            margin-top: 1rem;
+            color: white;
+            border-color: white;
+
+            &:hover {
+                background-color: white;
+                color: $icon-color;
+            }
+        }
+    }
+
+    .right-panel {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+
+        .login-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+
+            h2 {
+                margin-bottom: 1rem;
+                color: $main-color;
+                text-align: center;
+            }
+
+            .input-group {
+                margin-bottom: 1.5rem;
+                position: relative;
+
+                label {
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                    color: $main-color;
+                }
+
+                .required {
+                    color: red;
+                }
+
+                .p-input-icon-left {
+                    width: 100%;
+                    position: relative;
+
+                    input.p-inputtext {
+                        width: 100%;
+                        padding-left: 2.5rem; // space for left icon
+                        padding-right: 2.5rem; // space for eye toggle button
+                        border: 1px solid $main-color;
+                        color: $main-color;
+                        font-size: 1rem;
+                        height: 2.5rem;
+
+                        &::placeholder {
+                            color: lighten($main-color, 30%);
+                        }
+
+                        &:focus {
+                            border-color: darken($main-color, 15%);
+                            box-shadow: 0 0 4px $main-color;
+                            outline: none;
+                        }
+                    }
+
+                    .input-icon {
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $icon-color;
+                        z-index: 10;
+                        font-size: 1.2rem;
+                    }
+
+                    .password-toggle {
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border: none;
+                        background: transparent;
+                        cursor: pointer;
+                        color: $icon-color;
+                        font-size: 1.2rem;
+                        z-index: 10;
+                        padding: 0;
+
+                        &:focus {
+                            outline: none;
+                            color: darken($icon-color, 20%);
+                        }
+
+                        &:hover {
+                            color: darken($icon-color, 10%);
+                        }
+                    }
+                }
+
+                .password-input {
+                    border: 1px solid $main-color;
+                    color: $main-color;
+                    padding-left: 2.5rem;
+
+                    &::placeholder {
+                        color: lighten($main-color, 30%);
+                    }
+
+                    &:focus {
+                        border-color: darken($main-color, 15%);
+                        box-shadow: 0 0 4px $main-color;
+                        outline: none;
+                    }
+                }
+            }
+
+            .remember-forgot-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1.5rem;
+
+                .remember-me {
+                    display: flex;
+                    align-items: center;
+                    font-weight: 600;
+                    color: $main-color;
+                    cursor: pointer;
+                    user-select: none;
+
+                    input[type='checkbox'] {
+                        width: 18px;
+                        height: 18px;
+                        accent-color: $main-color;
+                        margin-right: 0.5rem;
+                        cursor: pointer;
+                    }
+                }
+
+                .forgot-password {
+                    color: gray;
+                    font-size: 0.9rem;
+                    cursor: pointer;
+                    margin: 0;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .login-btn {
+                background: linear-gradient(to right, $main-color, #9b59b6);
+                border: none;
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            .social-login-text {
+                text-align: center;
+                color: gray;
+                margin-bottom: 1rem;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+
+                svg {
+                    font-size: 1.5rem;
+                    color: #333;
+                    cursor: pointer;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+
+            .full-width {
+                width: 100%;
+            }
+        }
+    }
+}

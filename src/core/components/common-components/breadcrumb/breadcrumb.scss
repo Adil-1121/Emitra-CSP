@@ -1,0 +1,85 @@
+// 🌞 Default Light Mode Styles
+.p-breadcrumb {
+    margin: 30px 0 10px 30px; // Outer spacing
+    user-select: none; // Prevent text selection
+    font-size: 15px;
+    font-weight: 500;
+    color: hsl(0, 0%, 55%);
+    border: none;
+    padding: 0;
+    background: none;
+
+    .p-menuitem {
+        padding: 4px 8px;
+        display: flex;
+        align-items: center;
+
+        .p-menuitem-text {
+            color: rebeccapurple;
+            font-weight: 800;
+            line-height: 1;
+            margin: 0;
+        }
+
+        &:hover {
+            .p-menuitem-text {
+                color: #5a2a82; // Darker purple
+            }
+        }
+
+        &:last-child {
+            .p-menuitem-text {
+                color: #8d8d8d;
+                font-weight: 700;
+                cursor: default;
+
+                &:hover {
+                    color: #8d8d8d; // Prevent hover color change
+                }
+            }
+        }
+    }
+}
+
+// Separator icon between breadcrumb items
+.custom-separator-icon {
+    margin: 0 8px; // Horizontal spacing
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    color: currentColor;
+    user-select: none;
+}
+
+// 🌚 Dark Mode Support
+.app.dark {
+    .p-breadcrumb {
+        color: #aaa;
+
+        .p-menuitem {
+            .p-menuitem-text {
+                color: #b48ddb;
+                font-weight: 700;
+
+                &:hover {
+                    color: #a678d1;
+                }
+            }
+
+            &:last-child {
+                .p-menuitem-text {
+                    color: #888;
+                    cursor: default;
+
+                    &:hover {
+                        color: #888;
+                    }
+                }
+            }
+        }
+    }
+
+    .custom-separator-icon {
+        color: #aaa;
+    }
+}

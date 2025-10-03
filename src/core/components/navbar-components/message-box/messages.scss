@@ -1,0 +1,119 @@
+.messages-wrapper {
+    position: relative;
+
+    .item {
+        cursor: pointer;
+        position: relative;
+
+        .counter {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: brown;
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .messages-box {
+        position: absolute;
+        top: 35px;
+        right: 0;
+        width: 320px;
+        /* thoda bada for better readability */
+        max-height: 320px;
+        /* ✅ kam height */
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+        padding: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+
+        .messages-header {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fafafa;
+
+            .badge {
+                background: rebeccapurple;
+                color: white;
+                font-size: 12px;
+                font-weight: 500;
+                padding: 2px 8px;
+                border-radius: 12px;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 8px 12px;
+            margin: 0;
+            overflow-y: auto;
+
+            li {
+                padding: 8px 0;
+                border-bottom: 1px solid #f1f1f1;
+                font-size: 14px;
+                display: flex;
+                flex-direction: column;
+
+                .msg-title {
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+                .msg-tag {
+                    font-size: 11px;
+                    padding: 2px 6px;
+                    border-radius: 5px;
+                    margin: 4px 0;
+                    display: inline-block;
+                    width: fit-content;
+
+                    &.patient {
+                        background: #28a745;
+                        color: white;
+                    }
+
+                    &.service {
+                        background: #007bff;
+                        color: white;
+                    }
+
+                    &.payment {
+                        background: #ffc107;
+                        color: black;
+                    }
+
+                    &.kyc {
+                        background: #6f42c1;
+                        color: white;
+                    }
+                }
+
+                .msg-time {
+                    font-size: 11px;
+                    color: gray;
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

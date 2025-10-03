@@ -1,0 +1,195 @@
+$main-color: rebeccapurple;
+$light-color: #d6b3f7;
+$icon-color: #8e44ad;
+
+@use "sass:color";
+
+.register-container {
+    display: flex;
+    height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    .left-panel {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+
+        .register-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 1rem;
+
+            h2 {
+                margin-bottom: 1rem;
+                color: $main-color;
+                text-align: center;
+            }
+
+            .input-group {
+                margin-bottom: 1.2rem;
+                position: relative;
+
+                label {
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 0.4rem;
+                    color: $main-color;
+                    text-align: left;
+                }
+
+                .required {
+                    color: red;
+                }
+
+                .input-wrapper {
+                    position: relative;
+                    width: 100%;
+
+                    input.p-inputtext {
+                        width: 100%;
+                        padding-left: 2.5rem;
+                        padding-right: 2.5rem;
+                        border: 1px solid $main-color;
+                        border-radius: 8px;
+                        height: 2.5rem;
+                        color: $main-color;
+
+                        &::placeholder {
+                            color: color.adjust($main-color, $lightness: 30%);
+                        }
+
+                        &:focus {
+                            border-color: color.adjust($main-color, $lightness: -15%);
+                            box-shadow: 0 0 4px $main-color;
+                            outline: none;
+                        }
+                    }
+
+                    .input-icon {
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $icon-color;
+                        font-size: 1.2rem;
+                    }
+
+                    .password-toggle {
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        color: $icon-color;
+                        font-size: 1.2rem;
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+
+                        &:hover {
+                            color: color.adjust($icon-color, $lightness: -15%);
+                        }
+                    }
+                }
+            }
+
+            .terms {
+                margin-bottom: 1rem;
+
+                .terms-label {
+                    font-size: 0.9rem;
+                    color: $main-color;
+
+                    input[type="checkbox"] {
+                        margin-right: 0.5rem;
+                        accent-color: $main-color;
+                    }
+
+                    a {
+                        color: $main-color;
+                        text-decoration: underline;
+
+                        &:hover {
+                            color: color.adjust($main-color, $lightness: -15%);
+                        }
+                    }
+                }
+            }
+
+            .register-btn {
+                background: linear-gradient(to right, $main-color, #9b59b6);
+                border: none;
+                width: 100%;
+                font-weight: bold;
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+                border-radius: 8px;
+            }
+
+            .social-text {
+                margin: 1rem 0;
+                text-align: center;
+                color: gray;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+
+                svg {
+                    font-size: 1.5rem;
+                    color: #333;
+                    cursor: pointer;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .right-panel {
+        flex: 1;
+        background-color: $light-color;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        padding: 2rem;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .login-btn {
+            color: white;
+            border-color: white;
+
+            &:hover {
+                background: white;
+                color: $main-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.language-wrapper {
+    position: relative;
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 6px;
+
+        &:hover {
+            background: #f5f5f5;
+        }
+    }
+
+    .language-box {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-top: 5px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 5px 0;
+
+            li {
+                padding: 8px 15px;
+                cursor: pointer;
+
+                &:hover {
+                    background: #f0f0f0;
+                }
+            }
+        }
+    }
+}
