@@ -11,21 +11,12 @@ const BreadcrumbReact = ({ items }) => {
     const model = items.map((item, index) => {
         const isLast = index === items.length - 1;
 
-        if (typeof item === 'object' && item.label) {
-            return {
-                label: item.label,
-                command: !isLast && item.url ? () => navigate(item.url) : undefined,
-                className: isLast ? 'p-disabled' : '',
-            };
-        }
-
-        // For string items
         return {
-            label: item,
+            label: item.label,
+            command: !isLast && item.url ? () => navigate(item.url) : undefined,
             className: isLast ? 'p-disabled' : '',
         };
     });
-
 
     const separator = <FontAwesomeIcon icon={faChevronRight} className="custom-separator-icon" />;
 

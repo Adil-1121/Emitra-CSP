@@ -1,36 +1,35 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faPlusCircle,
     faUser,
-    faBox,
+    faBoxOpen,
     faShoppingCart,
-    faTags,
-    faUsers,
-    faFileInvoice,
+    faBell,
+    faFileInvoiceDollar,
     faChartLine,
-    faCogs,
+    faCog,
     faCommentDots,
-    faEnvelope
-} from "@fortawesome/free-solid-svg-icons";
-import { Tooltip } from "primereact/tooltip";
+    faEnvelope,
+    faPlusCircle,
+} from "@fortawesome/free-solid-svg-icons"
 import "./addNewDropdown.scss";
+import { useNavigate } from "react-router-dom";
 
 const AddNewDropdown = () => {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef();
+    const navigate = useNavigate();
 
     const items = [
-        { label: "New User", icon: faUser, action: () => alert("Create New User") },
-        { label: "New Product", icon: faBox, action: () => alert("Create New Product") },
-        { label: "New Order", icon: faShoppingCart, action: () => alert("Create New Order") },
-        { label: "New Category", icon: faTags, action: () => alert("Create New Category") },
-        { label: "New Customer", icon: faUsers, action: () => alert("Create New Customer") },
-        { label: "New Invoice", icon: faFileInvoice, action: () => alert("Create New Invoice") },
-        { label: "New Report", icon: faChartLine, action: () => alert("Create New Report") },
-        { label: "New Setting", icon: faCogs, action: () => alert("Create New Setting") },
-        { label: "New Message", icon: faCommentDots, action: () => alert("Create New Message") },
-        { label: "New Email", icon: faEnvelope, action: () => alert("Create New Email") },
+        { label: "Add User", icon: faUser, action: () => navigate("/users/add") },
+        { label: "Add Service", icon: faBoxOpen, action: () => navigate("/services/add") },
+        { label: "Add Customer", icon: faShoppingCart, action: () => navigate("/customers/add") },
+        { label: "Add Notification", icon: faBell, action: () => navigate("/notifications/add") },
+        { label: "Add Invoice", icon: faFileInvoiceDollar, action: () => navigate("/invoices/add") },
+        { label: "Add Report", icon: faChartLine, action: () => navigate("/reports/add") },
+        { label: "Add Expenses", icon: faCog, action: () => navigate("/settings/add") },
+        { label: "Add Message", icon: faCommentDots, action: () => navigate("/messages/add") },
+        { label: "Add Email", icon: faEnvelope, action: () => navigate("/emails/add") },
     ];
 
     useEffect(() => {
@@ -48,7 +47,6 @@ const AddNewDropdown = () => {
             {/* Trigger Button */}
             <div className="item" onClick={() => setOpen(!open)}>
                 <FontAwesomeIcon icon={faPlusCircle} className="icon" />
-                <Tooltip target=".addnew-wrapper .item" content="Add New" position="bottom" />
             </div>
 
             {/* Dropdown */}

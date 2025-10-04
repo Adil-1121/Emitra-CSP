@@ -1,13 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Tooltip } from 'primereact/tooltip';
 import './messages.scss';
 
-const MessagesBox = ({ icon, tooltip }) => {
+const MessagesBox = ({ icon }) => {
     const [open, setOpen] = useState(false);
     const boxRef = useRef();
 
-    // 🟢 Dummy Messages (Emitra project style)
     const messages = [
         {
             title: "New application submitted: Aadhaar Update",
@@ -41,7 +39,6 @@ const MessagesBox = ({ icon, tooltip }) => {
         }
     ];
 
-    // ✅ Count live from messages length
     const count = messages.length;
 
     useEffect(() => {
@@ -59,7 +56,6 @@ const MessagesBox = ({ icon, tooltip }) => {
             <div className="item" onClick={() => setOpen(!open)}>
                 <FontAwesomeIcon icon={icon} className="icon" />
                 {count > 0 && <div className="counter">{count}</div>}
-                <Tooltip target=".messages-wrapper .item" content={tooltip} position="bottom" />
             </div>
 
             {open && (
@@ -72,8 +68,8 @@ const MessagesBox = ({ icon, tooltip }) => {
                         {messages.map((msg, index) => (
                             <li key={index}>
                                 <p className="msg-title">{msg.title}</p>
-                                <span className={`msg-tag ${msg.tag}`}>{msg.tag}</span>
                                 <span className="msg-time">{msg.time}</span>
+                                <span className={`msg-tag ${msg.tag}`}>{msg.tag}</span>
                             </li>
                         ))}
                     </ul>

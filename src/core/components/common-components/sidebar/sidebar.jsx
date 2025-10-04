@@ -36,6 +36,12 @@ const Sidebar = () => {
                     </Link>
 
                     <p className="title">LISTS</p>
+                    <Link to="/users" style={{ textDecoration: "none" }}>
+                        <li>
+                            <FontAwesomeIcon icon={faUsers} className="icon" />
+                            <span>Users</span>
+                        </li>
+                    </Link>
                     <li
                         className={`portfolio ${portfolioOpen ? "active" : ""}`}
                         onClick={togglePortfolio}
@@ -61,13 +67,6 @@ const Sidebar = () => {
                         </>
                     )}
 
-                    <Link to="/users" style={{ textDecoration: "none" }}>
-                        <li>
-                            <FontAwesomeIcon icon={faUsers} className="icon" />
-                            <span>Users</span>
-                            <FontAwesomeIcon icon={faAngleRight} className="arrowIcon" />
-                        </li>
-                    </Link>
 
                     <li>
                         <FontAwesomeIcon icon={faTools} className="icon" />
@@ -84,7 +83,6 @@ const Sidebar = () => {
                     <li>
                         <FontAwesomeIcon icon={faBell} className="icon" />
                         <span>Notification</span>
-                        <FontAwesomeIcon icon={faAngleRight} className="arrowIcon" />
                     </li>
 
                     <p className="title">SERVICE</p>

@@ -1,24 +1,79 @@
 .datatable {
     padding: 20px;
+    margin: 20px;
+    margin-top: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fcfcfd;
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
 
     .dataTableTitle {
         width: 100%;
         font-size: 24px;
         color: gray;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
 
-        .link {
-            text-decoration: none;
-            color: green;
-            font-size: 16px;
-            font-weight: 400;
-            border: 1px solid green;
-            border-radius: 5px;
-            padding: 5px;
-            cursor: pointer;
+        h3 {
+            margin: 0;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .rightActions {
+            display: flex;
+            align-items: center;
+            gap: 30px; // Proper spacing between search and add
+            flex-wrap: wrap;
+
+            .searchContainer {
+                position: relative;
+
+                .searchIcon {
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                    transform: translateY(-50%);
+                    color: #888;
+                    font-size: 14px;
+                }
+
+                .searchInput {
+                    padding: 6px 10px 6px 30px; // space for icon
+                    font-size: 14px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    outline: none;
+                    min-width: 200px;
+
+                    &:focus {
+                        border-color: #888;
+                    }
+                }
+            }
+
+            .link {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                text-decoration: none;
+                color: green;
+                font-size: 14px;
+                font-weight: 500;
+                border: 1px solid green;
+                border-radius: 5px;
+                padding: 6px 10px;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: green;
+                    color: white;
+                }
+            }
+
         }
     }
 

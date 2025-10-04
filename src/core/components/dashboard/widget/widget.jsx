@@ -19,7 +19,7 @@ const Widget = ({ type }) => {
     let data;
     switch (type) {
         case "user":
-            targetAmount = 1500;
+            targetAmount = 850;
             diff = 10;
             data = {
                 title: "USERS",
@@ -35,7 +35,7 @@ const Widget = ({ type }) => {
             };
             break;
         case "order":
-            targetAmount = 3200;
+            targetAmount = 320;
             diff = -5;
             data = {
                 title: "ORDERS",
@@ -51,7 +51,7 @@ const Widget = ({ type }) => {
             };
             break;
         case "earning":
-            targetAmount = 37623;
+            targetAmount = 3723;
             diff = 20;
             data = {
                 title: "EARNINGS",
@@ -67,7 +67,7 @@ const Widget = ({ type }) => {
             };
             break;
         case "balance":
-            targetAmount = 24500;
+            targetAmount = 2450;
             diff = 15;
             data = {
                 title: "BALANCE",

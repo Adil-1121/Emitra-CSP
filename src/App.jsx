@@ -6,7 +6,8 @@ import { DarkModeContext } from "./core/shared/context/DarkModeContext";
 import Home from "./core/modules/home/Home";
 import Login from "./core/authentication/login/Login";
 import New from "./core/modules/users/add-new-user/Add-New-User";
-import Single from "./core/modules/users/view-user/View-User";
+import ViewUser from "./core/modules/users/view-user/View-User";
+import EditUser from "./core/modules/users/edit-user/Edit-New-User";
 import UserList from "./core/modules/users/users-list/Users-List";
 import Register from "./core/authentication/register/register";
 import ForgotPassword from "./core/authentication/forgot-password/forgot";
@@ -36,13 +37,15 @@ function App() {
 
           <Route path="users">
             <Route index element={<UserList />} />
-            <Route path=":userId" element={<Single />} />
-            <Route path="new" element={<New inputs={userInputs} />} />
+            <Route path="add-user" element={<New inputs={userInputs} />} />
+            <Route path="view-user/:userId" element={<ViewUser />} />
+            <Route path="edit-user/:userId" element={<EditUser inputs={userInputs} />} />
+
           </Route>
 
           <Route path="products">
             <Route index element={<UserList />} />
-            <Route path=":productId" element={<Single />} />
+            <Route path=":productId" element={<ViewUser />} />
             <Route path="new" element={<New />} />
           </Route>
 
