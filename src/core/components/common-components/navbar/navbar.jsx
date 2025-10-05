@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import './navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -19,6 +20,7 @@ import ProfileAvatar from "../../navbar-components/profile-avatar/ProfileAvatar"
 
 const Navbar = () => {
     const { dispatch, darkMode } = useContext(DarkModeContext);
+    const navigate = useNavigate();
 
     const toggleFullscreen = () => {
         if (!document.fullscreenElement) {
@@ -54,11 +56,8 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={darkMode ? faSun : faMoon} className="icon" />
                     </div>
 
-
-
-
                     {/* AI Assistant */}
-                    <div className="item">
+                    <div className="item" onClick={() => navigate("/gn-emitra-ai")}>
                         <span className="text">AI</span>
                     </div>
                     {/* Add New */}

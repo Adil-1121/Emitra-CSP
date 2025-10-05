@@ -13,10 +13,10 @@ import Register from "./core/authentication/register/register";
 import ForgotPassword from "./core/authentication/forgot-password/forgot";
 import ChangePassword from "./core/authentication/change-password/ChangePassword";
 import Lockscreen from "./core/authentication/lock-screen/Lockscreen";
+import AiChatbot from "./core/modules/ai-chatbot/AiChatbot";
 import Error404 from "./core/error/error404/Error404";
 import Error500 from "./core/error/error500/Error500";
 import { userInputs } from "./formSource";
-
 // Styles
 import "./core/shared/style/dark.scss";
 
@@ -34,6 +34,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/lock-screen" element={<Lockscreen />} />
+          <Route path="/gn-emitra-ai" element={<AiChatbot />} />
 
           <Route path="users">
             <Route index element={<UserList />} />
