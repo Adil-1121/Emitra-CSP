@@ -26,7 +26,7 @@
         .rightActions {
             display: flex;
             align-items: center;
-            gap: 30px; // Proper spacing between search and add
+            gap: 30px;
             flex-wrap: wrap;
 
             .searchContainer {
@@ -42,7 +42,7 @@
                 }
 
                 .searchInput {
-                    padding: 6px 10px 6px 30px; // space for icon
+                    padding: 6px 10px 6px 30px;
                     font-size: 14px;
                     border: 1px solid #ccc;
                     border-radius: 4px;
@@ -73,7 +73,6 @@
                     color: white;
                 }
             }
-
         }
     }
 
@@ -84,9 +83,9 @@
         .cellImg {
             width: 32px;
             height: 32px;
-            border-radius: 50%;
+            border-radius: 5px;
             object-fit: cover;
-            margin-right: 20px;
+            margin-right: 10px;
         }
     }
 
@@ -94,7 +93,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 8px 20px;
+        padding: 6px 15px;
         border-radius: 5px;
         text-transform: capitalize;
         text-align: center;
@@ -112,7 +111,6 @@
         &.inactive {
             background-color: rgba(255, 0, 0, 0.1);
             color: crimson;
-            color: rebeccapurple;
         }
     }
 
@@ -163,15 +161,12 @@
     .custom-confirm-dialog {
         .p-dialog-header {
             background-color: rebeccapurple;
-            /* Header color */
             color: white;
-            /* Header text */
             font-weight: bold;
         }
 
         .p-dialog-content {
             background-color: #f9f0ff;
-            /* Light purple background */
             color: #333;
         }
 
@@ -195,5 +190,4 @@
             border-color: #a7001e !important;
         }
     }
-
 }

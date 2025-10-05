@@ -1,0 +1,174 @@
+.viewFaqPage {
+    display: flex;
+
+    .listContainer {
+        flex: 1;
+
+        .contentWrapper {
+            padding: 20px; // Padding only for content, not breadcrumb/navbar
+
+            .viewFaqHeader {
+                margin-bottom: 20px;
+                width: 100%;
+                padding: 10px 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: white;
+                border-radius: 5px;
+                box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.15);
+
+
+                .breadcrumbBack {
+                    .backLink {
+                        cursor: pointer;
+                        color: rebeccapurple;
+                        font-weight: 700;
+                        font-size: 16px;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 5px;
+
+                        .fa-icon {
+                            background: rebeccapurple;
+                            color: white;
+                            padding: 5px;
+                            border-radius: 50%;
+                            font-size: 12px;
+                            height: 15px;
+                        }
+
+                        &:hover {
+                            color: rgb(75, 0, 150);
+                        }
+                    }
+                }
+
+                .createdDate {
+                    color: rebeccapurple;
+                    font-weight: 700;
+                    font-size: 16px;
+                    text-align: right;
+                }
+            }
+
+
+
+            .faqDetailsCard {
+                background: #fff;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                h2 {
+                    font-size: 26px;
+                    font-weight: 700;
+                    color: #2c3e50;
+                    margin-bottom: 15px;
+                }
+
+                .faqRowWrapper {
+                    display: flex;
+                    gap: 15px;
+
+                    .faqRow {
+                        flex: 1;
+                        display: flex;
+                        justify-content: space-between;
+                        border-radius: 8px;
+                        background: rgba(100, 57, 255, 0.05);
+                        font-size: 15px;
+                        transition: all 0.2s ease-in-out;
+
+                        &:hover {
+                            background: rgba(100, 57, 255, 0.1);
+                        }
+
+                        .label {
+                            padding: 10px 20px;
+                            font-weight: 600;
+                            color: white;
+                            background-color: rebeccapurple;
+                            width: 130px;
+                            border-radius: 8px;
+                            height: 40px;
+                        }
+
+                        .value {
+                            padding: 12px 15px;
+                            font-weight: 500;
+                            color: #555;
+                            text-align: right;
+                        }
+
+                        .status {
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            padding: 4px 12px;
+                            border-radius: 8px;
+
+                            &.active {
+                                color: #27ae60;
+                                background: rgba(46, 204, 113, 0.2);
+                            }
+
+                            &.inactive {
+                                color: #e74c3c;
+                                background: rgba(231, 76, 60, 0.2);
+                            }
+
+                            &.pending {
+                                color: #e67e22;
+                                background: rgba(230, 126, 34, 0.2);
+                            }
+                        }
+                    }
+
+                    .fullWidth {
+                        flex: 1 1 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .viewFaqPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 15px;
+
+                .viewFaqHeader {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    .createdDate {
+                        text-align: left;
+                    }
+
+                    .breadcrumbBack {
+                        .backLink {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .faqDetailsCard {
+                    .faqRowWrapper {
+                        flex-direction: column;
+
+                        .faqRow {
+                            width: 100% !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

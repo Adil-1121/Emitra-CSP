@@ -61,9 +61,14 @@ const Sidebar = () => {
                                     <span>About</span>
                                 </li>
                             </Link>
-                            <li className="submenu"><span>Services</span></li>
+                            <Link to="/services" style={{ textDecoration: "none" }}>
+                                <li className="submenu">
+                                    <span>Services</span>
+                                </li>
+                            </Link>
                             <li className="submenu"><span>Testimonials</span></li>
-                            <li className="submenu"><span>Faqs</span></li>
+                            <Link to="/faqs" style={{ textDecoration: "none" }}>
+                                <li className="submenu"><span>Faqs</span></li></Link>
                         </>
                     )}
 

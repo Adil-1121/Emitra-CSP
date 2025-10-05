@@ -1,0 +1,254 @@
+.faqsCards {
+    padding: 20px;
+    margin: 20px;
+    margin-top: 30px;
+    border: 1px solid #e0e0e0;
+    background-color: #fcfcfd;
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+
+    .faqsHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 24px;
+        color: gray;
+
+
+        h3 {
+            font-size: 26px;
+            font-weight: 700;
+            font-weight: 800;
+        }
+
+        .rightActions {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .searchContainer {
+                position: relative;
+
+                .searchIcon {
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                    transform: translateY(-50%);
+                    color: #888;
+                    font-size: 14px;
+                }
+
+                .searchInput {
+                    padding: 6px 10px 6px 30px;
+                    font-size: 14px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    outline: none;
+                    min-width: 200px;
+
+                    &:focus {
+                        border-color: #888;
+                    }
+                }
+            }
+
+            .addBtn {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                color: green;
+                padding: 8px 14px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                transition: all 0.2s ease-in-out;
+                border: 1px solid green;
+
+                &:hover {
+                    background-color: green;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .faqGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+    }
+
+    .faqCard {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.25s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .faqMeta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-bottom: 20px;
+            background: rebeccapurple;
+            color: white;
+            padding: 12px;
+            border-radius: 0px 20px 20px 20px;
+            -webkit-border-radius: 0px 20px 20px 20px;
+            -moz-border-radius: 0px 20px 20px 20px;
+
+            strong {
+                color: lightgray;
+            }
+        }
+
+        .cardHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .faqQuestion {
+                font-size: 18px;
+                font-weight: 700;
+                color: #2c3e50;
+                flex: 1;
+                margin-right: 10px;
+            }
+
+            .status {
+                font-size: 13px;
+                font-weight: 600;
+                padding: 5px 12px;
+                border-radius: 8px;
+                text-transform: capitalize;
+                backdrop-filter: blur(8px);
+                /* Glass effect */
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease-in-out;
+
+                &.active {
+                    background: rgba(46, 204, 113, 0.2);
+                    /* green glass */
+                    color: #27ae60;
+                }
+
+                &.inactive {
+                    background: rgba(231, 76, 60, 0.2);
+                    /* red glass */
+                    color: #e74c3c;
+                }
+
+                &.pending {
+                    background: rgba(230, 126, 34, 0.2);
+                    /* orange glass */
+                    color: #e67e22;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+                }
+            }
+
+        }
+
+        .faqAnswer {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+
+
+        .faqMetaBottom {
+            .date {
+                font-size: 12px;
+                color: white; // text ko white rakha
+                background: rgba(100, 57, 255, 0.45); // #6439ff with transparency
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+                border: 1px solid rgba(100, 57, 255, 0.4); // border with same color
+                border-radius: 8px;
+                padding: 4px 10px;
+                display: inline-block;
+                font-weight: 500;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background: rgba(100, 57, 255, 0.55);
+                    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+                }
+            }
+        }
+
+
+
+        .cardActions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+
+            button,
+            a {
+                // <-- add 'a' to target Link
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 15px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                text-decoration: none; // important for links
+                background: none;
+
+                &.viewBtn {
+                    color: darkblue !important;
+                    border: 1px dotted rgba(0, 0, 139, 0.6) !important;
+                }
+
+                &.editBtn {
+                    color: orange !important;
+                    border: 1px dotted rgba(255, 165, 0, 0.6) !important;
+                }
+
+                &.deleteBtn {
+                    color: crimson !important;
+                    border: 1px dotted rgba(220, 20, 60, 0.6) !important;
+                }
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.05) !important;
+                }
+            }
+        }
+
+    }
+
+    .noResult {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 14px;
+        color: #999;
+    }
+}

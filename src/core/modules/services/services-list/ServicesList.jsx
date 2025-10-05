@@ -1,11 +1,10 @@
 import React from "react";
-import './Users-List.scss'
+import './servicesList.scss'
 import Navbar from "../../../components/common-components/navbar/navbar";
 import Sidebar from "../../../components/common-components/sidebar/sidebar";
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
-import DataTable from "../../../components/users/datatable/DataTable"
-
-const UserList = () => {
+import ServicesDataTable from "../../../components/services/servicesDataTable/ServicesDataTable";
+const ServicesList = () => {
     return (
         <div className="list">
             <Sidebar />
@@ -14,13 +13,12 @@ const UserList = () => {
                 <BreadcrumbReact
                     items={[
                         { label: 'Dashboard', url: '/dashboard/admin-dashboard' },
-                        { label: 'User List' },
+                        { label: 'Service List' },
                     ]}
                 />
-
-                <DataTable />
+                <ServicesDataTable />
             </div>
         </div>
     )
 }
-export default UserList
+export default ServicesList
