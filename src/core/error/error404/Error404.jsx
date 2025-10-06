@@ -12,7 +12,7 @@ const Error404 = () => {
             <p className="error404-description">
                 The page you're looking for doesn’t exist or might have been moved.
             </p>
-            <button className="error404-button" onClick={() => navigate('/')}>
+            <button className="error404-button" onClick={() => navigate('/dashboard/admin-dashboard')}>
                 Go to Home
             </button>
         </div>

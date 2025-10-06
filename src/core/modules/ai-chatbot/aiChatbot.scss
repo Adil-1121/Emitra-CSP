@@ -1,0 +1,271 @@
+.ai-chatbot-page {
+    display: flex;
+    margin-left: 250px; // adjust if you already have a global sidebar
+    padding-top: 60px;
+    height: 100vh;
+    font-family: "Arial", sans-serif;
+
+    /* Sidebar */
+    .chat-sidebar {
+        width: 250px;
+        background: #f9f9f9;
+        padding: 20px;
+        border-right: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.2); // left side shadow only
+        // z-index: 1000;
+
+        h2 {
+            color: rebeccapurple;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, rebeccapurple, transparent);
+            border-radius: 5px;
+        }
+
+        .new-chat-btn {
+            background-color: rebeccapurple !important;
+            color: #fff !important;
+            border-radius: 10px;
+            font-weight: bold;
+            padding: 8px 12px;
+            border: 1px solid rebeccapurple;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 10px;
+
+            input {
+                flex: 1;
+                border: none;
+                outline: none;
+                width: 10px;
+                padding: 0;
+            }
+
+            svg {
+                color: #777;
+            }
+        }
+
+        .recent-chats {
+            display: flex;
+            flex-direction: column;
+            flex: 1; // sidebar me height fill kare
+            min-height: 0; // important for scroll
+
+            .recent-chats-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+
+                h4 {
+                    font-size: 14px;
+                    margin: 0;
+                    color: #777;
+                }
+
+                .help-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background-color: #f0f0f0;
+                    color: rebeccapurple;
+                    font-size: 14px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: rebeccapurple;
+                        color: #fff;
+                    }
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                overflow-y: auto; // scroll enable
+                flex: 1; // ul height fill kare
+                min-height: 0; // important for flex scroll
+                max-height: 100%; // prevent overflow
+
+                li {
+                    padding: 8px 0;
+                    font-size: 14px;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    color: #333;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    &:hover {
+                        color: rebeccapurple;
+                    }
+
+                    svg {
+                        color: rebeccapurple;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .main-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .p-card .p-card-content {
+            padding: 0;
+        }
+
+        .p-card .p-card-body {
+            padding: 10px;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+
+
+            // ✅ important: messages area scrollable
+            .messages {
+                flex: 1;
+                overflow-y: auto;
+                max-height: calc(106vh - 200px); // input-area ke liye space chodho
+                margin-bottom: 19px;
+
+                .message {
+                    display: flex;
+                    align-items: flex-start;
+                    margin-bottom: 12px;
+
+                    .avatar {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #f5f5f5;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .bot-icon {
+                            color: rebeccapurple;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .msg-bubble {
+                        max-width: 60%;
+                        word-wrap: break-word;
+                    }
+
+                    &.bot {
+                        justify-content: flex-start;
+                        flex-direction: row; // bot avatar left side
+
+                        .msg-bubble {
+                            background: #f5f5f5;
+                            color: #333;
+                            border-radius: 15px 15px 15px 5px;
+                            margin-left: 8px; // spacing between avatar and bubble
+                        }
+                    }
+
+                    &.user {
+                        justify-content: flex-start;
+                        flex-direction: row-reverse; // user avatar right side
+
+                        .msg-bubble {
+                            background: rebeccapurple;
+                            color: white;
+                            border-radius: 15px 15px 5px 15px;
+                            margin-right: 8px; // spacing between bubble and avatar
+                        }
+                    }
+                }
+            }
+
+
+
+            .input-area {
+                display: flex;
+                gap: 10px;
+
+                .input-with-icon {
+                    position: relative;
+                    flex: 1;
+
+                    .input-icon {
+                        position: absolute;
+                        left: 12px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #777;
+                        font-size: 16px;
+                        pointer-events: none; // icon click nahi hoga
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 10px 15px 10px 35px; // left padding for icon
+                        border-radius: 20px;
+                        border: 1px solid #ccc;
+                    }
+                }
+
+                .send-btn {
+                    background: rebeccapurple !important;
+                    color: white !important;
+                    border-radius: 50%;
+                    width: 45px;
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid rebeccapurple;
+                }
+            }
+
+        }
+    }
+
+}

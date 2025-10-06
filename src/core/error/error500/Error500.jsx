@@ -12,7 +12,7 @@ const Error500 = () => {
             <p className="error500-description">
                 Something went wrong on our end. Please try again later.
             </p>
-            <button className="error500-button" onClick={() => navigate('/')}>
+            <button className="error500-button" onClick={() => navigate('/dashboard/admin-dashboard')}>
                 Back to Home
             </button>
         </div>

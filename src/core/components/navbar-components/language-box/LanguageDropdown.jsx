@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { Tooltip } from "primereact/tooltip";
 import "./languageDropdown.scss";
 
 const LanguageDropdown = () => {
@@ -10,7 +9,6 @@ const LanguageDropdown = () => {
   const [language, setLanguage] = useState("English");
   const boxRef = useRef();
 
-  // Close dropdown when click outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (boxRef.current && !boxRef.current.contains(event.target)) {
@@ -30,12 +28,7 @@ const LanguageDropdown = () => {
     <div className="language-wrapper" ref={boxRef}>
       <div className="item" onClick={() => setOpen(!open)}>
         <FontAwesomeIcon icon={faGlobe} className="icon" />
-        {language}
-        <Tooltip
-          target=".language-wrapper .item"
-          content="Language"
-          position="bottom"
-        />
+        <span className="label">{language}</span>
       </div>
 
       {open && (
