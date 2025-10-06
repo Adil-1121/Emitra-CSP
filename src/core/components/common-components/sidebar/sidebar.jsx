@@ -56,7 +56,9 @@ const Sidebar = () => {
                                 </li>
                             </Link>
                             <li className="submenu"><span>Services</span></li>
-                            <li className="submenu"><span>Testimonials</span></li>
+                            <Link to="/portfolio/testimonials" style={{ textDecoration: "none" }}>
+                                <li className="submenu"><span>Testimonials</span></li>
+                            </Link>
                             <li className="submenu"><span>Faqs</span></li>
                         </>
                     )}

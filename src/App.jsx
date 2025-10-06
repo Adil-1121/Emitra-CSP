@@ -8,6 +8,7 @@ import Login from "./core/authentication/login/Login";
 import New from "./core/modules/users/add-new-user/Add-New-User";
 import Single from "./core/modules/users/view-user/View-User";
 import UserList from "./core/modules/users/users-list/Users-List";
+import TestimonialsList from "./core/modules/portfolio/testimonials/testimonials-list/TestimonialsList";
 import Register from "./core/authentication/register/register";
 import ForgotPassword from "./core/authentication/forgot-password/forgot";
 import ChangePassword from "./core/authentication/change-password/ChangePassword";
@@ -44,6 +45,10 @@ function App() {
             <Route index element={<UserList />} />
             <Route path=":productId" element={<Single />} />
             <Route path="new" element={<New />} />
+          </Route>
+
+          <Route path="portfolio/testimonials">
+            <Route index element={<TestimonialsList />} />
           </Route>
 
           <Route path="*" element={<Error404 />} />
