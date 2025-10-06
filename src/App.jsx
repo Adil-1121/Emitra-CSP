@@ -27,7 +27,7 @@ import FaqsList from "./core/modules/faqs/faqs-list/FaqsList";
 import EditFaq from "./core/modules/faqs/edit-faq/EditFaq";
 import AddFaq from "./core/modules/faqs/add-faq/AddFaq";
 import ViewFaq from "./core/modules/faqs/view-faq/ViewFaq";
-
+import ContactUs from "./core/modules/contact-Us/ContactUs";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -65,6 +65,10 @@ function App() {
             <Route path="view-faq/:faqId" element={<ViewFaq />} />
           </Route>
 
+          <Route path="contact-us">
+            <Route index element={<ContactUs />} />
+
+          </Route>
           <Route path="*" element={<Error404 />} />
           <Route path="/server-error" element={<Error500 />} />
 

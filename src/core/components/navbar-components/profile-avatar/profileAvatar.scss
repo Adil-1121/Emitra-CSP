@@ -48,7 +48,7 @@ $label-color: #666666; // muted gray
             border-radius: 8px;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            background-color: rgba(102, 51, 153, 0.85);
+            background: linear-gradient(90deg, #5e2a80, #7d4db2);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -60,7 +60,7 @@ $label-color: #666666; // muted gray
             .role-badge {
                 margin-top: 5px;
                 display: inline-block;
-                background-color: color.adjust($main-color, $lightness: 30%);
+                background-color: color.adjust($main-color, $lightness: 20%);
                 color: white;
                 font-size: 12px;
                 padding: 4px 8px;

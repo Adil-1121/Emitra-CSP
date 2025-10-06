@@ -56,11 +56,6 @@ const Sidebar = () => {
                     </li>
                     {portfolioOpen && (
                         <>
-                            <Link to="/users" style={{ textDecoration: "none" }}>
-                                <li className="submenu">
-                                    <span>About</span>
-                                </li>
-                            </Link>
                             <Link to="/services" style={{ textDecoration: "none" }}>
                                 <li className="submenu">
                                     <span>Services</span>
@@ -91,23 +86,15 @@ const Sidebar = () => {
                     </li>
 
                     <p className="title">SERVICE</p>
-                    <li>
-                        <FontAwesomeIcon icon={faEnvelope} className="icon" />
-                        <span>Contact Messages</span>
-                    </li>
+                    <Link to="/contact-us" style={{ textDecoration: "none" }}>
+
+                        <li>
+                            <FontAwesomeIcon icon={faEnvelope} className="icon" />
+                            <span>Contact Us</span>
+                        </li></Link>
                     <li>
                         <FontAwesomeIcon icon={faCog} className="icon" />
                         <span>Settings</span>
-                    </li>
-
-                    <p className="title">USER</p>
-                    <li>
-                        <FontAwesomeIcon icon={faUser} className="icon" />
-                        <span>Profile</span>
-                    </li>
-                    <li>
-                        <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
-                        <span>Logout</span>
                     </li>
                 </ul>
             </div>
