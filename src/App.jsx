@@ -29,6 +29,9 @@ import AddFaq from "./core/modules/faqs/add-faq/AddFaq";
 import ViewFaq from "./core/modules/faqs/view-faq/ViewFaq";
 import ContactUs from "./core/modules/contact-Us/ContactUs";
 import TestimonialsList from "./core/modules/testimonials/testimonials-list/TestimonialsList";
+import AddTestimonial from "./core/modules/testimonials/add-testimonial/AddNewTestimonial";
+import EditTestimonial from "./core/modules/testimonials/edit-testimonial/EditTestimonial";
+import ViewTestimonial from "./core/modules/testimonials/view-testimonial/ViewTestimonial";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -61,6 +64,9 @@ function App() {
 
           <Route path="/testimonials">
             <Route index element={<TestimonialsList />} />
+            <Route path="add-testimonial" element={<AddTestimonial inputs={userInputs} />} />
+            <Route path="edit-testimonial/:testimonialId" element={<EditTestimonial inputs={userInputs} />} />
+            <Route path="view-testimonial/:testimonialId" element={<ViewTestimonial />} />
           </Route>
 
           <Route path="faqs">

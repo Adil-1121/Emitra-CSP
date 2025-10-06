@@ -1,0 +1,235 @@
+.edit {
+    margin-left: 250px;
+    display: flex;
+    padding-top: 60px;
+    overflow-x: hidden;
+
+    .editContainer {
+        flex: 6;
+
+        .form-card {
+            margin: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            border-radius: 10px;
+            background: #fff;
+
+            .form-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h2 {
+                    margin: 0;
+                    font-size: 22px;
+                    font-weight: 600;
+                    color: #333;
+                }
+
+                .btn-group {
+                    display: flex;
+                    gap: 10px;
+
+                    .p-button {
+                        border-radius: 6px;
+                        padding: 0.6rem 1.2rem;
+                        font-weight: 600;
+                    }
+
+                    .p-button-secondary {
+                        background: #f0f0f0;
+                        color: #333;
+                        border: 1px solid #ddd;
+
+                        &:hover {
+                            background: #e0e0e0;
+                        }
+                    }
+                }
+            }
+
+            .p-divider {
+                margin: 20px 0;
+            }
+
+            form {
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .p-field {
+                    flex: 1 1 calc(50% - 20px);
+                    max-width: calc(50% - 20px);
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin-bottom: -9px;
+                        margin-left: 12px;
+                        display: inline-block;
+                        background-color: white;
+                        color: #444;
+                        z-index: 5;
+                        width: max-content;
+
+                        .required {
+                            color: red;
+                            font-weight: bold;
+                        }
+                    }
+
+                    input,
+                    textarea {
+                        font-size: 14px;
+                    }
+
+                    .p-inputtext,
+                    .p-inputtextarea {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        transition: border-color 0.3s;
+
+                        &:focus {
+                            border-color: rebeccapurple;
+                            box-shadow: 0 0 0 1px rebeccapurple;
+                        }
+                    }
+
+                    .p-invalid {
+                        border-color: red !important;
+                    }
+                }
+
+                .profile-upload-row {
+                    flex: 1 1 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    .profile-preview {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        border: 2px solid #ccc;
+
+                        &.p-invalid {
+                            border: 2px solid red !important;
+                        }
+                    }
+
+                    .custom-upload {
+                        flex: 1;
+
+                        .p-button {
+                            background: rebeccapurple;
+                            border: none;
+                            padding: 0.6rem 1.2rem;
+                            font-weight: 600;
+
+                            &:hover {
+                                background: #5d3d99;
+                            }
+                        }
+                    }
+                }
+
+                /* Gold Luxury Rating Stars */
+                .p-rating .p-rating-item .p-rating-icon {
+                    font-size: 2rem;
+                    color: #FFD700;
+                    /* base gold */
+                    text-shadow: 0 0 5px #FFD700;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                /* Active / Highlighted stars */
+                .p-rating .p-rating-item.p-highlight .p-rating-icon {
+                    color: #FFD700;
+                    /* solid gold */
+                    text-shadow: 0 0 10px #FFD700, 0 0 15px #FFA500, 0 0 20px #FFEC8B;
+                }
+
+                /* Hover stars */
+                .p-rating .p-rating-item:hover .p-rating-icon,
+                .p-rating .p-rating-item.p-highlight:hover .p-rating-icon {
+                    color: #FFA500 !important;
+                    text-shadow: 0 0 8px #FFA500, 0 0 12px #FFD700, 0 0 16px #FFEC8B;
+                    transform: scale(1.2);
+                }
+
+                /* Cursor pointer for better interactivity */
+                .p-rating .p-rating-item {
+                    cursor: pointer;
+                }
+
+                /* Remove default blue outline on focus */
+                .p-rating .p-rating-item:focus,
+                .p-rating .p-rating-item:focus-visible,
+                .p-rating .p-rating-item.p-highlight:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                /* Rating Stars Gold */
+                .custom-rating {
+                    border: 1px solid #ccc;
+                    /* same as .p-inputtext border */
+                    border-radius: 6px;
+                    /* same rounded corners */
+                    padding: 10px 15px;
+                    transition: border-color 0.3s;
+
+                    /* Focus effect like input */
+                    &:focus-within {
+                        border-color: rebeccapurple;
+                        box-shadow: 0 0 0 1px rebeccapurple;
+                    }
+
+                    /* Error state like other inputs */
+                    &.p-invalid {
+                        border-color: red !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.p-toast {
+    .p-toast-message {
+        border-radius: 6px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .edit {
+        margin-left: 0;
+
+        .editContainer {
+            .form-card {
+                form {
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .custom-upload {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
