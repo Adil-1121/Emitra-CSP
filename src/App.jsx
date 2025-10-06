@@ -9,7 +9,6 @@ import New from "./core/modules/users/add-user/Add-New-User";
 import ViewUser from "./core/modules/users/view-user/View-User";
 import EditUser from "./core/modules/users/edit-user/Edit-New-User";
 import UserList from "./core/modules/users/users-list/Users-List";
-import TestimonialsList from "./core/modules/portfolio/testimonials/testimonials-list/TestimonialsList";
 import Register from "./core/authentication/register/register";
 import ForgotPassword from "./core/authentication/forgot-password/forgot";
 import ChangePassword from "./core/authentication/change-password/ChangePassword";
@@ -29,6 +28,7 @@ import EditFaq from "./core/modules/faqs/edit-faq/EditFaq";
 import AddFaq from "./core/modules/faqs/add-faq/AddFaq";
 import ViewFaq from "./core/modules/faqs/view-faq/ViewFaq";
 import ContactUs from "./core/modules/contact-Us/ContactUs";
+import TestimonialsList from "./core/modules/testimonials/testimonials-list/TestimonialsList";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -59,7 +59,7 @@ function App() {
             <Route path="view-service/:ServiceId" element={<ViewService />} />
           </Route>
 
-          <Route path="portfolio/testimonials">
+          <Route path="/testimonials">
             <Route index element={<TestimonialsList />} />
           </Route>
 

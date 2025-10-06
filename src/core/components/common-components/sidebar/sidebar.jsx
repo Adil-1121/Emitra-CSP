@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { faUser, faUsers, faCog, faChartBar, faBell, faEnvelope, faTools, faSignOutAlt, faAngleRight, faCheckCircle, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faUsers, faCog, faChartBar, faBell, faHeadset, faTools, faSignOutAlt, faAngleRight, faCheckCircle, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './sidebar.scss';
 
@@ -61,12 +61,9 @@ const Sidebar = () => {
                                     <span>Services</span>
                                 </li>
                             </Link>
-                            <li className="submenu"><span>Services</span></li>
-                            <Link to="/portfolio/testimonials" style={{ textDecoration: "none" }}>
+                            <Link to="/testimonials" style={{ textDecoration: "none" }}>
                                 <li className="submenu"><span>Testimonials</span></li>
                             </Link>
-                            <li className="submenu"><span>Faqs</span></li>
-                            <li className="submenu"><span>Testimonials</span></li>
                             <Link to="/faqs" style={{ textDecoration: "none" }}>
                                 <li className="submenu"><span>Faqs</span></li></Link>
                         </>
@@ -91,16 +88,16 @@ const Sidebar = () => {
                     </li>
 
                     <p className="title">SERVICE</p>
-                    <Link to="/contact-us" style={{ textDecoration: "none" }}>
-
-                        <li>
-                            <FontAwesomeIcon icon={faEnvelope} className="icon" />
-                            <span>Contact Us</span>
-                        </li></Link>
                     <li>
                         <FontAwesomeIcon icon={faCog} className="icon" />
                         <span>Settings</span>
                     </li>
+                    <Link to="/contact-us" style={{ textDecoration: "none" }}>
+
+                        <li>
+                            <FontAwesomeIcon icon={faHeadset} className="icon" />
+                            <span>Contact Us</span>
+                        </li></Link>
                 </ul>
             </div>
             <div className="bottom">

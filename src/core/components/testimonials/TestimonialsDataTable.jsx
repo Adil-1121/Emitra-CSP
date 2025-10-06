@@ -3,11 +3,10 @@ import "./testimonialsDataTable.scss";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
-import { testimonialsRows } from "../../../../datatablesource";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEye, faEdit, faStar } from "@fortawesome/free-solid-svg-icons";
-
+import { testimonialsRows } from "../../../testimonialDatatableSource";
 const TestimonialsDataTable = () => {
     const [data, setData] = useState(testimonialsRows);
 
@@ -25,10 +24,10 @@ const TestimonialsDataTable = () => {
     const ratingBodyTemplate = (rowData) => (
         <div className="cellWithRating">
             {[...Array(5)].map((_, i) => (
-                <FontAwesomeIcon 
-                    key={i} 
-                    icon={faStar} 
-                    className={i < rowData.rating ? "star-filled" : "star-empty"} 
+                <FontAwesomeIcon
+                    key={i}
+                    icon={faStar}
+                    className={i < rowData.rating ? "star-filled" : "star-empty"}
                 />
             ))}
         </div>
@@ -40,8 +39,8 @@ const TestimonialsDataTable = () => {
 
     const testimonialBodyTemplate = (rowData) => (
         <div className="testimonialText">
-            {rowData.testimonial.length > 50 
-                ? `${rowData.testimonial.substring(0, 50)}...` 
+            {rowData.testimonial.length > 50
+                ? `${rowData.testimonial.substring(0, 50)}...`
                 : rowData.testimonial}
         </div>
     );
