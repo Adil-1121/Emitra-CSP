@@ -32,6 +32,8 @@ import TestimonialsList from "./core/modules/testimonials/testimonials-list/Test
 import AddTestimonial from "./core/modules/testimonials/add-testimonial/AddNewTestimonial";
 import EditTestimonial from "./core/modules/testimonials/edit-testimonial/EditTestimonial";
 import ViewTestimonial from "./core/modules/testimonials/view-testimonial/ViewTestimonial";
+import ProfilePage from "./core/modules/profile/profile-page/ProfilePage";
+import EditProfile from "./core/modules/profile/edit-profile/EditProfile";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -47,7 +49,11 @@ function App() {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/lock-screen" element={<Lockscreen />} />
           <Route path="/gn-emitra-ai" element={<AiChatbot />} />
+          <Route path="/profile">
+            <Route index element={<ProfilePage />} />
+            <Route path="edit-profile" element={<EditProfile inputs={userInputs} />} />
 
+          </Route>
           <Route path="users">
             <Route index element={<UserList />} />
             <Route path="add-user" element={<New inputs={userInputs} />} />
@@ -78,7 +84,6 @@ function App() {
 
           <Route path="contact-us">
             <Route index element={<ContactUs />} />
-
           </Route>
           <Route path="*" element={<Error404 />} />
           <Route path="/server-error" element={<Error500 />} />

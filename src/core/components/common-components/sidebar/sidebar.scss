@@ -6,34 +6,108 @@
     height: 100vh;
     background-color: white;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
-    z-index: 1000; // ✅ Must be above navbar
     display: flex;
     flex-direction: column;
+    transition: width 0.3s ease;
+
+    &.closed {
+        width: 70px;
+
+        .center ul li span,
+        .center ul p.title,
+        .submenu,
+        .bottom .profileInfo,
+        .logoutIcon {
+            display: none;
+        }
+
+        .arrowIcon {
+            display: none;
+        }
+
+        .top .logo span {
+            display: none;
+        }
+
+        .top .logo-container .logo img {
+            width: 25px; // Closed sidebar avatar
+            height: 25px;
+            margin-right: 0;
+        }
+    }
+
+    &.hovered {
+        width: 250px;
+
+        .center ul li span,
+        .center ul p.title,
+        .submenu,
+        .bottom .profileInfo,
+        .logoutIcon {
+            display: flex;
+        }
+
+        .arrowIcon {
+            display: inline-block;
+        }
+
+        .top .logo span {
+            display: flex;
+        }
+
+        .top .logo-container .logo img {
+            width: 35px; // Open/Hover avatar
+            height: 35px;
+            margin-right: 5px;
+        }
+    }
 
     .top {
         height: 60px;
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-shrink: 0; // Prevent shrinking when sidebar overflows
-        z-index: 1;
+        justify-content: space-between;
+        padding: 0 10px;
+        flex-shrink: 0;
 
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
-            font-size: 24px;
-            font-weight: 700;
-            color: #6439ff;
+            justify-content: space-between;
+            width: 100%;
 
-            .avatar {
-                width: 35px;
-                height: 35px;
-                border-radius: 50%;
-                object-fit: cover;
-                margin-right: 5px;
+            .logo {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 700;
+                // color: #6439ff;
+                color: rebeccapurple;
+
+
+                .avatar {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-right: 5px;
+                    transition: width 0.3s, height 0.3s, margin 0.3s;
+                }
             }
+
+        }
+
+        .menuBtn {
+            font-size: 20px;
+            left: 1000px;
+            cursor: pointer;
+            // color: #6439ff;
+            color: rebeccapurple;
+
+            background: white;
         }
     }
+
 
     hr {
         margin: 0;
@@ -78,11 +152,10 @@
                 }
             }
 
-
-
             .icon {
                 font-size: 18px;
-                color: #7451f8;
+                // color: #7451f8;
+                color: rebeccapurple;
             }
 
             span {
@@ -90,11 +163,7 @@
                 font-weight: 600;
                 color: #888;
                 margin-left: 10px;
-            }
 
-            /* Portfolio menu */
-            .portfolio {
-                user-select: none;
             }
 
             .portfolio.active {
@@ -102,7 +171,6 @@
                 font-weight: 700;
             }
 
-            /* Submenu items */
             .submenu {
                 padding-left: 40px;
                 font-size: 14px;
@@ -119,7 +187,6 @@
                 }
             }
 
-            /* Rotate arrow icon when expanded */
             .arrowIcon.rotate {
                 transform: rotate(90deg);
             }
@@ -143,6 +210,7 @@
                 border-radius: 50%;
                 object-fit: cover;
                 border: 2px solid #6439ff;
+                transition: all 0.3s;
             }
 
             .profileInfo {

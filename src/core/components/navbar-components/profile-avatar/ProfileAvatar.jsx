@@ -5,7 +5,7 @@ import './profileAvatar.scss';
 
 // Font Awesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faRightFromBracket, faUserPen } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faRightFromBracket, faUserPen, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const ProfileAvatar = ({
     image,
@@ -38,7 +38,11 @@ const ProfileAvatar = ({
     };
 
     const goToEditProfile = () => {
-        navigate("/edit-profile");
+        navigate("/profile/edit-profile");
+        setOpen(false);
+    };
+    const goToChangePassword = () => {
+        navigate("/change-password");
         setOpen(false);
     };
 
@@ -61,7 +65,10 @@ const ProfileAvatar = ({
                     <div className="profile-header">
                         <div className="name">{name}</div>
                         <div className="role-badge">{role}</div>
+                        {/* Pro subscription badge */}
+                        <div className="subscription-badge">Pro</div>
                     </div>
+
                     <ul>
                         <li onClick={goToProfile}>
                             <FontAwesomeIcon icon={faUser} className="icon" />
@@ -71,10 +78,16 @@ const ProfileAvatar = ({
                             <FontAwesomeIcon icon={faUserPen} className="icon" />
                             <span className="label">Edit Profile</span>
                         </li>
-                        <li onClick={handleLogout}>
-                            <FontAwesomeIcon icon={faRightFromBracket} className="icon" />
-                            <span className="label">Logout</span>
+                        <li onClick={goToChangePassword}>
+                            <FontAwesomeIcon icon={faLock} className="icon" />
+                            <span className="label">Change Password</span>
                         </li>
+                        <hr />
+                        <li className="signout" onClick={handleLogout}>
+                            <FontAwesomeIcon icon={faRightFromBracket} className="icon" />
+                            <span className="label">Sign Out</span>
+                        </li>
+
                     </ul>
                 </div>
             )}

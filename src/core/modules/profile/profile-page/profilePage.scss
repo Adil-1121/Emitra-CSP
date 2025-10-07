@@ -1,0 +1,35 @@
+.profile-page {
+    margin-left: 250px;
+    display: flex;
+    padding-top: 60px;
+    overflow-x: hidden;
+    padding-bottom: 150px;
+
+    .profile-container {
+        flex: 6;
+        padding: 20px;
+
+        .profile-content {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+
+            .right-column {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                flex: 1;
+
+                .right-progress {
+                    height: 710px; // height jo chahiye
+                }
+
+                .admin-action-progress {
+                    height: 300px;
+                }
+            }
+
+        }
+    }
+}

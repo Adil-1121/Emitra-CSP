@@ -250,8 +250,11 @@ const AddTestimonial = () => {
                                 value={formData.rating}
                                 onChange={(e) => handleChange(e, "rating")}
                                 cancel={false}
-                                className="custom-rating"
+                                className={classNames("custom-rating", {
+                                    "p-invalid": submitted && (!formData.rating || formData.rating < 1),
+                                })}
                             />
+
                             {submitted && (!formData.rating || formData.rating < 1) && (
                                 <small className="p-error">{getErrorMessage("rating")}</small>
                             )}

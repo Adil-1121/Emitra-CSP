@@ -41,6 +41,7 @@ $label-color: #666666; // muted gray
         animation: fadeIn 0.25s ease-out;
 
         .profile-header {
+            position: relative; // badge ke liye relative
             padding: 12px;
             background-color: $main-color;
             color: $text-light;
@@ -54,7 +55,7 @@ $label-color: #666666; // muted gray
 
             .name {
                 font-weight: bold;
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .role-badge {
@@ -62,21 +63,53 @@ $label-color: #666666; // muted gray
                 display: inline-block;
                 background-color: color.adjust($main-color, $lightness: 20%);
                 color: white;
-                font-size: 12px;
+                font-size: 10px;
                 padding: 4px 8px;
                 border-radius: 12px;
                 text-transform: uppercase;
                 font-weight: 800;
             }
+
+            /* Pro badge */
+            .subscription-badge {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                padding: 0px 4px;
+                border-radius: 5px;
+                background-color: #c1f5c1; // Light green
+                color: green;
+                font-weight: 600;
+                font-size: 10px;
+                text-align: center;
+                cursor: default;
+                box-shadow: 0 0 3px #90EE90; // subtle glow
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #b9fab9; // slightly brighter on hover
+                    box-shadow: 0 0 5px #7CFC00; // stronger glow
+                }
+            }
+
+
+
         }
+
 
         ul {
             list-style: none;
             margin: 0;
             padding: 0;
 
+            hr {
+                border: none;
+                height: 1px;
+                background-color: rgba(0, 0, 0, 0.1); // light gray line
+            }
+
             li {
-                padding: 12px 18px;
+                padding: 10px 14px;
                 font-size: 14px;
                 cursor: pointer;
                 display: flex;
@@ -113,6 +146,21 @@ $label-color: #666666; // muted gray
             }
         }
     }
+
+    .profile-dropdown ul li.signout {
+        .icon {
+            color: crimson !important;
+        }
+
+        .label {
+            color: crimson !important;
+        }
+
+        &:hover {
+            background-color: rgba(255, 0, 0, 0.1); // optional hover effect
+        }
+    }
+
 
     @keyframes fadeIn {
         from {
