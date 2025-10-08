@@ -34,6 +34,7 @@ import EditTestimonial from "./core/modules/testimonials/edit-testimonial/EditTe
 import ViewTestimonial from "./core/modules/testimonials/view-testimonial/ViewTestimonial";
 import ProfilePage from "./core/modules/profile/profile-page/ProfilePage";
 import EditProfile from "./core/modules/profile/edit-profile/EditProfile";
+import SettingPage from "./core/modules/setting/SettingPage";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -53,6 +54,9 @@ function App() {
             <Route index element={<ProfilePage />} />
             <Route path="edit-profile" element={<EditProfile inputs={userInputs} />} />
 
+          </Route>
+          <Route path="/settings">
+            <Route index element={<SettingPage />} />
           </Route>
           <Route path="users">
             <Route index element={<UserList />} />

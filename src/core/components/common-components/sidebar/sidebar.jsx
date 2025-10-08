@@ -136,10 +136,12 @@ const Sidebar = () => {
                     </li>
 
                     <p className="title">{isOpen ? "SERVICE" : ""}</p>
-                    <li>
-                        <FontAwesomeIcon icon={faCog} className="icon" />
-                        {isOpen && <span>Settings</span>}
-                    </li>
+                    <Link to="/settings" style={{ textDecoration: "none" }}>
+                        <li>
+                            <FontAwesomeIcon icon={faCog} className="icon" />
+                            {isOpen && <span>Settings</span>}
+                        </li>
+                    </Link>
 
                     <Link to="/contact-us" style={{ textDecoration: "none" }}>
                         <li>
@@ -153,7 +155,9 @@ const Sidebar = () => {
             {/* Bottom */}
             <div className="bottom">
                 <div className="profile">
-                    <img src={avatar} className="profileImg" alt="User Avatar" />
+                    <Link to="/profile" className="link" style={{ textDecoration: "none" }}>
+                        <img src={avatar} className="profileImg" alt="User Avatar" />
+                    </Link>
                     {isOpen && (
                         <Link to="/profile" className="link" style={{ textDecoration: "none" }}>
 
@@ -163,7 +167,8 @@ const Sidebar = () => {
                                     <FontAwesomeIcon icon={faCheckCircle} className="verifiedIcon" />
                                 </div>
                                 <span className="role">Admin</span>
-                            </div></Link>
+                            </div>
+                        </Link>
                     )}
                     <Link to="/login" className="link" style={{ textDecoration: "none" }}>
 
