@@ -73,8 +73,7 @@ const Navbar = () => {
                                 <div 
                                     key={user.id} 
                                     className="search-item"
-                                    onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-
+                                    onClick={() => handleUserClick(user.id)}
                                 >
                                     <img src={user.img} alt={user.userName} className="search-avatar" />
                                     <div className="search-info">

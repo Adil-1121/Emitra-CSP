@@ -15,7 +15,7 @@ import {
     faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../../components/common-components/sidebar/sidebar";
-import avatar from "C:/Users/HP/Documents/GitHub/Emitra-CSP/src/assets/avatar.png";
+// import avatar from "E:/Emitra-CSP/src/assets/avatar.png";
 
 const sidebarOptions = [
     { label: "New Orders", icon: faComments },
@@ -78,7 +78,7 @@ const AiChatbot = () => {
                                             <FontAwesomeIcon icon={faRobot} className="bot-icon" />
                                         ) : (
                                             <img
-                                                src={avatar} alt="User"
+                                                src={faQuestion} alt="User"
                                             />
                                         )}
                                     </span>
