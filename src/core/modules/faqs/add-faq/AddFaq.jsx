@@ -9,8 +9,6 @@ import { Dropdown } from "primereact/dropdown";
 import { classNames } from "primereact/utils";
 import { useNavigate } from "react-router-dom";
 
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 
 import "./AddFaq.scss";
@@ -77,10 +75,8 @@ const AddFaq = () => {
     };
 
     return (
-        <div className="new">
-            <Sidebar />
-            <div className="newContainer">
-                <Navbar />
+        <div className="addFaq">
+            <div className="addFaqContainer">
                 <BreadcrumbReact
                     items={[
                         { label: 'Dashboard', url: '/dashboard/admin-dashboard' },
@@ -91,10 +87,10 @@ const AddFaq = () => {
 
                 <Toast ref={toast} />
 
-                <Card className="form-card">
-                    <div className="form-header">
+                <Card className="addFaq-formCard">
+                    <div className="addFaq-formHeader">
                         <h2>Add FAQ</h2>
-                        <div className="btn-group">
+                        <div className="addFaq-btnGroup">
                             <Button
                                 label="Submit"
                                 onClick={handleSubmit}
@@ -110,8 +106,6 @@ const AddFaq = () => {
                     </div>
 
                     <form className="p-fluid p-formgrid p-grid">
-
-
                         {/* Category */}
                         <div className="p-field p-col-12 p-md-6">
                             <label>
@@ -185,6 +179,7 @@ const AddFaq = () => {
                                 <small className="p-error">Status is required</small>
                             )}
                         </div>
+
                         {/* Question */}
                         <div className="p-field p-col-12 p-md-6">
                             <label>

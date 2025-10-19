@@ -9,8 +9,6 @@ import { Dropdown } from "primereact/dropdown";
 import { classNames } from "primereact/utils";
 import { useNavigate, useLocation } from "react-router-dom";
 
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 
 import "./EditFaq.scss";
@@ -27,6 +25,7 @@ const EditFaq = () => {
         addedDate: new Date(),
         addedBy: "Admin",
     });
+
     const [submitted, setSubmitted] = useState(false);
     const [formValid, setFormValid] = useState(false);
 
@@ -76,10 +75,8 @@ const EditFaq = () => {
     };
 
     return (
-        <div className="new">
-            <Sidebar />
-            <div className="newContainer">
-                <Navbar />
+        <div className="editFaq">
+            <div className="editFaqContainer">
                 <BreadcrumbReact
                     items={[
                         { label: 'Dashboard', url: '/dashboard/admin-dashboard' },

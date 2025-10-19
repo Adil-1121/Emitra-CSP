@@ -10,10 +10,11 @@ import { Rating } from "primereact/rating";
 import { classNames } from "primereact/utils";
 import noImage from "../../../../assets/noImage.png";
 import { useNavigate, useParams } from "react-router-dom";
+import { Dropdown } from 'primereact/dropdown';
+import { Calendar } from 'primereact/calendar';
 
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
 import Breadcrumb from "../../../components/common-components/breadcrumb/Breadcrumb";
+import { getTestimonialById, updateTestimonial } from "../../../../services/testimonialService";
 
 import "./editTestimonial.scss";
 
@@ -29,40 +30,37 @@ const EditTestimonial = () => {
         email: "",
         review: "",
         rating: null,
+        addedBy: "",
+        status: "",
+        dateAdded: null,
     });
 
     const [profileImage, setProfileImage] = useState(null);
     const [submitted, setSubmitted] = useState(false);
     const [formValid, setFormValid] = useState(false);
 
-    // Mock fetch function to get existing testimonial data
-    const fetchTestimonial = (id) => {
-        // Replace this with API call
-        return {
-            clientName: "John Doe",
-            company: "ABC Pvt Ltd",
-            city: "New York",
-            email: "john@example.com",
-            review: "Great service provided!",
-            rating: 4,
-            profileImage: null,
-        };
-    };
-
+    // ✅ Fetch testimonial from backend
     useEffect(() => {
-        const data = fetchTestimonial(id);
-        setFormData({
-            clientName: data.clientName,
-            company: data.company,
-            city: data.city,
-            email: data.email,
-            review: data.review,
-            rating: data.rating,
-        });
-        if (data.profileImage) {
-            setProfileImage(data.profileImage);
-        }
+        const fetchTestimonial = async () => {
+            const data = await getTestimonialById(id);
+            if (data) {
+                setFormData({
+                    clientName: data.name || "",
+                    company: data.company || "",
+                    city: data.city || "",
+                    email: data.email || "",
+                    review: data.comment || "",
+                    rating: data.rating || 0,
+                    addedBy: data.added_by || "",
+                    status: data.status || "",
+                    dateAdded: data.date_added ? new Date(data.date_added) : null,
+                });
+                if (data.image_url) setProfileImage(data.image_url);
+            }
+        };
+        fetchTestimonial();
     }, [id]);
+
 
     const handleChange = (e, name) => {
         const value = e.target ? e.target.value : e;
@@ -72,17 +70,13 @@ const EditTestimonial = () => {
     const handleUpload = (event) => {
         const file = event.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onload = () => {
-                setProfileImage(reader.result);
-            };
-            reader.readAsDataURL(file);
+            setProfileImage(file); // save file object for API
         }
     };
 
     // Validation
     const validateForm = () => {
-        const { clientName, company, city, email, review, rating } = formData;
+        const { clientName, company, city, email, review, rating, addedBy, status, dateAdded } = formData;
         return (
             clientName.trim() &&
             company.trim() &&
@@ -90,9 +84,13 @@ const EditTestimonial = () => {
             email.trim() &&
             review.trim() &&
             rating > 0 &&
-            profileImage
+            profileImage &&
+            addedBy &&
+            status &&
+            dateAdded
         );
     };
+
 
     useEffect(() => {
         setFormValid(validateForm());
@@ -109,11 +107,42 @@ const EditTestimonial = () => {
         return "";
     };
 
-    const handleSubmit = (e) => {
+    // ✅ Submit updated testimonial to backend
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmitted(true);
 
-        if (formValid) {
+        if (!formValid) {
+            toast.current.show({
+                severity: "error",
+                summary: "Error",
+                detail: "Please fill all required fields correctly",
+                life: 3000,
+            });
+            return;
+        }
+
+        try {
+            const payload = new FormData();
+            payload.append("name", formData.clientName);
+            payload.append("company", formData.company);
+            payload.append("city", formData.city);
+            payload.append("email", formData.email);
+            payload.append("comment", formData.review);
+            payload.append("rating", formData.rating);
+            payload.append("added_by", formData.addedBy);
+            payload.append("status", formData.status);
+            if (formData.dateAdded) {
+                payload.append("date_added", formData.dateAdded.toISOString());
+            }
+
+            // If profileImage is a file, append it
+            if (profileImage instanceof File) {
+                payload.append("image", profileImage);
+            }
+
+            await updateTestimonial(id, payload);
+
             toast.current.show({
                 severity: "success",
                 summary: "Success",
@@ -121,14 +150,12 @@ const EditTestimonial = () => {
                 life: 2000,
             });
 
-            setTimeout(() => {
-                navigate("/testimonials");
-            }, 2000);
-        } else {
+            setTimeout(() => navigate("/testimonials"), 2000);
+        } catch (error) {
             toast.current.show({
                 severity: "error",
                 summary: "Error",
-                detail: "Please fill all required fields correctly",
+                detail: "Failed to update testimonial",
                 life: 3000,
             });
         }
@@ -136,9 +163,7 @@ const EditTestimonial = () => {
 
     return (
         <div className="edit">
-            <Sidebar />
             <div className="editContainer">
-                <Navbar />
                 <Breadcrumb
                     items={[
                         { label: "Dashboard", url: "/dashboard/admin-dashboard" },
@@ -174,7 +199,11 @@ const EditTestimonial = () => {
                         <div className="p-field p-col-6 profile-upload-row">
                             <div className="profile-preview-wrapper">
                                 <img
-                                    src={profileImage || noImage}
+                                    src={
+                                        profileImage instanceof File
+                                            ? URL.createObjectURL(profileImage)
+                                            : profileImage || noImage
+                                    }
                                     alt="Client"
                                     className={classNames("profile-preview", {
                                         "p-invalid": submitted && !profileImage,
@@ -206,7 +235,7 @@ const EditTestimonial = () => {
                             <InputText
                                 value={formData.clientName}
                                 onChange={(e) => handleChange(e, "clientName")}
-                                placeholder="John Doe"
+                                placeholder="Please Enter Client Name"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.clientName,
                                 })}
@@ -224,7 +253,7 @@ const EditTestimonial = () => {
                             <InputText
                                 value={formData.company}
                                 onChange={(e) => handleChange(e, "company")}
-                                placeholder="ABC Pvt Ltd"
+                                placeholder="Please Enter Client Company Name"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.company,
                                 })}
@@ -242,7 +271,7 @@ const EditTestimonial = () => {
                             <InputText
                                 value={formData.city}
                                 onChange={(e) => handleChange(e, "city")}
-                                placeholder="New York"
+                                placeholder="Please Enter Client City Name"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.city,
                                 })}
@@ -261,13 +290,54 @@ const EditTestimonial = () => {
                                 type="email"
                                 value={formData.email}
                                 onChange={(e) => handleChange(e, "email")}
-                                placeholder="example@email.com"
+                                placeholder="Please Enter Client Email Address"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.email,
                                 })}
                             />
                             {submitted && !formData.email && (
                                 <small className="p-error">{getErrorMessage("email")}</small>
+                            )}
+                        </div>
+                        {/* Added By */}
+                        <div className="p-field p-col-12 p-md-4">
+                            <label>
+                                Added By<span className="required">*</span>
+                            </label>
+                            <Dropdown
+                                value={formData.addedBy}
+                                options={[
+                                    { label: "Admin", value: "admin" },
+                                    { label: "Manager", value: "manager" },
+                                    { label: "Staff", value: "staff" },
+                                    { label: "Customer Support", value: "support" },
+                                ]}
+                                onChange={(e) => handleChange(e, "addedBy")}
+                                placeholder="Select Added By"
+                                className={classNames({
+                                    "p-invalid": submitted && !formData.addedBy,
+                                })}
+                            />
+                            {submitted && !formData.addedBy && (
+                                <small className="p-error">{getErrorMessage("addedBy")}</small>
+                            )}
+                        </div>
+                        {/* Date Added */}
+                        <div className="p-field p-col-12 p-md-4">
+                            <label>
+                                Date Added<span className="required">*</span>
+                            </label>
+                            <Calendar
+                                value={formData.dateAdded}
+                                onChange={(e) => handleChange(e.value, "dateAdded")}
+                                showIcon
+                                dateFormat="yy-mm-dd"
+                                className={classNames({
+                                    "p-invalid": submitted && !formData.dateAdded,
+                                })}
+                            />
+                            {submitted && !formData.dateAdded && (
+                                <small className="p-error">{getErrorMessage("dateAdded")}</small>
                             )}
                         </div>
 
@@ -289,6 +359,28 @@ const EditTestimonial = () => {
                                 <small className="p-error">{getErrorMessage("rating")}</small>
                             )}
                         </div>
+                        {/* Status */}
+                        <div className="p-field p-col-12 p-md-4">
+                            <label>
+                                Status<span className="required">*</span>
+                            </label>
+                            <Dropdown
+                                value={formData.status}
+                                options={[
+                                    { label: "Active", value: "active" },
+                                    { label: "Pending", value: "pending" },
+                                    { label: "Inactive", value: "inactive" },
+                                ]}
+                                onChange={(e) => handleChange(e, "status")}
+                                placeholder="Select Status"
+                                className={classNames({
+                                    "p-invalid": submitted && !formData.status,
+                                })}
+                            />
+                            {submitted && !formData.status && (
+                                <small className="p-error">{getErrorMessage("status")}</small>
+                            )}
+                        </div>
 
                         {/* Review */}
                         <div className="p-field p-col-12">
@@ -299,7 +391,7 @@ const EditTestimonial = () => {
                                 rows={4}
                                 value={formData.review}
                                 onChange={(e) => handleChange(e, "review")}
-                                placeholder="Client review..."
+                                placeholder="Please Enter Client Reviews"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.review,
                                 })}

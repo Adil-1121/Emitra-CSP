@@ -1,11 +1,9 @@
-/* EditFaq.scss */
-.new {
-    margin-left: 250px;
+.editFaq {
     display: flex;
     padding-top: 60px;
     overflow-x: hidden;
 
-    .newContainer {
+    .editFaqContainer {
         flex: 6;
 
         .form-card {
@@ -70,6 +68,7 @@
                         background-color: white;
                         color: #444;
                         width: max-content;
+                        z-index: 5;
 
                         .required {
                             color: red;
@@ -103,10 +102,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .new {
+    .editFaq {
         margin-left: 0;
 
-        .newContainer {
+        .editFaqContainer {
             .form-card {
                 form {
                     .p-field {

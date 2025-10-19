@@ -1,11 +1,9 @@
-.home {
+.dashboardHome {
     display: flex;
     width: 100%; // Add this
     overflow-x: hidden; // Prevent horizontal scroll
 
-    .homeContainer {
-
-        margin-left: 250px; // Same as sidebar width
+    .dashboardContainer {
         padding-top: 60px; // ✅ height of fixed Navbar
         width: 100%;
 
@@ -33,5 +31,4 @@
             }
         }
     }
-
 }

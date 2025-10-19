@@ -8,18 +8,15 @@ import { FileUpload } from "primereact/fileupload";
 import { Divider } from "primereact/divider";
 import { Calendar } from "primereact/calendar";
 import { classNames } from "primereact/utils";
-import noImage from '../../../../assets/noImage.png';
-import { useNavigate } from "react-router-dom"; // ✅ Add this
-
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
+import noImage from "../../../../assets/noImage.png";
+import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../../../components/common-components/breadcrumb/Breadcrumb";
 
 import "./Add-New-User.scss";
 
-const New = () => {
+const AddNewUser = () => {
     const toast = useRef(null);
-    const navigate = useNavigate(); // ✅ Add navigate
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         username: "",
@@ -32,12 +29,12 @@ const New = () => {
         joinedDate: null,
     });
 
-    const [profileImage, setProfileImage] = useState(null); // For preview
+    const [profileImage, setProfileImage] = useState(null);
     const [submitted, setSubmitted] = useState(false);
     const [formValid, setFormValid] = useState(false);
 
     const handleChange = (e, name) => {
-        const value = e.target ? e.target.value : e; // for Calendar
+        const value = e.target ? e.target.value : e;
         setFormData({ ...formData, [name]: value });
     };
 
@@ -45,14 +42,11 @@ const New = () => {
         const file = event.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = () => {
-                setProfileImage(reader.result);
-            };
+            reader.onload = () => setProfileImage(reader.result);
             reader.readAsDataURL(file);
         }
     };
 
-    // Validation function: only required fields
     const validateForm = () => {
         const { username, fullname, email, phone, password, joinedDate } = formData;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,7 +75,8 @@ const New = () => {
         }
         if (field === "phone") {
             const phoneRegex = /^[0-9]{10,15}$/;
-            if (!phoneRegex.test(value.replace(/\D/g, ""))) return "Phone number is invalid";
+            if (!phoneRegex.test(value.replace(/\D/g, "")))
+                return "Phone number is invalid";
         }
         if (field === "joinedDate" && !value) return "Joined Date is required";
         return "";
@@ -96,12 +91,11 @@ const New = () => {
                 severity: "success",
                 summary: "Success",
                 detail: "User Added Successfully",
-                life: 2000, // toast 2 sec dikhe
+                life: 2000,
             });
 
-            // ✅ 2 second ke baad navigate
             setTimeout(() => {
-                navigate("/users"); // users list page
+                navigate("/users");
             }, 2000);
         } else {
             toast.current.show({
@@ -114,10 +108,8 @@ const New = () => {
     };
 
     return (
-        <div className="new">
-            <Sidebar />
-            <div className="newContainer">
-                <Navbar />
+        <div className="addUser">
+            <div className="addUser-container">
                 <Breadcrumb
                     items={[
                         { label: "Dashboard", url: "/dashboard/admin-dashboard" },
@@ -128,10 +120,10 @@ const New = () => {
 
                 <Toast ref={toast} />
 
-                <Card className="form-card">
-                    <div className="form-header">
+                <Card className="addUser-form-card">
+                    <div className="addUser-form-header">
                         <h2>Add User</h2>
-                        <div className="btn-group">
+                        <div className="addUser-btn-group">
                             <Button
                                 label="Submit"
                                 onClick={handleSubmit}
@@ -141,27 +133,25 @@ const New = () => {
                                 label="Cancel"
                                 className="p-button-secondary"
                                 style={{ marginLeft: "10px" }}
-                                onClick={() => navigate("/users")} // ✅ Cancel pe direct navigate
-
+                                onClick={() => navigate("/users")}
                             />
                         </div>
                     </div>
 
                     <Divider />
 
-                    <form className="p-fluid p-formgrid p-grid">
-                        {/* Profile Image row */}
-                        <div className="p-field p-col-6 profile-upload-row">
-                            <div className="profile-preview-wrapper">
+                    <form className="p-fluid p-formgrid p-grid addUser-form">
+                        <div className="p-field p-col-6 addUser-profile-upload-row">
+                            <div className="addUser-profile-preview-wrapper">
                                 <img
-                                    src={profileImage || noImage} // agar image na ho toh placeholder
+                                    src={profileImage || noImage}
                                     alt="Profile"
-                                    className="profile-preview"
+                                    className="addUser-profile-preview"
                                 />
                             </div>
                         </div>
 
-                        <div className="p-field p-col-6 profile-upload-row">
+                        <div className="p-field p-col-6 addUser-profile-upload-row">
                             <FileUpload
                                 mode="basic"
                                 name="file"
@@ -169,11 +159,10 @@ const New = () => {
                                 auto
                                 customUpload
                                 uploadHandler={handleUpload}
-                                className="custom-upload"
+                                className="addUser-custom-upload"
                             />
                         </div>
 
-                        {/* Required fields */}
                         {[
                             { label: "Username", name: "username", type: "text" },
                             { label: "Fullname", name: "fullname", type: "text" },
@@ -185,7 +174,8 @@ const New = () => {
                             return (
                                 <div key={field.name} className="p-field p-col-12 p-md-6">
                                     <label>
-                                        {field.label}<span className="required">*</span>
+                                        {field.label}
+                                        <span className="required">*</span>
                                     </label>
                                     <InputText
                                         type={field.type}
@@ -196,7 +186,9 @@ const New = () => {
                                             "p-invalid": errorMessage,
                                         })}
                                     />
-                                    {errorMessage && <small className="p-error">{errorMessage}</small>}
+                                    {errorMessage && (
+                                        <small className="p-error">{errorMessage}</small>
+                                    )}
                                 </div>
                             );
                         })}
@@ -228,7 +220,6 @@ const New = () => {
                             />
                         </div>
 
-                        {/* Optional fields */}
                         <div className="p-field p-col-12 p-md-6">
                             <label>Address</label>
                             <InputTextarea
@@ -245,4 +236,4 @@ const New = () => {
     );
 };
 
-export default New;
+export default AddNewUser;

@@ -1,7 +1,6 @@
 import React from "react";
 import "./profilePage.scss";
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
+
 import ProfileDetails from "../../../components/profile/ProfileDetails/ProfileDetails";
 import ProfileProgress from "../../../components/profile/ProfileProgress/ProfileProgress";
 import AdminActions from "../../../components/profile/AdminActions/AdminActions";
@@ -9,9 +8,7 @@ import AdminActions from "../../../components/profile/AdminActions/AdminActions"
 const ProfilePage = () => {
     return (
         <div className="profile-page">
-            <Sidebar />
             <div className="profile-container">
-                <Navbar />
                 <div className="profile-content">
                     {/* Left column */}
                     <ProfileDetails />

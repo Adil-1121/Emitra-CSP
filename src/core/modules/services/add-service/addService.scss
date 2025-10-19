@@ -1,10 +1,9 @@
-.new {
-    margin-left: 250px;
+.edit {
     display: flex;
     padding-top: 60px;
     overflow-x: hidden;
 
-    .newContainer {
+    .editContainer {
         flex: 6;
 
         .form-card {
@@ -82,9 +81,9 @@
 
                     .p-inputtext,
                     .p-inputtextarea,
-                    select {
+                    select,
+                    .p-dropdown {
                         width: 100%;
-                        padding: 10px;
                         border: 1px solid #ccc;
                         border-radius: 6px;
                         transition: border-color 0.3s;
@@ -144,10 +143,10 @@
 
 // Responsive
 @media (max-width: 768px) {
-    .new {
+    .edit {
         margin-left: 0;
 
-        .newContainer {
+        .editContainer {
             .form-card {
                 form {
                     .p-field {

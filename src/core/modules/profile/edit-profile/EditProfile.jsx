@@ -24,8 +24,6 @@ import {
     faTint,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
 import avatar from "../../../../assets/avatar.png";
 
 import "./EditProfile.scss";
@@ -147,9 +145,7 @@ const EditProfile = () => {
 
     return (
         <div className="edit-profile">
-            <Sidebar />
             <div className="edit-profile-container">
-                <Navbar />
                 <Toast ref={toast} />
                 <Card className="edit-card">
                     <div className="header">

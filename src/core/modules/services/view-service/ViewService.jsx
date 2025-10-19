@@ -1,8 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./ViewService.scss";
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
+
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 import ServiceActivityTable from "../../../components/services/seviceActivityTable/ServiceActivityTable";
 const ViewService = () => {
@@ -23,9 +22,7 @@ const ViewService = () => {
 
     return (
         <div className="single">
-            <Sidebar />
             <div className="singleContainer">
-                <Navbar />
                 <BreadcrumbReact
                     items={[
                         { label: "Dashboard", url: "/dashboard/admin-dashboard" },

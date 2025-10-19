@@ -1,25 +1,23 @@
-.form-card .p-card-content {
+.editUser-form-card .p-card-content {
     padding: 0 !important;
 }
 
-.new {
-    margin-left: 250px;
+.editUser {
     display: flex;
     padding-top: 60px;
     overflow-x: hidden;
 
-    .newContainer {
+    .editUser-container {
         flex: 6;
 
-        .form-card {
+        .editUser-form-card {
             margin: 20px;
             border: 1px solid #e0e0e0;
             box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
             border-radius: 10px;
             background: #fff;
 
-
-            .form-header {
+            .editUser-form-header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -31,7 +29,7 @@
                     color: #333;
                 }
 
-                .btn-group {
+                .editUser-btn-group {
                     display: flex;
                     gap: 10px;
 
@@ -54,10 +52,10 @@
             }
 
             .p-divider {
-                margin: 20px 0; // top & bottom margin
+                margin: 20px 0;
             }
 
-            form {
+            .editUser-form {
                 margin-top: 20px;
                 display: flex;
                 flex-wrap: wrap;
@@ -110,16 +108,13 @@
                     }
                 }
 
-                // ===== Updated Profile Upload Row =====
-                .profile-upload-row {
+                .editUser-profile-upload-row {
                     flex: 1 1 100%;
                     display: flex;
                     align-items: center;
                     gap: 20px;
 
-
-
-                    .profile-preview {
+                    .editUser-profile-preview {
                         width: 80px;
                         height: 80px;
                         border-radius: 50%;
@@ -127,9 +122,8 @@
                         border: 2px solid #ccc;
                     }
 
-
-                    .custom-upload {
-                        flex: 1; // Right side
+                    .editUser-custom-upload {
+                        flex: 1;
 
                         .p-button {
                             background: rebeccapurple;
@@ -144,17 +138,15 @@
                     }
                 }
 
-                // File Upload full width if needed separately
-                .custom-upload {
+                .editUser-custom-upload {
                     flex: 1 1 100%;
                     margin-top: 10px;
                 }
 
-                // Submit Button Row
-                .form-actions {
+                .editUser-form-actions {
                     flex: 1 1 100%;
                     display: flex;
-                    justify-content: flex-end; // ✅ Always right
+                    justify-content: flex-end;
 
                     button {
                         width: 200px;
@@ -177,7 +169,6 @@
     }
 }
 
-// Toast Styling
 .p-toast {
     .p-toast-message {
         border-radius: 6px;
@@ -185,29 +176,28 @@
     }
 }
 
-// Responsive
 @media (max-width: 768px) {
-    .new {
+    .editUser {
         margin-left: 0;
 
-        .newContainer {
-            .form-card {
-                form {
+        .editUser-container {
+            .editUser-form-card {
+                .editUser-form {
                     .p-field {
                         flex: 1 1 100%;
                         max-width: 100%;
                     }
 
-                    .profile-upload-row {
+                    .editUser-profile-upload-row {
                         flex-direction: column;
                         align-items: flex-start;
 
-                        .custom-upload {
+                        .editUser-custom-upload {
                             width: 100%;
                         }
                     }
 
-                    .form-actions {
+                    .editUser-form-actions {
                         justify-content: center;
                     }
                 }

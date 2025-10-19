@@ -1,87 +1,175 @@
-.single {
-    margin-left: 250px;
+.viewUser {
     display: flex;
     padding-top: 60px;
-    overflow-x: hidden; // Prevent horizontal scroll
+    overflow-x: hidden;
+    width: 100%;
+    transition: all 0.3s ease; // smooth resizing when sidebar toggles
 
-    .singleContainer {
+    .viewUser-container {
         flex: 6;
+        width: 100%;
+        transition: all 0.3s ease;
     }
 
-    .singleTop {
+    .viewUser-top {
         padding: 20px;
         display: flex;
         gap: 20px;
+        flex-wrap: wrap; // allow wrapping for responsiveness
+        justify-content: space-between;
 
-        .left {
-            flex: 1;
+        .viewUser-left {
+            flex: 1 1 320px;
+            min-width: 300px;
             -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
             box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
             padding: 20px;
             position: relative;
+            background-color: #fff;
+            border-radius: 10px;
 
-            .editButton {
+            .viewUser-editButton {
                 position: absolute;
                 top: 0;
                 right: 0;
-                padding: 5px;
+                padding: 5px 10px;
                 font-size: 12px;
                 color: #7451f8;
                 background-color: #7551f818;
                 cursor: pointer;
                 border-radius: 0px 0px 0px 5px;
+                transition: all 0.2s ease;
             }
 
-            .item {
-                display: flex;
-                gap: 20px;
+            .viewUser-editButton:hover {
+                background-color: #7451f822;
+            }
 
-                .itemImg {
+            .viewUser-item {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex-wrap: wrap;
+
+                .viewUser-itemImg {
                     width: 100px;
                     height: 100px;
                     border-radius: 50%;
                     object-fit: cover;
                 }
 
-                .details {
-                    .itemTitle {
+                .viewUser-details {
+                    flex: 1;
+
+                    .viewUser-itemTitle {
                         margin-bottom: 10px;
                         color: #555;
+                        font-size: 18px;
+                        font-weight: 600;
                     }
 
-                    .detailItem {
+                    .viewUser-detailItem {
                         margin-bottom: 10px;
                         font-size: 14px;
+                        display: flex;
+                        flex-wrap: wrap;
 
-                        .itemKey {
+                        .viewUser-itemKey {
                             font-weight: bold;
                             color: gray;
                             margin-right: 5px;
                         }
 
-                        .itemValue {
+                        .viewUser-itemValue {
                             font-weight: 300;
+                            word-break: break-word;
                         }
                     }
                 }
             }
         }
 
-        .right {
-            flex: 2;
+        .viewUser-right {
+            flex: 2 1 400px;
+            min-width: 340px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
         }
     }
 
-    .singleBottom {
+    .viewUser-bottom {
         -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
         box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
         padding: 20px;
         margin: 10px 20px;
+        background-color: #fff;
+        border-radius: 10px;
     }
 
-    .title {
+    .viewUser-title {
         font-size: 16px;
         color: lightgray;
         margin-bottom: 20px;
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+
+    @media screen and (max-width: 1024px) {
+        .viewUser-top {
+            flex-direction: column;
+
+            .viewUser-left,
+            .viewUser-right {
+                width: 100%;
+                flex: 1 1 100%;
+            }
+        }
+
+        .viewUser-bottom {
+            margin: 10px;
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding-top: 50px;
+
+        .viewUser-itemImg {
+            width: 80px;
+            height: 80px;
+        }
+
+        .viewUser-itemTitle {
+            font-size: 16px;
+        }
+
+        .viewUser-detailItem {
+            font-size: 13px;
+        }
+
+        .viewUser-bottom {
+            margin: 10px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+
+        .viewUser-left,
+        .viewUser-right {
+            padding: 15px;
+        }
+
+        .viewUser-title {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .viewUser-itemImg {
+            width: 70px;
+            height: 70px;
+        }
     }
 }

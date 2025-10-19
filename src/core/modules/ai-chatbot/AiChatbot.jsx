@@ -1,7 +1,6 @@
 // AiChatbot.jsx
 import React, { useState, useEffect, useRef } from "react";
 import "./aiChatbot.scss";
-import Navbar from "../../components/common-components/navbar/navbar";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Card } from "primereact/card";
@@ -14,8 +13,7 @@ import {
     faRobot,
     faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
-import Sidebar from "../../components/common-components/sidebar/sidebar";
-import avatar from "C:/Users/HP/Documents/GitHub/Emitra-CSP/src/assets/avatar.png";
+import avatar from '../../../assets/images/avatar.png';
 
 const sidebarOptions = [
     { label: "New Orders", icon: faComments },
@@ -66,9 +64,7 @@ const AiChatbot = () => {
         <div className="ai-chatbot-page">
             {/* Main Chat Section */}
             <div className="main-container">
-                <Navbar />
                 <div className="chat-container">
-                    <Sidebar />
                     <div className="chat-area">
                         <div className="messages">
                             {messages.map((msg, index) => (

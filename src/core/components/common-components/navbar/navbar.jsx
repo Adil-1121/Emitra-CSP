@@ -18,7 +18,7 @@ import LanguageDropdown from "../../navbar-components/language-box/LanguageDropd
 import AddNewDropdown from "../../navbar-components/add-dropdown-box/AddNewDropdown";
 import ProfileAvatar from "../../navbar-components/profile-avatar/ProfileAvatar";
 
-const Navbar = () => {
+const Navbar = ({ sidebarWidth }) => {
     const { dispatch, darkMode } = useContext(DarkModeContext);
     const navigate = useNavigate();
 
@@ -31,8 +31,14 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar">
-            <div className="wrapper">
+        <div
+            className="navbar"
+            style={{
+                width: `calc(100% - ${sidebarWidth}px)`,
+                left: `${sidebarWidth}px`,
+                transition: "all 0.3s ease"
+            }}
+        >         <div className="wrapper">
                 {/* Search */}
                 <div className="search">
                     <input type="text" placeholder="Type here to search..." />

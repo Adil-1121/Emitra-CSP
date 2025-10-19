@@ -1,7 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
+
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -18,9 +17,7 @@ const ViewFaq = () => {
 
     return (
         <div className="viewFaqPage list">
-            <Sidebar />
             <div className="listContainer">
-                <Navbar />
                 <BreadcrumbReact
                     items={[
                         { label: "Dashboard", url: "/dashboard/admin-dashboard" },

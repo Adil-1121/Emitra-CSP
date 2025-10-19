@@ -10,12 +10,16 @@ import { Rating } from "primereact/rating";
 import { classNames } from "primereact/utils";
 import noImage from "../../../../assets/noImage.png";
 import { useNavigate } from "react-router-dom";
+import { Dropdown } from "primereact/dropdown";
+import { Calendar } from "primereact/calendar";
 
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
 import Breadcrumb from "../../../components/common-components/breadcrumb/Breadcrumb";
 
 import "./addTestimonial.scss";
+
+import axios from "axios";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "");
 
 const AddTestimonial = () => {
     const toast = useRef(null);
@@ -31,6 +35,7 @@ const AddTestimonial = () => {
     });
 
     const [profileImage, setProfileImage] = useState(null);
+    const [profileFile, setProfileFile] = useState(null); // store file for API
     const [submitted, setSubmitted] = useState(false);
     const [formValid, setFormValid] = useState(false);
 
@@ -42,6 +47,7 @@ const AddTestimonial = () => {
     const handleUpload = (event) => {
         const file = event.files[0];
         if (file) {
+            setProfileFile(file); // save file for API
             const reader = new FileReader();
             reader.onload = () => {
                 setProfileImage(reader.result);
@@ -60,13 +66,13 @@ const AddTestimonial = () => {
             email.trim() &&
             review.trim() &&
             rating > 0 &&
-            profileImage // image required
+            profileFile // file required
         );
     };
 
     useEffect(() => {
         setFormValid(validateForm());
-    }, [formData, profileImage]);
+    }, [formData, profileFile]);
 
     const getErrorMessage = (field) => {
         const value = formData[field];
@@ -76,39 +82,74 @@ const AddTestimonial = () => {
         if (field === "rating" && (!value || value < 1)) {
             return "Please select a rating";
         }
+        if (field === "image" && !profileFile) {
+            return "Profile image is required";
+        }
         return "";
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmitted(true);
 
-        if (formValid) {
-            toast.current.show({
-                severity: "success",
-                summary: "Success",
-                detail: "Testimonial Added Successfully",
-                life: 2000,
-            });
-
-            setTimeout(() => {
-                navigate("/testimonials"); // testimonials list page
-            }, 2000);
-        } else {
+        if (!formValid) {
             toast.current.show({
                 severity: "error",
                 summary: "Error",
                 detail: "Please fill all required fields correctly",
                 life: 3000,
             });
+            return;
+        }
+
+        // Prepare payload for API
+        // Prepare payload for API
+        const payload = new FormData();
+        payload.append("name", formData.clientName);
+        payload.append("company", formData.company);
+        payload.append("city", formData.city);
+        payload.append("email", formData.email);
+        payload.append("comment", formData.review);
+        payload.append("rating", formData.rating);
+        payload.append("image", profileFile);
+
+        // New fields
+        payload.append("added_by", formData.addedBy || ""); // optional default
+        payload.append("status", formData.status || "active");
+        if (formData.dateAdded) {
+            payload.append("date_added", formData.dateAdded.toISOString()); // send ISO string
+        }
+
+
+        try {
+            const res = await axios.post(`${API_BASE_URL}/api/review`, payload, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+
+            if (res.status === 200 || res.status === 201) {
+                toast.current.show({
+                    severity: "success",
+                    summary: "Success",
+                    detail: "Testimonial Added Successfully",
+                    life: 2000,
+                });
+                setTimeout(() => navigate("/testimonials"), 2000);
+            } else {
+                throw new Error("Failed to add testimonial");
+            }
+        } catch (err) {
+            toast.current.show({
+                severity: "error",
+                summary: "Error",
+                detail: err.response?.data?.message || err.message || "Failed to add testimonial",
+                life: 3000,
+            });
         }
     };
 
     return (
-        <div className="new">
-            <Sidebar />
-            <div className="newContainer">
-                <Navbar />
+        <div className="edit">
+            <div className="editContainer">
                 <Breadcrumb
                     items={[
                         { label: "Dashboard", url: "/dashboard/admin-dashboard" },
@@ -147,11 +188,11 @@ const AddTestimonial = () => {
                                     src={profileImage || noImage}
                                     alt="Client"
                                     className={classNames("profile-preview", {
-                                        "p-invalid": submitted && !profileImage,
+                                        "p-invalid": submitted && !profileFile,
                                     })}
                                 />
-                                {submitted && !profileImage && (
-                                    <small className="p-error">Profile image is required</small>
+                                {submitted && !profileFile && (
+                                    <small className="p-error">{getErrorMessage("image")}</small>
                                 )}
                             </div>
                         </div>
@@ -176,7 +217,7 @@ const AddTestimonial = () => {
                             <InputText
                                 value={formData.clientName}
                                 onChange={(e) => handleChange(e, "clientName")}
-                                placeholder="John Doe"
+                                placeholder="Please Enter Client Name"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.clientName,
                                 })}
@@ -194,7 +235,7 @@ const AddTestimonial = () => {
                             <InputText
                                 value={formData.company}
                                 onChange={(e) => handleChange(e, "company")}
-                                placeholder="ABC Pvt Ltd"
+                                placeholder="Please Enter Client Company Name"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.company,
                                 })}
@@ -212,7 +253,7 @@ const AddTestimonial = () => {
                             <InputText
                                 value={formData.city}
                                 onChange={(e) => handleChange(e, "city")}
-                                placeholder="New York"
+                                placeholder="Please Enter Client City Name"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.city,
                                 })}
@@ -231,13 +272,55 @@ const AddTestimonial = () => {
                                 type="email"
                                 value={formData.email}
                                 onChange={(e) => handleChange(e, "email")}
-                                placeholder="example@email.com"
+                                placeholder="Please Enter Client Email Address"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.email,
                                 })}
                             />
                             {submitted && !formData.email && (
                                 <small className="p-error">{getErrorMessage("email")}</small>
+                            )}
+                        </div>
+                        {/* Added By */}
+                        <div className="p-field p-col-12 p-md-4">
+                            <label>
+                                Added By<span className="required">*</span>
+                            </label>
+                            <Dropdown
+                                value={formData.addedBy}
+                                options={[
+                                    { label: "Admin", value: "admin" },
+                                    { label: "Manager", value: "manager" },
+                                    { label: "Staff", value: "staff" },
+                                    { label: "Customer Support", value: "support" },
+                                ]}
+
+                                onChange={(e) => handleChange(e, "addedBy")}
+                                placeholder="Select Added By"
+                                className={classNames({
+                                    "p-invalid": submitted && !formData.addedBy,
+                                })}
+                            />
+                            {submitted && !formData.addedBy && (
+                                <small className="p-error">{getErrorMessage("addedBy")}</small>
+                            )}
+                        </div>
+                        {/* Date Added */}
+                        <div className="p-field p-col-12 p-md-4">
+                            <label>
+                                Date Added<span className="required">*</span>
+                            </label>
+                            <Calendar
+                                value={formData.dateAdded}
+                                onChange={(e) => handleChange(e, "dateAdded")}
+                                placeholder="Select Date"
+                                showIcon
+                                className={classNames({
+                                    "p-invalid": submitted && !formData.dateAdded,
+                                })}
+                            />
+                            {submitted && !formData.dateAdded && (
+                                <small className="p-error">{getErrorMessage("dateAdded")}</small>
                             )}
                         </div>
 
@@ -254,12 +337,32 @@ const AddTestimonial = () => {
                                     "p-invalid": submitted && (!formData.rating || formData.rating < 1),
                                 })}
                             />
-
                             {submitted && (!formData.rating || formData.rating < 1) && (
                                 <small className="p-error">{getErrorMessage("rating")}</small>
                             )}
                         </div>
-
+                        {/* Status */}
+                        <div className="p-field p-col-12 p-md-4">
+                            <label>
+                                Status<span className="required">*</span>
+                            </label>
+                            <Dropdown
+                                value={formData.status}
+                                options={[
+                                    { label: "Active", value: "active" },
+                                    { label: "Pending", value: "pending" },
+                                    { label: "Inactive", value: "inactive" },
+                                ]}
+                                onChange={(e) => handleChange(e, "status")}
+                                placeholder="Select Status"
+                                className={classNames({
+                                    "p-invalid": submitted && !formData.status,
+                                })}
+                            />
+                            {submitted && !formData.status && (
+                                <small className="p-error">{getErrorMessage("status")}</small>
+                            )}
+                        </div>
                         {/* Review */}
                         <div className="p-field p-col-12">
                             <label>
@@ -269,7 +372,7 @@ const AddTestimonial = () => {
                                 rows={4}
                                 value={formData.review}
                                 onChange={(e) => handleChange(e, "review")}
-                                placeholder="Client review..."
+                                placeholder="Please Enter Client Reviews"
                                 className={classNames({
                                     "p-invalid": submitted && !formData.review,
                                 })}
@@ -278,6 +381,9 @@ const AddTestimonial = () => {
                                 <small className="p-error">{getErrorMessage("review")}</small>
                             )}
                         </div>
+
+
+
                     </form>
                 </Card>
             </div>

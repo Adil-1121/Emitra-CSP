@@ -12,8 +12,6 @@ import { classNames } from "primereact/utils";
 import noImage from '../../../../assets/noImage.png';
 import { useNavigate, useParams } from "react-router-dom";
 
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 
 import './editService.scss';
@@ -21,7 +19,7 @@ import './editService.scss';
 const EditService = () => {
     const toast = useRef(null);
     const navigate = useNavigate();
-    const { serviceId } = useParams(); // agar id se fetch karna ho
+    const { serviceId } = useParams(); // agar API se fetch karna ho
 
     // Initial state, aap API se bhi fetch kar sakte ho
     const [formData, setFormData] = useState({
@@ -50,9 +48,7 @@ const EditService = () => {
         const file = event.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = () => {
-                setServiceImage(reader.result);
-            };
+            reader.onload = () => setServiceImage(reader.result);
             reader.readAsDataURL(file);
         }
     };
@@ -62,9 +58,7 @@ const EditService = () => {
         return title.trim() && description.trim() && addedDate && status && (serviceImage || true);
     };
 
-    useEffect(() => {
-        setFormValid(validateForm());
-    }, [formData, serviceImage]);
+    useEffect(() => setFormValid(validateForm()), [formData, serviceImage]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -78,9 +72,7 @@ const EditService = () => {
                 life: 2000,
             });
 
-            setTimeout(() => {
-                navigate("/services");
-            }, 2000);
+            setTimeout(() => navigate("/services"), 2000);
         } else {
             toast.current.show({
                 severity: "error",
@@ -92,10 +84,8 @@ const EditService = () => {
     };
 
     return (
-        <div className="new">
-            <Sidebar />
-            <div className="newContainer">
-                <Navbar />
+        <div className="edit">
+            <div className="editContainer">
                 <BreadcrumbReact
                     items={[
                         { label: 'Dashboard', url: '/dashboard/admin-dashboard' },

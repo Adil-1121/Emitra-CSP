@@ -1,26 +1,40 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./testimonialsDataTable.scss";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faSearch,
-    faTrash,
-    faEye,
-    faEdit,
-    faPlus,
-    faStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTrash, faEye, faEdit, faPlus, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
-import { testimonialsRows } from "../../../testimonialDatatableSource";
+import { getAllTestimonials, deleteTestimonial } from "../../../services/testimonialService";
 
 const TestimonialsDataTable = () => {
-    const [data, setData] = useState(testimonialsRows);
+    const [data, setData] = useState([]);
     const [globalFilter, setGlobalFilter] = useState("");
     const toast = useRef(null);
+
+    // Fetch testimonials on mount
+    useEffect(() => {
+        console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const res = await getAllTestimonials();
+            if (Array.isArray(res)) setData(res);
+            else setData([]);
+        } catch (err) {
+            toast.current.show({
+                severity: "error",
+                summary: "Error",
+                detail: err.message || "Failed to fetch testimonials",
+                life: 3000,
+            });
+        }
+    };
 
     // Confirm delete dialog
     const confirmDelete = (id) => {
@@ -36,26 +50,38 @@ const TestimonialsDataTable = () => {
         });
     };
 
-    // Delete handler
-    const handleDelete = (id) => {
-        setData(data.filter((item) => item.id !== id));
-        toast.current.show({
-            severity: "success",
-            summary: "Deleted",
-            detail: "Testimonial deleted successfully",
-            life: 3000,
-        });
+    // Delete single testimonial
+    const handleDelete = async (id) => {
+        try {
+            await deleteTestimonial(id);
+            toast.current.show({
+                severity: "success",
+                summary: "Deleted",
+                detail: "Testimonial deleted successfully",
+                life: 3000,
+            });
+            fetchData(); // refresh table after deletion
+        } catch (err) {
+            toast.current.show({
+                severity: "error",
+                summary: "Error",
+                detail: err.message || "Failed to delete testimonial",
+                life: 3000,
+            });
+        }
     };
 
     // Client column with image
     const clientBodyTemplate = (rowData) => (
         <div className="cellWithImg">
-            <img
-                src={rowData.img}
-                alt={rowData.clientName}
-                className="cellImg"
-            />
-            {rowData.clientName}
+            {rowData.image_url && (
+                <img
+                    src={`http://127.0.0.1:5000${rowData.image_url}`}
+                    alt={rowData.name}
+                    className="cellImg"
+                />
+            )}
+            {rowData.name}
         </div>
     );
 
@@ -72,37 +98,31 @@ const TestimonialsDataTable = () => {
         </div>
     );
 
-    // Testimonial text trim
+    // Testimonial text
     const testimonialBodyTemplate = (rowData) => (
         <div className="testimonialText">
-            {rowData.testimonial.length > 50
-                ? `${rowData.testimonial.substring(0, 50)}...`
-                : rowData.testimonial}
+            {rowData.comment.length > 50
+                ? `${rowData.comment.substring(0, 50)}...`
+                : rowData.comment}
         </div>
     );
+    // Status column
+    const statusBodyTemplate = (rowData) => (
+        <span className={`cellWithStatus ${rowData.status}`}>
+            {rowData.status}
+        </span>
+    );
 
-    // Actions
+
+    // Actions column
     const actionBodyTemplate = (rowData) => (
         <div className="cellAction">
-            {/* View */}
-            <Link
-                to={`/testimonials/view-testimonial/${rowData.id}`}
-                style={{ textDecoration: "none" }}
-            >
-                <Button
-                    className="viewButton"
-                    icon={<FontAwesomeIcon icon={faEye} />}
-                    label="View"
-                />
+            <Link to={`/testimonials/view-testimonial/${rowData.id}`} style={{ textDecoration: "none" }}>
+                <Button className="viewButton" icon={<FontAwesomeIcon icon={faEye} />} label="View" />
             </Link>
-
-            {/* Edit */}
             <Link to={`/testimonials/edit-testimonial/${rowData.id}`} style={{ textDecoration: "none" }}>
                 <Button className="editButton" icon={<FontAwesomeIcon icon={faEdit} />} label="Edit" />
             </Link>
-
-
-            {/* Delete */}
             <Button
                 className="deleteButton"
                 icon={<FontAwesomeIcon icon={faTrash} />}
@@ -114,14 +134,12 @@ const TestimonialsDataTable = () => {
 
     return (
         <div className="datatable">
-            {/* Toast & ConfirmDialog */}
             <Toast ref={toast} position="top-right" />
             <ConfirmDialog position="top" className="custom-confirm-dialog" />
 
             <div className="dataTableTitle">
                 <h3>Testimonials List</h3>
                 <div className="rightActions">
-                    {/* Search */}
                     <div className="searchContainer">
                         <FontAwesomeIcon icon={faSearch} className="searchIcon" />
                         <input
@@ -133,7 +151,6 @@ const TestimonialsDataTable = () => {
                         />
                     </div>
 
-                    {/* Add New */}
                     <Link to="/testimonials/add-testimonial" className="link">
                         <FontAwesomeIcon icon={faPlus} /> Add New Testimonial
                     </Link>
@@ -149,20 +166,11 @@ const TestimonialsDataTable = () => {
                 emptyMessage="No testimonials found."
             >
                 <Column field="id" header="ID" sortable filter />
-                <Column
-                    header="Client"
-                    body={clientBodyTemplate}
-                    sortable
-                    filter
-                />
-                <Column field="company" header="Company" sortable filter />
-                <Column header="Rating" body={ratingBodyTemplate} sortable />
-                <Column
-                    header="Testimonial"
-                    body={testimonialBodyTemplate}
-                    sortable
-                    filter
-                />
+                <Column field="name" header="Client" body={clientBodyTemplate} sortable filter />
+                <Column field="city" header="City" sortable filter />
+                <Column field="rating" header="Rating" body={ratingBodyTemplate} sortable />
+                <Column field="comment" header="Review" body={testimonialBodyTemplate} sortable filter />
+                <Column field="status" header="Status" body={statusBodyTemplate} sortable filter />
                 <Column header="Action" body={actionBodyTemplate} />
             </DataTable>
         </div>

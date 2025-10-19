@@ -1,6 +1,5 @@
 .ai-chatbot-page {
     display: flex;
-    margin-left: 250px; // adjust if you already have a global sidebar
     padding-top: 60px;
     height: 100vh;
     font-family: "Arial", sans-serif;
@@ -15,7 +14,6 @@
         flex-direction: column;
         gap: 20px;
         box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.2); // left side shadow only
-        // z-index: 1000;
 
         h2 {
             color: rebeccapurple;

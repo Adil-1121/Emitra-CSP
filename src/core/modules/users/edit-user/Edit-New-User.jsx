@@ -8,24 +8,43 @@ import { FileUpload } from "primereact/fileupload";
 import { Divider } from "primereact/divider";
 import { Calendar } from "primereact/calendar";
 import { classNames } from "primereact/utils";
-import noImage from '../../../../assets/noImage.png';
-import { useNavigate, useParams } from "react-router-dom"; // ✅ useParams
-
-import Navbar from "../../../components/common-components/navbar/navbar";
-import Sidebar from "../../../components/common-components/sidebar/sidebar";
+import noImage from "../../../../assets/noImage.png";
+import { useNavigate, useParams } from "react-router-dom";
 import Breadcrumb from "../../../components/common-components/breadcrumb/Breadcrumb";
 
 import "./Edit-New-User.scss";
 
 const mockUserData = [
-    { id: 1, username: "john123", fullname: "John Doe", email: "john@example.com", phone: "1234567890", password: "123456", address: "123 Street", city: "New York", joinedDate: new Date(), profileImage: null },
-    { id: 2, username: "jane456", fullname: "Jane Doe", email: "jane@example.com", phone: "9876543210", password: "abcdef", address: "456 Street", city: "Los Angeles", joinedDate: new Date(), profileImage: null },
+    {
+        id: 1,
+        username: "john123",
+        fullname: "John Doe",
+        email: "john@example.com",
+        phone: "1234567890",
+        password: "123456",
+        address: "123 Street",
+        city: "New York",
+        joinedDate: new Date(),
+        profileImage: null,
+    },
+    {
+        id: 2,
+        username: "jane456",
+        fullname: "Jane Doe",
+        email: "jane@example.com",
+        phone: "9876543210",
+        password: "abcdef",
+        address: "456 Street",
+        city: "Los Angeles",
+        joinedDate: new Date(),
+        profileImage: null,
+    },
 ];
 
 const EditUser = () => {
     const toast = useRef(null);
     const navigate = useNavigate();
-    const { userId } = useParams(); // ✅ For edit mode
+    const { userId } = useParams();
 
     const isEditMode = !!userId;
 
@@ -44,10 +63,10 @@ const EditUser = () => {
     const [submitted, setSubmitted] = useState(false);
     const [formValid, setFormValid] = useState(false);
 
-    // Prefill form in edit mode
+    // Prefill in edit mode
     useEffect(() => {
         if (isEditMode) {
-            const user = mockUserData.find(u => u.id === parseInt(userId));
+            const user = mockUserData.find((u) => u.id === parseInt(userId));
             if (user) {
                 setFormData({
                     username: user.username,
@@ -65,7 +84,7 @@ const EditUser = () => {
     }, [isEditMode, userId]);
 
     const handleChange = (e, name) => {
-        const value = e.target ? e.target.value : e; // for Calendar
+        const value = e.target ? e.target.value : e;
         setFormData({ ...formData, [name]: value });
     };
 
@@ -82,8 +101,14 @@ const EditUser = () => {
         const { username, fullname, email, phone, password, joinedDate } = formData;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^[0-9]{10,15}$/;
-        return username.trim() && fullname.trim() && emailRegex.test(email) &&
-            phoneRegex.test(phone.replace(/\D/g, "")) && password.trim() && joinedDate;
+        return (
+            username.trim() &&
+            fullname.trim() &&
+            emailRegex.test(email) &&
+            phoneRegex.test(phone.replace(/\D/g, "")) &&
+            password.trim() &&
+            joinedDate
+        );
     };
 
     useEffect(() => {
@@ -100,7 +125,8 @@ const EditUser = () => {
         }
         if (field === "phone") {
             const phoneRegex = /^[0-9]{10,15}$/;
-            if (!phoneRegex.test(value.replace(/\D/g, ""))) return "Phone number is invalid";
+            if (!phoneRegex.test(value.replace(/\D/g, "")))
+                return "Phone number is invalid";
         }
         if (field === "joinedDate" && !value) return "Joined Date is required";
         return "";
@@ -114,7 +140,9 @@ const EditUser = () => {
             toast.current.show({
                 severity: "success",
                 summary: "Success",
-                detail: isEditMode ? "User Updated Successfully" : "User Added Successfully",
+                detail: isEditMode
+                    ? "User Updated Successfully"
+                    : "User Added Successfully",
                 life: 2000,
             });
 
@@ -130,10 +158,8 @@ const EditUser = () => {
     };
 
     return (
-        <div className="new">
-            <Sidebar />
-            <div className="newContainer">
-                <Navbar />
+        <div className="editUser">
+            <div className="editUser-container">
                 <Breadcrumb
                     items={[
                         { label: "Dashboard", url: "/dashboard/admin-dashboard" },
@@ -142,10 +168,11 @@ const EditUser = () => {
                     ]}
                 />
                 <Toast ref={toast} />
-                <Card className="form-card">
-                    <div className="form-header">
+
+                <Card className="editUser-form-card">
+                    <div className="editUser-form-header">
                         <h2>{isEditMode ? "Edit User" : "Add User"}</h2>
-                        <div className="btn-group">
+                        <div className="editUser-btn-group">
                             <Button
                                 label="Submit"
                                 onClick={handleSubmit}
@@ -161,13 +188,18 @@ const EditUser = () => {
                     </div>
                     <Divider />
 
-                    <form className="p-fluid p-formgrid p-grid">
-                        <div className="p-field p-col-6 profile-upload-row">
-                            <div className="profile-preview-wrapper">
-                                <img src={profileImage || noImage} alt="Profile" className="profile-preview" />
+                    <form className="p-fluid p-formgrid p-grid editUser-form">
+                        <div className="p-field p-col-6 editUser-profile-upload-row">
+                            <div className="editUser-profile-preview-wrapper">
+                                <img
+                                    src={profileImage || noImage}
+                                    alt="Profile"
+                                    className="editUser-profile-preview"
+                                />
                             </div>
                         </div>
-                        <div className="p-field p-col-6 profile-upload-row">
+
+                        <div className="p-field p-col-6 editUser-profile-upload-row">
                             <FileUpload
                                 mode="basic"
                                 name="file"
@@ -175,21 +207,23 @@ const EditUser = () => {
                                 auto
                                 customUpload
                                 uploadHandler={handleUpload}
-                                className="custom-upload"
+                                className="editUser-custom-upload"
                             />
                         </div>
 
-                        {[{ label: "Username", name: "username", type: "text" },
-                        { label: "Fullname", name: "fullname", type: "text" },
-                        { label: "Email", name: "email", type: "text" },
-                        { label: "Password", name: "password", type: "password" },
-                        { label: "Phone", name: "phone", type: "text" }
+                        {[
+                            { label: "Username", name: "username", type: "text" },
+                            { label: "Fullname", name: "fullname", type: "text" },
+                            { label: "Email", name: "email", type: "text" },
+                            { label: "Password", name: "password", type: "password" },
+                            { label: "Phone", name: "phone", type: "text" },
                         ].map((field) => {
                             const errorMessage = submitted ? getErrorMessage(field.name) : "";
                             return (
                                 <div key={field.name} className="p-field p-col-12 p-md-6">
                                     <label>
-                                        {field.label}<span className="required">*</span>
+                                        {field.label}
+                                        <span className="required">*</span>
                                     </label>
                                     <InputText
                                         type={field.type}
@@ -198,7 +232,9 @@ const EditUser = () => {
                                         placeholder={field.label}
                                         className={classNames({ "p-invalid": errorMessage })}
                                     />
-                                    {errorMessage && <small className="p-error">{errorMessage}</small>}
+                                    {errorMessage && (
+                                        <small className="p-error">{errorMessage}</small>
+                                    )}
                                 </div>
                             );
                         })}
@@ -212,19 +248,32 @@ const EditUser = () => {
                                 onChange={(e) => handleChange(e.value, "joinedDate")}
                                 showIcon
                                 placeholder="Select joined date"
-                                className={classNames({ "p-invalid": submitted && !formData.joinedDate })}
+                                className={classNames({
+                                    "p-invalid": submitted && !formData.joinedDate,
+                                })}
                             />
-                            {submitted && !formData.joinedDate && <small className="p-error">Joined Date is required</small>}
+                            {submitted && !formData.joinedDate && (
+                                <small className="p-error">Joined Date is required</small>
+                            )}
                         </div>
 
                         <div className="p-field p-col-12 p-md-6">
                             <label>City</label>
-                            <InputText value={formData.city} onChange={(e) => handleChange(e, "city")} placeholder="New York" />
+                            <InputText
+                                value={formData.city}
+                                onChange={(e) => handleChange(e, "city")}
+                                placeholder="New York"
+                            />
                         </div>
 
                         <div className="p-field p-col-12 p-md-6">
                             <label>Address</label>
-                            <InputTextarea rows={2} value={formData.address} onChange={(e) => handleChange(e, "address")} placeholder="Elton ST. 213 NewYork" />
+                            <InputTextarea
+                                rows={2}
+                                value={formData.address}
+                                onChange={(e) => handleChange(e, "address")}
+                                placeholder="Elton ST. 213 NewYork"
+                            />
                         </div>
                     </form>
                 </Card>

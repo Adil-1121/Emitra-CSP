@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './home.scss'
 // Go up to 'src/core' first, then into components
-import Navbar from "../../components/common-components/navbar/navbar";
-import Sidebar from "../../components/common-components/sidebar/sidebar";
+
 import BreadcrumbReact from "../../components/common-components/breadcrumb/Breadcrumb";
 import Widget from "../../components/dashboard/widget/widget";
 import Featured from "../../components/dashboard/featured/Featured";
@@ -23,17 +22,14 @@ const Home = () => {
         }, 1000); // 3 seconds delay
     }, []);
     return (
-        <div className="home">
+        <div className="dashboardHome">
             <LoadingSpinner isLoading={isLoading} />
-            <Sidebar />
-            <div className="homeContainer">
-                <Navbar />
+            <div className="dashboardContainer">
                 <BreadcrumbReact
                     items={[
                         { label: 'Dashboard', url: '/dashboard/admin-dashboard' },
                         { label: 'Admin Dashboard' }]}
                 />
-
 
                 <DateFilter onDateChange={(range) => console.log("Date Range Changed:", range)} />
                 <div className="widgets">
@@ -57,4 +53,4 @@ const Home = () => {
         </div >
     )
 }
-export default Home
+export default Home;

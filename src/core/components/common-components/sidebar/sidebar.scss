@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     transition: width 0.3s ease;
+    z-index: 100;
 
     &.closed {
         width: 70px;
@@ -30,8 +31,8 @@
         }
 
         .top .logo-container .logo img {
-            width: 25px; // Closed sidebar avatar
-            height: 25px;
+            width: 450px;
+            height: 45px;
             margin-right: 0;
         }
     }
@@ -56,9 +57,10 @@
         }
 
         .top .logo-container .logo img {
-            width: 35px; // Open/Hover avatar
+            width: 35px;
             height: 35px;
             margin-right: 5px;
+
         }
     }
 
@@ -66,24 +68,20 @@
         height: 60px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
         padding: 0 10px;
-        flex-shrink: 0;
 
         .logo-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-evenly;
             width: 100%;
 
             .logo {
                 display: flex;
                 align-items: center;
-                font-size: 18px;
+                font-size: 26px;
                 font-weight: 700;
-                // color: #6439ff;
                 color: rebeccapurple;
-
 
                 .avatar {
                     width: 35px;
@@ -93,21 +91,10 @@
                     margin-right: 5px;
                     transition: width 0.3s, height 0.3s, margin 0.3s;
                 }
+
             }
-
-        }
-
-        .menuBtn {
-            font-size: 20px;
-            left: 1000px;
-            cursor: pointer;
-            // color: #6439ff;
-            color: rebeccapurple;
-
-            background: white;
         }
     }
-
 
     hr {
         margin: 0;
@@ -154,7 +141,6 @@
 
             .icon {
                 font-size: 18px;
-                // color: #7451f8;
                 color: rebeccapurple;
             }
 
@@ -163,7 +149,6 @@
                 font-weight: 600;
                 color: #888;
                 margin-left: 10px;
-
             }
 
             .portfolio.active {
@@ -252,5 +237,37 @@
                 }
             }
         }
+    }
+
+}
+
+/* Menu Button outside sidebar */
+.menuBtn {
+    position: fixed;
+    top: 15px;
+    left: 250px; // matches sidebar open width
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: rebeccapurple;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease, background-color 0.2s, transform 0.3s ease;
+    z-index: 1000;
+
+    &.closed {
+        left: 70px; // matches sidebar closed width
+    }
+
+    /* ✅ Hover ke waqt (sidebar hover hone par) */
+    &.hovered {
+        left: 250px; // Same as open width
+    }
+
+    &:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.1); // optional for smooth hover animation
+
     }
 }

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./settingPage.scss";
 
-import Navbar from "../../components/common-components/navbar/navbar";
-import Sidebar from "../../components/common-components/sidebar/sidebar";
 import Breadcrumb from "../../components/common-components/breadcrumb/Breadcrumb";
 
 import SettingsSidebar from "../../components/settings/SettingsSidebar/SettingsSidebar";
@@ -14,9 +12,7 @@ const SettingPage = () => {
 
     return (
         <div className="settings-page">
-            <Sidebar />
             <div className="settings-main">
-                <Navbar />
                 <Breadcrumb
                     items={[
                         { label: "Dashboard", url: "/dashboard/admin-dashboard" },
