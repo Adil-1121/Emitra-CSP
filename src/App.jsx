@@ -99,11 +99,11 @@ function MainLayout({
       navigate("/lock-screen");
     };
 
-    let timer = setTimeout(lock, 10000); // 10 sec for testing
+    let timer = setTimeout(lock, 600000); // 10 sec for testing
 
     const resetTimer = () => {
       clearTimeout(timer);
-      timer = setTimeout(lock, 10000);
+      timer = setTimeout(lock, 600000);
     };
 
     window.addEventListener("mousemove", resetTimer);
@@ -121,11 +121,11 @@ function MainLayout({
   // -----------------------------
   // Redirect to lockscreen if locked
   // -----------------------------
-  useEffect(() => {
-    if (locked === "true" && location.pathname !== "/lock-screen") {
-      navigate("/lock-screen");
-    }
-  }, [locked, location.pathname, navigate]);
+  // useEffect(() => {
+  //   if (locked === "true" && location.pathname !== "/lock-screen") {
+  //     navigate("/lock-screen");
+  //   }
+  // }, [locked, location.pathname, navigate]);
 
   return (
     <>

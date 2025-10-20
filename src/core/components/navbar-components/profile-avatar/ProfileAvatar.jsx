@@ -5,7 +5,7 @@ import './profileAvatar.scss';
 
 // Font Awesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faRightFromBracket, faUserPen, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faUserLock, faRightFromBracket, faUserPen, faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons';
 
 const ProfileAvatar = ({
     image = "/default-avatar.png", // Default avatar image
@@ -50,6 +50,12 @@ const ProfileAvatar = ({
         navigate("/change-password");
         setOpen(false);
     };
+    const goToLockScreen = () => {
+        localStorage.setItem("locked", "true"); // session immediately lock
+        navigate("/lock-screen");
+        setOpen(false);
+    };
+
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -86,8 +92,12 @@ const ProfileAvatar = ({
                             <span className="label">Edit Profile</span>
                         </li>
                         <li onClick={goToChangePassword}>
-                            <FontAwesomeIcon icon={faLock} className="icon" />
+                            <FontAwesomeIcon icon={faUnlockKeyhole} className="icon" />
                             <span className="label">Change Password</span>
+                        </li>
+                        <li onClick={goToLockScreen}>
+                            <FontAwesomeIcon icon={faUserLock} className="icon" />
+                            <span className="label">Lock Screen</span>
                         </li>
                         <hr />
                         <li className="signout" onClick={handleLogout}>

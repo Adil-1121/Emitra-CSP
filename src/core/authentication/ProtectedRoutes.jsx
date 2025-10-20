@@ -3,7 +3,12 @@ import { Navigate, Outlet } from "react-router-dom";
 
 function ProtectedRoutes() {
     const token = localStorage.getItem("token");
-    return token ? <Outlet /> : <Navigate to="/login" replace />;
+    const locked = localStorage.getItem("locked") === "true";
+
+    if (!token) return <Navigate to="/login" replace />;
+    if (locked) return <Navigate to="/lock-screen" replace />;
+
+    return <Outlet />;
 }
 
 export default ProtectedRoutes;

@@ -22,6 +22,25 @@ import avatar from "../../../../assets/avatar.png";
 const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
     const [portfolioOpen, setPortfolioOpen] = useState(false);
     const [hovered, setHovered] = useState(false);
+    const [user, setUser] = useState({
+        full_name: "User",
+        role: "Admin",
+        avatar: avatar
+    });
+
+
+    useEffect(() => {
+        const userName = localStorage.getItem("userName"); // same as ProfileAvatar
+        const userData = JSON.parse(localStorage.getItem("user")); // optional, role/avatar
+        setUser({
+            full_name: userName || "User",
+            role: userData?.role || "Admin",
+            avatar: userData?.avatar || avatar
+        });
+    }, []);
+
+
+
 
     const togglePortfolio = () => {
         setPortfolioOpen(!portfolioOpen);
@@ -36,6 +55,13 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
         setHovered(false);
         setSidebarHovered(false);
     };
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        localStorage.removeItem("locked");
+        window.location.href = "/login";
+    };
+
 
     const isOpen = sidebarOpen || hovered;
 
@@ -154,24 +180,27 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
                 <div className="bottom">
                     <div className="profile">
                         <Link to="/profile" className="link" style={{ textDecoration: "none" }}>
-                            <img src={avatar} className="profileImg" alt="User Avatar" />
+                            <img src={user.avatar} className="profileImg" alt="User Avatar" />
                         </Link>
                         {isOpen && (
                             <Link to="/profile" className="link" style={{ textDecoration: "none" }}>
                                 <div className="profileInfo">
                                     <div className="nameRow">
-                                        <span className="name">Sadiq Hussain</span>
+                                        <span className="name">{user.full_name}</span>
                                         <FontAwesomeIcon icon={faCheckCircle} className="verifiedIcon" />
                                     </div>
-                                    <span className="role">Admin</span>
+                                    <span className="role">{user.role}</span>
                                 </div>
                             </Link>
                         )}
-                        <Link to="/login" className="link" style={{ textDecoration: "none" }}>
-                            {isOpen && <FontAwesomeIcon icon={faSignOutAlt} className="logoutIcon" />}
-                        </Link>
+                        {isOpen && (
+                            <div onClick={handleLogout} style={{ cursor: "pointer" }}>
+                                <FontAwesomeIcon icon={faSignOutAlt} className="logoutIcon" />
+                            </div>
+                        )}
                     </div>
                 </div>
+
             </div>
 
             {/* ✅ Single Menu Button outside sidebar */}
