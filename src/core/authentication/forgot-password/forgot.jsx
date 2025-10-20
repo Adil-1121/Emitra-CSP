@@ -12,7 +12,7 @@ const ForgotPassword = () => {
     const [submitted, setSubmitted] = useState(false);
     const toast = useRef(null);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!email) {
@@ -25,16 +25,39 @@ const ForgotPassword = () => {
             return;
         }
 
-        // Simulate API call success
-        setSubmitted(true);
-        toast.current.show({
-            severity: "success",
-            summary: "Success",
-            detail: "Reset link sent to your email.",
-            life: 3000,
-        });
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}auth/forgot-password`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
 
-        console.log("Password reset requested for:", email);
+            const data = await res.json();
+
+            if (res.ok) {
+                setSubmitted(true);
+                toast.current.show({
+                    severity: "success",
+                    summary: "Success",
+                    detail: data.message,
+                    life: 3000,
+                });
+            } else {
+                toast.current.show({
+                    severity: "error",
+                    summary: "Error",
+                    detail: data.message,
+                    life: 3000,
+                });
+            }
+        } catch (err) {
+            toast.current.show({
+                severity: "error",
+                summary: "Error",
+                detail: "Server error. Try again later.",
+                life: 3000,
+            });
+        }
     };
 
     return (

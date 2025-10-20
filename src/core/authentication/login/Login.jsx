@@ -19,7 +19,7 @@ export default function Login() {
     const [rememberMe, setRememberMe] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (!email || !password) {
             toast.current.show({
                 severity: 'error',
@@ -30,8 +30,29 @@ export default function Login() {
             return;
         }
 
-        // Example validation: just demo email/password for now
-        if (email === 'sadiq@yopmail.com' && password === 'Sadiq@123') {
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                toast.current.show({
+                    severity: 'error',
+                    summary: 'Login Failed',
+                    detail: data.message || "Invalid credentials",
+                    life: 3000
+                });
+                return;
+            }
+
+            // ✅ Corrected line
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("userName", data.user.full_name);
+
             toast.current.show({
                 severity: 'success',
                 summary: 'Login Successful',
@@ -39,18 +60,20 @@ export default function Login() {
                 life: 2000
             });
 
-            setTimeout(() => {
-                navigate('/dashboard/admin-dashboard');
-            }, 2000);
-        } else {
+            setTimeout(() => navigate("/dashboard/admin-dashboard"), 2000);
+
+        } catch (err) {
             toast.current.show({
-                severity: 'warn',
-                summary: 'Invalid Credentials',
-                detail: 'Please try again.',
+                severity: 'error',
+                summary: 'Error',
+                detail: 'Something went wrong!',
                 life: 3000
             });
+            console.error(err);
         }
     };
+
+
 
     return (
         <div className="login-container">

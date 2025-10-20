@@ -22,48 +22,50 @@ export default function Register() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [agreeTerms, setAgreeTerms] = useState(false);
 
-    const handleRegister = () => {
+    const handleRegister = async () => {
         if (!fullName || !email || !password || !confirmPassword) {
-            toast.current.show({
-                severity: "error",
-                summary: "Error",
-                detail: "All fields are required.",
-                life: 3000,
-            });
+            toast.current.show({ severity: "error", summary: "Error", detail: "All fields are required.", life: 3000 });
             return;
         }
 
         if (password !== confirmPassword) {
-            toast.current.show({
-                severity: "warn",
-                summary: "Password Mismatch",
-                detail: "Passwords do not match.",
-                life: 3000,
-            });
+            toast.current.show({ severity: "warn", summary: "Password Mismatch", detail: "Passwords do not match.", life: 3000 });
             return;
         }
 
         if (!agreeTerms) {
-            toast.current.show({
-                severity: "warn",
-                summary: "Terms Not Agreed",
-                detail: "You must agree to the terms and privacy policy.",
-                life: 3000,
-            });
+            toast.current.show({ severity: "warn", summary: "Terms Not Agreed", detail: "You must agree to the terms and privacy policy.", life: 3000 });
             return;
         }
 
-        toast.current.show({
-            severity: "success",
-            summary: "Registration Successful",
-            detail: "Welcome!",
-            life: 2000,
-        });
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/register`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ full_name: fullName, email, password }),
+            });
 
-        setTimeout(() => {
-            navigate("/login");
-        }, 2000);
+            const data = await res.json();
+
+            if (!res.ok) {
+                toast.current.show({ severity: "error", summary: "Registration Failed", detail: data.message || "Error", life: 3000 });
+                return;
+            }
+
+            // Save JWT token in localStorage (optional)
+            localStorage.setItem("token", data.token);
+
+            toast.current.show({ severity: "success", summary: "Registration Successful", detail: "Welcome!", life: 2000 });
+
+            // Redirect to login after 2s
+            setTimeout(() => navigate("/login"), 2000);
+
+        } catch (err) {
+            toast.current.show({ severity: "error", summary: "Error", detail: "Something went wrong!", life: 3000 });
+            console.error(err);
+        }
     };
+
 
     return (
         <div className="register-container">

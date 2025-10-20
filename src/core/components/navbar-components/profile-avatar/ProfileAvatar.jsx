@@ -8,8 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket, faUserPen, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const ProfileAvatar = ({
-    image,
-    name = "Sadiq Hussain",
+    image = "/default-avatar.png", // Default avatar image
     role = "ADMIN",
     altText = "User Avatar",
 }) => {
@@ -17,6 +16,10 @@ const ProfileAvatar = ({
     const dropdownRef = useRef(null);
     const navigate = useNavigate();
 
+    // ✅ Get the logged-in user's name from localStorage
+    const [name, setName] = useState(localStorage.getItem("userName") || "User");
+
+    // Close dropdown if clicked outside
     const handleClickOutside = (e) => {
         if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
             setOpen(false);
@@ -32,6 +35,7 @@ const ProfileAvatar = ({
         setOpen(prev => !prev);
     };
 
+    // Navigation handlers
     const goToProfile = () => {
         navigate("/profile");
         setOpen(false);
@@ -41,12 +45,15 @@ const ProfileAvatar = ({
         navigate("/profile/edit-profile");
         setOpen(false);
     };
+
     const goToChangePassword = () => {
         navigate("/change-password");
         setOpen(false);
     };
 
     const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("userName");
         navigate("/login");
         setOpen(false);
     };
@@ -87,7 +94,6 @@ const ProfileAvatar = ({
                             <FontAwesomeIcon icon={faRightFromBracket} className="icon" />
                             <span className="label">Sign Out</span>
                         </li>
-
                     </ul>
                 </div>
             )}
@@ -96,11 +102,9 @@ const ProfileAvatar = ({
 };
 
 ProfileAvatar.propTypes = {
-    image: PropTypes.string.isRequired,
-    name: PropTypes.string,
+    image: PropTypes.string,
     role: PropTypes.string,
     altText: PropTypes.string,
-    tooltip: PropTypes.string,
 };
 
 export default ProfileAvatar;
