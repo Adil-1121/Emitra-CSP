@@ -7,14 +7,27 @@ import { faLock, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./lockscreen.scss";
 import avatar from "../../../assets/images/avatar.png";
+
 const Lockscreen = () => {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const toast = useRef(null);
     const navigate = useNavigate();
 
-    const userData = JSON.parse(localStorage.getItem("user")) || {};
     const token = localStorage.getItem("token");
+
+    // ✅ Helper: Format Image from localStorage
+    const formatImage = (img) => {
+        if (!img) return avatar;
+        if (img.startsWith("data:image")) return img;
+        return `data:image/jpeg;base64,${img}`;
+    };
+
+    // ✅ Get user details from localStorage
+    const userData = {
+        full_name: localStorage.getItem("userName") || "Welcome Back!",
+        avatar: formatImage(localStorage.getItem("userProfileImage")),
+    };
 
     // -----------------------------
     // 1️⃣ Automatic Lock Timer (Inactivity)
@@ -27,7 +40,7 @@ const Lockscreen = () => {
             navigate("/lock-screen");
         };
 
-        // 10 sec timer for testing
+        // 10 min timer
         let timer = setTimeout(lock, 600000);
 
         const resetTimer = () => {
@@ -44,16 +57,6 @@ const Lockscreen = () => {
             window.removeEventListener("keydown", resetTimer);
         };
     }, [navigate, token]);
-
-    // -----------------------------
-    // 2️⃣ Check lock state on mount (refresh / tab close)
-    // -----------------------------
-    // useEffect(() => {
-    //     const locked = localStorage.getItem("locked");
-    //     if (locked === "true" && window.location.pathname !== "/lock-screen") {
-    //         navigate("/lock-screen");
-    //     }
-    // }, [navigate]);
 
     // -----------------------------
     // Unlock function
@@ -116,15 +119,16 @@ const Lockscreen = () => {
         <div className="lockscreen-page">
             <Toast ref={toast} />
             <div className="lockscreen-box">
+                {/* ✅ User Image from localStorage */}
                 <Avatar
-                    image={userData.avatar || avatar}
+                    image={userData.avatar}
                     size="xlarge"
                     shape="circle"
                 />
+
+                {/* ✅ User Name from localStorage */}
                 <h2 className="username">
-                    {userData.full_name
-                        ? userData.full_name
-                        : "Welcome Back!"}
+                    {userData.full_name}, Welcome Back!
                 </h2>
 
                 <form onSubmit={handleSubmit} className="lockscreen-form">

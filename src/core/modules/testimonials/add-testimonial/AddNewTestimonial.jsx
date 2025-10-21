@@ -17,8 +17,7 @@ import Breadcrumb from "../../../components/common-components/breadcrumb/Breadcr
 
 import "./addTestimonial.scss";
 
-import axios from "axios";
-
+import { addTestimonial } from "../../../../services/testimonialService";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "");
 
 const AddTestimonial = () => {
@@ -103,7 +102,6 @@ const AddTestimonial = () => {
         }
 
         // Prepare payload for API
-        // Prepare payload for API
         const payload = new FormData();
         payload.append("name", formData.clientName);
         payload.append("company", formData.company);
@@ -112,31 +110,21 @@ const AddTestimonial = () => {
         payload.append("comment", formData.review);
         payload.append("rating", formData.rating);
         payload.append("image", profileFile);
-
-        // New fields
-        payload.append("added_by", formData.addedBy || ""); // optional default
+        payload.append("added_by", formData.addedBy || "");
         payload.append("status", formData.status || "active");
         if (formData.dateAdded) {
-            payload.append("date_added", formData.dateAdded.toISOString()); // send ISO string
+            payload.append("date_added", formData.dateAdded.toISOString());
         }
 
-
         try {
-            const res = await axios.post(`${API_BASE_URL}/api/review`, payload, {
-                headers: { "Content-Type": "multipart/form-data" },
+            await addTestimonial(payload);
+            toast.current.show({
+                severity: "success",
+                summary: "Success",
+                detail: "Testimonial Added Successfully",
+                life: 2000,
             });
-
-            if (res.status === 200 || res.status === 201) {
-                toast.current.show({
-                    severity: "success",
-                    summary: "Success",
-                    detail: "Testimonial Added Successfully",
-                    life: 2000,
-                });
-                setTimeout(() => navigate("/testimonials"), 2000);
-            } else {
-                throw new Error("Failed to add testimonial");
-            }
+            setTimeout(() => navigate("/testimonials"), 2000);
         } catch (err) {
             toast.current.show({
                 severity: "error",

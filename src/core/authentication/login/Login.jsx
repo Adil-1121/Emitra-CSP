@@ -52,6 +52,10 @@ export default function Login() {
             // ✅ Corrected line
             localStorage.setItem("token", data.token);
             localStorage.setItem("userName", data.user.full_name);
+            localStorage.setItem("userId", data.user.id);
+            localStorage.setItem("userRole", data.user.role);
+            localStorage.setItem("userProfileImage", data.user.profile_image); // 👈 base64 image saved
+
 
             toast.current.show({
                 severity: 'success',

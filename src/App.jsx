@@ -73,6 +73,7 @@ function MainLayout({
   setSidebarHovered,
   effectiveSidebarWidth,
 }) {
+
   const location = useLocation();
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
@@ -118,14 +119,6 @@ function MainLayout({
     };
   }, [navigate, token, locked]);
 
-  // -----------------------------
-  // Redirect to lockscreen if locked
-  // -----------------------------
-  // useEffect(() => {
-  //   if (locked === "true" && location.pathname !== "/lock-screen") {
-  //     navigate("/lock-screen");
-  //   }
-  // }, [locked, location.pathname, navigate]);
 
   return (
     <>

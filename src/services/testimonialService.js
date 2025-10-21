@@ -36,8 +36,3 @@ export const deleteTestimonial = async (id) => {
   return res.data;
 };
 
-// Delete all testimonials
-export const deleteAllTestimonials = async () => {
-  const res = await axios.delete(`${API_BASE_URL}/api/reviews`);
-  return res.data;
-};

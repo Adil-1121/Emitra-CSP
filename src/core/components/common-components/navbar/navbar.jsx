@@ -10,7 +10,7 @@ import {
     faBell,
     faCommentDots,
 } from '@fortawesome/free-solid-svg-icons';
-import avatar from '../../../../assets/avatar.png';
+// import avatar from '../../../../assets/avatar.png';
 import { DarkModeContext } from "../../../shared/context/darkModeContext";
 import NotificationBox from "../../navbar-components/notification-box/NotificationBox";
 import MessagesBox from "../../navbar-components/message-box/Messages";
@@ -75,7 +75,7 @@ const Navbar = ({ sidebarWidth }) => {
                     <MessagesBox icon={faCommentDots} />
 
                     {/* Avatar */}
-                    <ProfileAvatar image={avatar} />
+                    <ProfileAvatar />
                 </div>
             </div>
         </div>

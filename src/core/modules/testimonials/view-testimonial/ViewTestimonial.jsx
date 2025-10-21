@@ -4,6 +4,7 @@ import Breadcrumb from "../../../components/common-components/breadcrumb/Breadcr
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import noImage from "../../../../assets/noImage.png";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "");
 import { Toast } from "primereact/toast";
 import "./viewTestimonial.scss";
 import LoadingSpinner from "../../../components/common-components/loadingSpinner/LoadingSpinner";
@@ -32,7 +33,7 @@ const ViewTestimonial = () => {
                     status: res.status || "active",
                     addedBy: res.added_by || "Admin",
                     addedDate: res.date_added ? new Date(res.date_added).toLocaleDateString() : "",
-                    profileImage: res.image_url ? `http://127.0.0.1:5000${res.image_url}` : null,
+                    profileImage: res.image_url ? `${API_BASE_URL}${res.image_url}` : null,
                 });
             } catch (err) {
                 toast.current.show({

@@ -12,12 +12,12 @@ import {
     faAngleRight,
     faAngleLeft,
     faCheckCircle,
-    faHome
+    faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./sidebar.scss";
 import logo from "../../../../assets/logo.png";
-import avatar from "../../../../assets/avatar.png";
+import defaultAvatar from "../../../../assets/avatar.png";
 
 const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
     const [portfolioOpen, setPortfolioOpen] = useState(false);
@@ -25,22 +25,35 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
     const [user, setUser] = useState({
         full_name: "User",
         role: "Admin",
-        avatar: avatar
+        avatar: defaultAvatar,
     });
 
+    // ✅ Helper: Format avatar (supports base64 or URL)
+    const formatAvatar = (img) => {
+        if (!img) return defaultAvatar;
+        if (img.startsWith("data:image")) return img;
+        return `data:image/jpeg;base64,${img}`;
+    };
+
+    // ✅ Fetch user info from localStorage
+    const getUserData = () => {
+        const name = localStorage.getItem("userName") || "User";
+        const role = localStorage.getItem("userRole") || "Admin";
+        const avatar = formatAvatar(localStorage.getItem("userProfileImage"));
+        return { full_name: name, role, avatar };
+    };
 
     useEffect(() => {
-        const userName = localStorage.getItem("userName"); // same as ProfileAvatar
-        const userData = JSON.parse(localStorage.getItem("user")); // optional, role/avatar
-        setUser({
-            full_name: userName || "User",
-            role: userData?.role || "Admin",
-            avatar: userData?.avatar || avatar
-        });
+        setUser(getUserData());
+
+        // ✅ Auto update when localStorage changes
+        const handleStorageChange = () => {
+            setUser(getUserData());
+        };
+
+        window.addEventListener("storage", handleStorageChange);
+        return () => window.removeEventListener("storage", handleStorageChange);
     }, []);
-
-
-
 
     const togglePortfolio = () => {
         setPortfolioOpen(!portfolioOpen);
@@ -55,13 +68,16 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
         setHovered(false);
         setSidebarHovered(false);
     };
+
     const handleLogout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         localStorage.removeItem("locked");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userRole");
+        localStorage.removeItem("userProfileImage");
         window.location.href = "/login";
     };
-
 
     const isOpen = sidebarOpen || hovered;
 
@@ -72,7 +88,7 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                {/* Top */}
+                {/* Top Section */}
                 <div className="top">
                     <div className="logo-container">
                         <Link to="/dashboard/admin-dashboard" style={{ textDecoration: "none" }}>
@@ -82,9 +98,9 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
                                     className="avatar"
                                     alt="Logo"
                                     style={{
-                                        width: isOpen ? "45px" : "45px",
-                                        height: isOpen ? "45px" : "45px",
-                                        marginRight: isOpen ? "5px" : "0"
+                                        width: "45px",
+                                        height: "45px",
+                                        marginRight: isOpen ? "5px" : "0",
                                     }}
                                 />
                                 {isOpen && "ADMIN PANEL"}
@@ -95,7 +111,7 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
 
                 <hr />
 
-                {/* Center */}
+                {/* Center Section */}
                 <div className="center">
                     <ul>
                         <p className="title">{isOpen ? "MAIN" : ""}</p>
@@ -176,7 +192,7 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
                     </ul>
                 </div>
 
-                {/* Bottom */}
+                {/* Bottom Section (User Profile) */}
                 <div className="bottom">
                     <div className="profile">
                         <Link to="/profile" className="link" style={{ textDecoration: "none" }}>
@@ -200,19 +216,14 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
                         )}
                     </div>
                 </div>
-
             </div>
 
-            {/* ✅ Single Menu Button outside sidebar */}
+            {/* ✅ Toggle Button Outside Sidebar */}
             <FontAwesomeIcon
-                icon={sidebarOpen || hovered ? faAngleLeft : faAngleRight}  // <-- updated condition
-                className={`menuBtn 
-        ${sidebarOpen ? "open" : "closed"} 
-        ${hovered ? "hovered" : ""}`}  // <-- added hovered class
+                icon={sidebarOpen || hovered ? faAngleLeft : faAngleRight}
+                className={`menuBtn ${sidebarOpen ? "open" : "closed"} ${hovered ? "hovered" : ""}`}
                 onClick={toggleSidebar}
             />
-
-
         </>
     );
 };

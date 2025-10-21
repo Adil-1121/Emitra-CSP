@@ -68,6 +68,31 @@
                         font-weight: 600;
                     }
 
+                    .status {
+                        padding: 3px 6px;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 5px;
+                        font-weight: 500;
+                        text-transform: capitalize;
+
+                        &.Inactive {
+                            color: crimson;
+                            background-color: rgba(255, 0, 0, 0.1);
+                        }
+
+                        &.Active {
+                            color: green;
+                            background-color: rgba(0, 128, 0, 0.1);
+                        }
+
+                        &.suspended {
+                            color: darkorange;
+                            background-color: rgba(255, 217, 0, 0.1);
+                        }
+                    }
+
                     .viewUser-detailItem {
                         margin-bottom: 10px;
                         font-size: 14px;

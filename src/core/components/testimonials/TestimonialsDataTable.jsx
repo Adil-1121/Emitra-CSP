@@ -81,7 +81,7 @@ const TestimonialsDataTable = () => {
         <div className="cellWithImg">
             {rowData.image_url && (
                 <img
-                    src={`http://127.0.0.1:5000${rowData.image_url}`}
+                    src={`${import.meta.env.VITE_API_BASE_URL}${rowData.image_url}`}
                     alt={rowData.name}
                     className="cellImg"
                 />
@@ -89,6 +89,7 @@ const TestimonialsDataTable = () => {
             {rowData.name}
         </div>
     );
+
 
     // Rating stars
     const ratingBodyTemplate = (rowData) => (
@@ -162,22 +163,7 @@ const TestimonialsDataTable = () => {
                 </div>
             </div>
 
-            {/* <DataTable
-                value={data}
-                paginator
-                rows={9}
-                responsiveLayout="scroll"
-                globalFilter={globalFilter}
-                emptyMessage="No testimonials found."
-            >
-                <Column field="id" header="ID" sortable filter />
-                <Column field="name" header="Client" body={clientBodyTemplate} sortable filter />
-                <Column field="city" header="City" sortable filter />
-                <Column field="rating" header="Rating" body={ratingBodyTemplate} sortable />
-                <Column field="comment" header="Review" body={testimonialBodyTemplate} sortable filter />
-                <Column field="status" header="Status" body={statusBodyTemplate} sortable filter />
-                <Column header="Action" body={actionBodyTemplate} />
-            </DataTable> */}
+
             {/* 👇 Spinner tab chalega jab API pending hogi */}
             {isLoading ? (
                 <LoadingSpinner isLoading={isLoading} />
