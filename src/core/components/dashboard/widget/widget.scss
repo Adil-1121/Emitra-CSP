@@ -6,6 +6,12 @@
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
     border-radius: 10px;
     height: 100px;
+    transition: all 0.3s ease; // smooth transition
+
+    &:hover {
+        transform: translateY(-5px); // upar slide
+        box-shadow: 4px 8px 20px 2px rgba(201, 201, 201, 0.6); // shadow thoda strong
+    }
 
     .left,
     .right {

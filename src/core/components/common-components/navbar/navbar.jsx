@@ -19,7 +19,7 @@ import AddNewDropdown from "../../navbar-components/add-dropdown-box/AddNewDropd
 import ProfileAvatar from "../../navbar-components/profile-avatar/ProfileAvatar";
 
 const Navbar = ({ sidebarWidth }) => {
-    const { dispatch, darkMode } = useContext(DarkModeContext);
+    const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
     const navigate = useNavigate();
 
     const toggleFullscreen = () => {
@@ -57,7 +57,7 @@ const Navbar = ({ sidebarWidth }) => {
                     {/* Dark Mode Toggle */}
                     <div
                         className="item"
-                        onClick={() => dispatch({ type: "TOGGLE" })}
+                        onClick={toggleDarkMode}
                     >
                         <FontAwesomeIcon icon={darkMode ? faSun : faMoon} className="icon" />
                     </div>
