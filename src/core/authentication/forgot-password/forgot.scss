@@ -243,5 +243,216 @@
             }
         }
     }
+}
 
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .forgot-password-page .left-panel {
+        max-width: 650px;
+        padding: 60px 50px;
+    }
+
+    .forgot-password-page .left-panel h2 {
+        font-size: 34px;
+    }
+
+    .forgot-password-page .left-panel .subtitle {
+        font-size: 18px;
+    }
+
+    .forgot-password-page .left-panel form .submit-btn {
+        font-size: 17px !important;
+        padding: 14px 0 !important;
+    }
+
+    .forgot-password-page .right-panel h4 {
+        font-size: 32px;
+    }
+
+    .forgot-password-page .right-panel p {
+        font-size: 18px;
+    }
+
+    .forgot-password-page .right-panel img {
+        width: 220px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .forgot-password-page .left-panel {
+        max-width: 600px;
+        padding: 50px 40px;
+    }
+
+    .forgot-password-page .left-panel h2 {
+        font-size: 32px;
+    }
+
+    .forgot-password-page .left-panel .subtitle {
+        font-size: 17px;
+    }
+
+    .forgot-password-page .left-panel form .submit-btn {
+        font-size: 16px !important;
+        padding: 13px 0 !important;
+    }
+
+    .forgot-password-page .right-panel h4 {
+        font-size: 30px;
+    }
+
+    .forgot-password-page .right-panel p {
+        font-size: 17px;
+    }
+
+    .forgot-password-page .right-panel img {
+        width: 200px;
+    }
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .forgot-password-page .left-panel {
+        max-width: 500px;
+        padding: 40px 35px;
+    }
+
+    .forgot-password-page .left-panel h2 {
+        font-size: 28px;
+    }
+
+    .forgot-password-page .left-panel .subtitle {
+        font-size: 16px;
+    }
+
+    .forgot-password-page .left-panel form .submit-btn {
+        font-size: 15px !important;
+        padding: 12px 0 !important;
+    }
+
+    .forgot-password-page .right-panel h4 {
+        font-size: 26px;
+    }
+
+    .forgot-password-page .right-panel p {
+        font-size: 16px;
+    }
+
+    .forgot-password-page .right-panel img {
+        width: 180px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 768px) {
+    .forgot-password-page .left-panel {
+        padding: 35px 25px;
+        border-radius: 0 !important;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .forgot-password-page .left-panel h2 {
+        font-size: 26px;
+    }
+
+    .forgot-password-page .left-panel .subtitle {
+        font-size: 15px;
+    }
+
+    .forgot-password-page .left-panel form .submit-btn {
+        font-size: 15px !important;
+        padding: 10px 0 !important;
+    }
+
+    .forgot-password-page .right-panel {
+        padding: 80px 20px;
+        border-radius: 0 0 40px 40px;
+        margin-top: 15px;
+    }
+
+    .forgot-password-page .right-panel h4 {
+        font-size: 24px;
+    }
+
+    .forgot-password-page .right-panel p {
+        font-size: 15px;
+    }
+
+    .forgot-password-page .right-panel img {
+        width: 160px;
+    }
+}
+
+/* Mobile */
+@media (min-width: 376px) and (max-width: 600px) {
+    .forgot-password-page .left-panel {
+        padding: 120px 15px;
+    }
+
+    .forgot-password-page .left-panel h2 {
+        font-size: 22px;
+    }
+
+    .forgot-password-page .left-panel .subtitle {
+        font-size: 14px;
+    }
+
+    .forgot-password-page .left-panel form .submit-btn {
+        font-size: 14px !important;
+        padding: 9px 0 !important;
+    }
+
+    .forgot-password-page .right-panel {
+        padding: 100px 15px;
+    }
+
+    .forgot-password-page .right-panel h4 {
+        font-size: 20px;
+    }
+
+    .forgot-password-page .right-panel p {
+        font-size: 13px;
+    }
+
+    .forgot-password-page .right-panel img {
+        width: 130px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 375px) {
+    .forgot-password-page .left-panel {
+        padding: 100px 10px;
+    }
+
+    .forgot-password-page .left-panel h2 {
+        font-size: 20px;
+    }
+
+    .forgot-password-page .left-panel .subtitle {
+        font-size: 13px;
+    }
+
+    .forgot-password-page .left-panel form .submit-btn {
+        font-size: 13px !important;
+        padding: 8px 0 !important;
+    }
+
+    .forgot-password-page .right-panel {
+        padding: 80px 10px;
+    }
+
+    .forgot-password-page .right-panel h4 {
+        font-size: 18px;
+    }
+
+    .forgot-password-page .right-panel p {
+        font-size: 12px;
+    }
+
+    .forgot-password-page .right-panel img {
+        width: 120px;
+    }
 }

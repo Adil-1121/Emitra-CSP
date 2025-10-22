@@ -1,0 +1,117 @@
+// 🔹 Fully Responsive SCSS for FaqsList Page
+
+.list {
+    display: flex;
+    padding-top: 60px;
+    overflow-x: hidden;
+
+    .listContainer {
+        flex: 6;
+        margin: 20px;
+
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+
+        .faqs-cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+// 🔹 Desktop Large (1400px+)
+@media (max-width: 1400px) {
+    .list {
+        padding-top: 55px;
+
+        .listContainer {
+            margin: 18px;
+
+            .faqs-cards-wrapper {
+                gap: 18px;
+            }
+        }
+    }
+}
+
+// 🔹 Laptop (1200px)
+@media (max-width: 1200px) {
+    .list {
+        padding-top: 50px;
+
+        .listContainer {
+            margin: 16px;
+
+            .faqs-cards-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+    }
+}
+
+// 🔹 Tablets (992px)
+@media (max-width: 992px) {
+    .list {
+        padding-top: 45px;
+
+        .listContainer {
+            margin: 14px;
+
+            .faqs-cards-wrapper {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+        }
+    }
+}
+
+// 🔹 Mobile (768px)
+@media (max-width: 768px) {
+    .list {
+        padding-top: 40px;
+
+        .listContainer {
+            margin: 12px;
+
+            .faqs-cards-wrapper {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+    }
+}
+
+// 🔹 Small Mobile (576px)
+@media (max-width: 576px) {
+    .list {
+        padding-top: 35px;
+
+        .listContainer {
+            margin: 10px;
+
+            .faqs-cards-wrapper {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+// 🔹 Extra Small Mobile (400px)
+@media (max-width: 400px) {
+    .list {
+        padding-top: 30px;
+
+        .listContainer {
+            margin: 8px;
+
+            .faqs-cards-wrapper {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+        }
+    }
+}

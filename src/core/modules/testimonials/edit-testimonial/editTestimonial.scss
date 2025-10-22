@@ -232,3 +232,199 @@
         }
     }
 }
+
+/* Responsive SCSS for EditTestimonial Component */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+    .edit {
+        .editContainer {
+            .form-card {
+                margin: 15px;
+
+                form {
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .profile-preview {
+                            width: 70px;
+                            height: 70px;
+                        }
+
+                        .custom-upload {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Tablets / Large Phones (≤ 768px) */
+@media (max-width: 768px) {
+    .edit {
+        padding-top: 50px;
+
+        .editContainer {
+            .form-card {
+                margin: 10px;
+
+                .form-header h2 {
+                    font-size: 20px;
+                }
+
+                .btn-group {
+                    flex-direction: column;
+                    gap: 8px;
+
+                    .p-button {
+                        width: 100%;
+                    }
+
+                    .p-button-secondary {
+                        margin-left: 0 !important;
+                    }
+                }
+
+                form {
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 10px;
+
+                        .profile-preview {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        .custom-upload {
+                            width: 100%;
+                        }
+                    }
+
+                    .custom-rating {
+                        padding: 8px 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Devices (≤ 480px) */
+@media (max-width: 480px) {
+    .edit {
+        padding-top: 40px;
+
+        .editContainer {
+            .form-card {
+                margin: 8px;
+
+                .form-header h2 {
+                    font-size: 18px;
+                }
+
+                .btn-group {
+                    .p-button {
+                        font-size: 14px;
+                        padding: 0.5rem 1rem;
+                    }
+                }
+
+                form {
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .profile-upload-row {
+                        .profile-preview {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+
+                    .custom-rating {
+                        padding: 6px 10px;
+                    }
+
+                    label {
+                        font-size: 13px;
+                        margin-bottom: -7px;
+                    }
+
+                    input,
+                    textarea {
+                        font-size: 13px;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Devices / Small Mobile (≤ 360px) */
+@media (max-width: 360px) {
+    .edit {
+        padding-top: 30px;
+
+        .editContainer {
+            .form-card {
+                margin: 5px;
+
+                .form-header h2 {
+                    font-size: 16px;
+                }
+
+                .btn-group {
+                    .p-button {
+                        font-size: 13px;
+                        padding: 0.45rem 0.9rem;
+                    }
+                }
+
+                form {
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .profile-upload-row {
+                        .profile-preview {
+                            width: 45px;
+                            height: 45px;
+                        }
+                    }
+
+                    .custom-rating {
+                        padding: 5px 8px;
+                    }
+
+                    label {
+                        font-size: 12px;
+                        margin-bottom: -6px;
+                    }
+
+                    input,
+                    textarea {
+                        font-size: 12px;
+                        padding: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

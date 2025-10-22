@@ -49,3 +49,151 @@
     background-color: #5a3d7a;
     transform: scale(1.05);
 }
+
+// 🔹 Fully Responsive SCSS for Error404 Page
+
+@media (max-width: 1400px) {
+    .error404-container {
+        padding: 50px 20px;
+
+        .error404-code {
+            font-size: 100px;
+            letter-spacing: 5px;
+        }
+
+        .error404-message {
+            font-size: 36px;
+        }
+
+        .error404-description {
+            font-size: 18px;
+            max-width: 420px;
+        }
+
+        .error404-button {
+            padding: 12px 28px;
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .error404-container {
+        .error404-code {
+            font-size: 90px;
+            letter-spacing: 4px;
+        }
+
+        .error404-message {
+            font-size: 34px;
+        }
+
+        .error404-description {
+            font-size: 17px;
+            max-width: 400px;
+        }
+
+        .error404-button {
+            padding: 11px 26px;
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .error404-container {
+        .error404-code {
+            font-size: 80px;
+            letter-spacing: 3px;
+        }
+
+        .error404-message {
+            font-size: 32px;
+        }
+
+        .error404-description {
+            font-size: 16px;
+            max-width: 380px;
+        }
+
+        .error404-button {
+            padding: 10px 24px;
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .error404-container {
+        padding: 40px 15px;
+
+        .error404-code {
+            font-size: 70px;
+            letter-spacing: 2px;
+        }
+
+        .error404-message {
+            font-size: 28px;
+        }
+
+        .error404-description {
+            font-size: 15px;
+            max-width: 350px;
+        }
+
+        .error404-button {
+            padding: 9px 22px;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .error404-container {
+        padding: 30px 10px;
+
+        .error404-code {
+            font-size: 60px;
+            letter-spacing: 1px;
+        }
+
+        .error404-message {
+            font-size: 24px;
+        }
+
+        .error404-description {
+            font-size: 14px;
+            max-width: 300px;
+        }
+
+        .error404-button {
+            padding: 8px 20px;
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .error404-container {
+        padding: 25px 8px;
+
+        .error404-code {
+            font-size: 50px;
+            letter-spacing: 1px;
+        }
+
+        .error404-message {
+            font-size: 20px;
+        }
+
+        .error404-description {
+            font-size: 13px;
+            max-width: 260px;
+        }
+
+        .error404-button {
+            padding: 7px 18px;
+            font-size: 11px;
+        }
+    }
+}

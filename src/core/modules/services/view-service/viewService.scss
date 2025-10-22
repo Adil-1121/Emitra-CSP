@@ -128,3 +128,190 @@
         }
     }
 }
+
+/* 🔹 Responsive SCSS for ViewService Page */
+
+/* Large Desktop (>=1400px) */
+@media (max-width: 1400px) {
+    .single {
+        .singleContainer {
+            padding: 18px;
+
+            .singleTop.fullWidth,
+            .singleBottom {
+                margin: 18px;
+                padding: 18px;
+            }
+        }
+    }
+}
+
+/* Laptop (<=1200px) */
+@media (max-width: 1200px) {
+    .single {
+        .singleContainer {
+            padding: 16px;
+
+            .singleTop.fullWidth,
+            .singleBottom {
+                margin: 16px;
+                padding: 16px;
+            }
+        }
+    }
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+    .single {
+        padding-top: 50px;
+
+        .singleContainer {
+
+            .singleTop.fullWidth,
+            .singleBottom {
+                margin: 14px;
+                padding: 14px;
+
+                .item.fullWidth {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .itemImg {
+                        width: 100%;
+                        max-width: 180px;
+                        height: auto;
+                        margin-bottom: 10px;
+                    }
+
+                    .details {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .single {
+        padding-top: 45px;
+
+        .singleContainer {
+
+            .singleTop.fullWidth,
+            .singleBottom {
+                margin: 12px 0;
+                padding: 12px;
+
+                .item.fullWidth {
+                    .itemImg {
+                        max-width: 160px;
+                    }
+
+                    .details {
+                        .itemTitle {
+                            font-size: 16px;
+                        }
+
+                        .detailItem {
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .title {
+                    font-size: 14px;
+                }
+
+                .editButton {
+                    font-size: 11px;
+                    padding: 4px 8px;
+                }
+            }
+        }
+    }
+}
+
+/* Small Mobile (<=576px) */
+@media (max-width: 576px) {
+    .single {
+        padding-top: 40px;
+
+        .singleContainer {
+
+            .singleTop.fullWidth,
+            .singleBottom {
+                margin: 10px 0;
+                padding: 10px;
+
+                .item.fullWidth {
+                    .itemImg {
+                        max-width: 140px;
+                    }
+
+                    .details {
+                        .itemTitle {
+                            font-size: 15px;
+                        }
+
+                        .detailItem {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .title {
+                    font-size: 13px;
+                }
+
+                .editButton {
+                    font-size: 10px;
+                    padding: 3px 6px;
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Mobile (<=400px) */
+@media (max-width: 400px) {
+    .single {
+        padding-top: 35px;
+
+        .singleContainer {
+
+            .singleTop.fullWidth,
+            .singleBottom {
+                margin: 8px 0;
+                padding: 8px;
+
+                .item.fullWidth {
+                    .itemImg {
+                        max-width: 120px;
+                    }
+
+                    .details {
+                        .itemTitle {
+                            font-size: 14px;
+                        }
+
+                        .detailItem {
+                            font-size: 11px;
+                        }
+                    }
+                }
+
+                .title {
+                    font-size: 12px;
+                }
+
+                .editButton {
+                    font-size: 9px;
+                    padding: 2px 5px;
+                }
+            }
+        }
+    }
+}

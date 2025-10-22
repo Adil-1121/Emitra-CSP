@@ -1,0 +1,90 @@
+/* Responsive SCSS for TestimonialsList Component */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+    .list {
+
+        .listContainer {
+            padding: 15px;
+
+            .p-datatable {
+                font-size: 14px;
+
+                .p-datatable-thead>tr>th,
+                .p-datatable-tbody>tr>td {
+                    padding: 10px 8px;
+                }
+            }
+        }
+    }
+}
+
+/* Small Tablets / Large Phones (≤ 768px) */
+@media (max-width: 768px) {
+    .list {
+        padding-top: 60px;
+
+        .listContainer {
+            padding: 10px;
+
+            .p-datatable {
+                font-size: 13px;
+
+                .p-datatable-thead>tr>th,
+                .p-datatable-tbody>tr>td {
+                    padding: 8px 6px;
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Devices (≤ 480px) */
+@media (max-width: 480px) {
+    .list {
+        padding-top: 60px;
+
+        .listContainer {
+            padding: 8px;
+
+            .p-datatable {
+                font-size: 12px;
+
+                .p-datatable-thead>tr>th,
+                .p-datatable-tbody>tr>td {
+                    padding: 6px 4px;
+                }
+
+                .p-datatable-header,
+                .p-datatable-footer {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Devices / Small Mobile (≤ 360px) */
+@media (max-width: 360px) {
+    .list {
+        padding-top: 60px;
+
+        .listContainer {
+            padding: 5px;
+
+            .p-datatable {
+                font-size: 11px;
+
+                .p-datatable-thead>tr>th,
+                .p-datatable-tbody>tr>td {
+                    padding: 4px 2px;
+                }
+
+                .p-datatable-header,
+                .p-datatable-footer {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}

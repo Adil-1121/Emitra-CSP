@@ -122,3 +122,250 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .messages-wrapper Component
+
+@media (max-width: 1200px) {
+    .messages-wrapper {
+        .item {
+            .counter {
+                width: 16px;
+                height: 16px;
+                font-size: 11px;
+                top: -4px;
+                right: -4px;
+            }
+
+            .icon {
+                font-size: 17px;
+            }
+        }
+
+        .messages-box {
+            width: 290px;
+
+            .messages-header {
+                font-size: 13px;
+
+                .badge {
+                    font-size: 11px;
+                    padding: 2px 7px;
+                }
+            }
+
+            ul li {
+                font-size: 13px;
+                padding: 7px 9px;
+
+                .msg-title {
+                    font-size: 13px;
+                }
+
+                .msg-tag {
+                    font-size: 10px;
+                    padding: 2px 5px;
+                }
+
+                .msg-time {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .messages-wrapper {
+        .item {
+            .counter {
+                width: 15px;
+                height: 15px;
+                font-size: 10px;
+                top: -3px;
+                right: -3px;
+            }
+
+            .icon {
+                font-size: 16px;
+            }
+        }
+
+        .messages-box {
+            width: 260px;
+
+            .messages-header {
+                font-size: 12px;
+
+                .badge {
+                    font-size: 10px;
+                    padding: 2px 6px;
+                }
+            }
+
+            ul li {
+                font-size: 12px;
+                padding: 6px 8px;
+
+                .msg-title {
+                    font-size: 12px;
+                }
+
+                .msg-tag {
+                    font-size: 9px;
+                    padding: 2px 4px;
+                }
+
+                .msg-time {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .messages-wrapper {
+        .item {
+            .counter {
+                width: 14px;
+                height: 14px;
+                font-size: 9px;
+                top: -2px;
+                right: -2px;
+            }
+
+            .icon {
+                font-size: 15px;
+            }
+        }
+
+        .messages-box {
+            width: 240px;
+
+            .messages-header {
+                font-size: 11px;
+
+                .badge {
+                    font-size: 9px;
+                    padding: 1px 5px;
+                }
+            }
+
+            ul li {
+                font-size: 11px;
+                padding: 5px 7px;
+
+                .msg-title {
+                    font-size: 11px;
+                }
+
+                .msg-tag {
+                    font-size: 8px;
+                    padding: 1px 4px;
+                }
+
+                .msg-time {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .messages-wrapper {
+        .item {
+            .counter {
+                width: 13px;
+                height: 13px;
+                font-size: 8px;
+                top: -2px;
+                right: -2px;
+            }
+
+            .icon {
+                font-size: 14px;
+            }
+        }
+
+        .messages-box {
+            width: 220px;
+
+            .messages-header {
+                font-size: 10px;
+
+                .badge {
+                    font-size: 8px;
+                    padding: 1px 4px;
+                }
+            }
+
+            ul li {
+                font-size: 10px;
+                padding: 4px 6px;
+
+                .msg-title {
+                    font-size: 10px;
+                }
+
+                .msg-tag {
+                    font-size: 7px;
+                    padding: 1px 3px;
+                }
+
+                .msg-time {
+                    font-size: 7px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .messages-wrapper {
+        .item {
+            .counter {
+                width: 12px;
+                height: 12px;
+                font-size: 7px;
+                top: -1px;
+                right: -1px;
+            }
+
+            .icon {
+                font-size: 13px;
+            }
+        }
+
+        .messages-box {
+            width: 200px;
+
+            .messages-header {
+                font-size: 9px;
+
+                .badge {
+                    font-size: 7px;
+                    padding: 1px 3px;
+                }
+            }
+
+            ul li {
+                font-size: 9px;
+                padding: 3px 5px;
+
+                .msg-title {
+                    font-size: 9px;
+                }
+
+                .msg-tag {
+                    font-size: 6px;
+                    padding: 1px 2px;
+                }
+
+                .msg-time {
+                    font-size: 6px;
+                }
+            }
+        }
+    }
+}

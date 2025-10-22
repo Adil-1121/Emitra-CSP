@@ -221,3 +221,225 @@
         }
     }
 }
+
+/* 🔹 Fully Responsive SCSS for AddTestimonial */
+
+/* Large Desktop (>=1400px) */
+@media (max-width: 1400px) {
+    .editContainer .form-card {
+        margin: 18px;
+
+        form {
+            gap: 18px;
+
+            .p-field {
+                flex: 1 1 calc(50% - 18px);
+                max-width: calc(50% - 18px);
+            }
+
+            .profile-upload-row {
+                gap: 18px;
+            }
+        }
+    }
+}
+
+/* Laptop (<=1200px) */
+@media (max-width: 1200px) {
+    .editContainer .form-card {
+        margin: 16px;
+
+        form {
+            gap: 16px;
+
+            .p-field {
+                flex: 1 1 calc(50% - 16px);
+                max-width: calc(50% - 16px);
+            }
+
+            .profile-upload-row {
+                gap: 16px;
+            }
+        }
+    }
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+    .editContainer .form-card {
+        margin: 14px;
+        padding: 14px;
+
+        form {
+            .p-field {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .profile-upload-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+
+                .custom-upload {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .edit {
+        padding-top: 50px;
+
+        .editContainer .form-card {
+            margin: 12px;
+            padding: 12px;
+
+            form {
+                gap: 12px;
+
+                .p-field {
+                    flex: 1 1 100%;
+                    max-width: 100%;
+                }
+
+                .profile-upload-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+
+                    .custom-upload {
+                        width: 100%;
+                    }
+
+                    .profile-preview {
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+
+                input.p-inputtext,
+                textarea.p-inputtextarea {
+                    font-size: 13px;
+                    padding: 8px;
+                }
+
+                label {
+                    font-size: 13px;
+                }
+
+                .p-rating .p-rating-item .p-rating-icon {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+/* Small Mobile (<=576px) */
+@media (max-width: 576px) {
+    .edit {
+        padding-top: 45px;
+
+        .editContainer .form-card {
+            margin: 10px;
+            padding: 10px;
+
+            form {
+                gap: 10px;
+
+                .p-field {
+                    flex: 1 1 100%;
+                    max-width: 100%;
+                }
+
+                .profile-upload-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    .custom-upload {
+                        width: 100%;
+                    }
+
+                    .profile-preview {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+
+                input.p-inputtext,
+                textarea.p-inputtextarea {
+                    font-size: 12px;
+                    padding: 7px;
+                }
+
+                label {
+                    font-size: 12px;
+                }
+
+                .p-rating .p-rating-item .p-rating-icon {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Mobile (<=400px) */
+@media (max-width: 400px) {
+    .edit {
+        padding-top: 40px;
+
+        .editContainer .form-card {
+            margin: 8px;
+            padding: 8px;
+
+            form {
+                gap: 8px;
+
+                .p-field {
+                    flex: 1 1 100%;
+                    max-width: 100%;
+                }
+
+                .profile-upload-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+
+                    .custom-upload {
+                        width: 100%;
+                    }
+
+                    .profile-preview {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                input.p-inputtext,
+                textarea.p-inputtextarea {
+                    font-size: 11px;
+                    padding: 6px;
+                }
+
+                label {
+                    font-size: 11px;
+                }
+
+                .p-rating .p-rating-item .p-rating-icon {
+                    font-size: 1.4rem;
+                }
+
+                .btn-group .p-button {
+                    padding: 0.5rem 1rem;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

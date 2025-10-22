@@ -38,3 +38,143 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .serviceTable Component
+
+@media (max-width: 1200px) {
+    .serviceTable {
+        .p-datatable {
+            .p-datatable-thead>tr>th {
+                font-size: 13px;
+                padding: 10px 8px;
+            }
+
+            .p-datatable-tbody>tr>td {
+                font-size: 13px;
+                padding: 8px 6px;
+            }
+
+            .p-datatable-paginator {
+                justify-content: flex-end;
+                font-size: 13px;
+            }
+        }
+
+        .status {
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .serviceTable {
+        .p-datatable {
+            .p-datatable-thead>tr>th {
+                font-size: 12px;
+                padding: 8px 6px;
+            }
+
+            .p-datatable-tbody>tr>td {
+                font-size: 12px;
+                padding: 6px 4px;
+            }
+
+            .p-datatable-paginator {
+                font-size: 12px;
+            }
+        }
+
+        .status {
+            padding: 3px 6px;
+            font-size: 11px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .serviceTable {
+        .p-datatable {
+            .p-datatable-thead>tr>th {
+                font-size: 11px;
+                padding: 6px 4px;
+            }
+
+            .p-datatable-tbody>tr>td {
+                font-size: 11px;
+                padding: 5px 3px;
+            }
+
+            .p-datatable-wrapper {
+                overflow-x: auto;
+            }
+
+            .p-datatable-paginator {
+                font-size: 11px;
+            }
+        }
+
+        .status {
+            padding: 2px 5px;
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .serviceTable {
+        .p-datatable {
+            .p-datatable-thead>tr>th {
+                font-size: 10px;
+                padding: 5px 3px;
+            }
+
+            .p-datatable-tbody>tr>td {
+                font-size: 10px;
+                padding: 4px 2px;
+            }
+
+            .p-datatable-wrapper {
+                overflow-x: auto;
+            }
+
+            .p-datatable-paginator {
+                font-size: 10px;
+            }
+        }
+
+        .status {
+            padding: 2px 4px;
+            font-size: 9px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .serviceTable {
+        .p-datatable {
+            .p-datatable-thead>tr>th {
+                font-size: 9px;
+                padding: 4px 2px;
+            }
+
+            .p-datatable-tbody>tr>td {
+                font-size: 9px;
+                padding: 3px 2px;
+            }
+
+            .p-datatable-wrapper {
+                overflow-x: auto;
+            }
+
+            .p-datatable-paginator {
+                font-size: 9px;
+            }
+        }
+
+        .status {
+            padding: 1px 3px;
+            font-size: 8px;
+        }
+    }
+}

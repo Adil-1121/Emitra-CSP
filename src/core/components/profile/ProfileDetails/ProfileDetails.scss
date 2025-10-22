@@ -327,3 +327,301 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .profile-details-card Component
+
+@media (max-width: 1200px) {
+    .profile-details-card {
+        padding: 12px !important;
+
+        .profile-title h1 {
+            font-size: 26px;
+            margin-bottom: 22px;
+        }
+
+        .profile-header {
+            gap: 16px;
+
+            .avatar-wrapper .avatar {
+                width: 90px !important;
+                height: 90px !important;
+            }
+
+            .user-info h2 {
+                font-size: 20px;
+            }
+
+            .role-badge {
+                font-size: 11px;
+                padding: 3px 8px;
+            }
+
+            .designation,
+            .company {
+                font-size: 13px;
+            }
+
+            .status-tag {
+                font-size: 11px;
+            }
+
+            .edit-btn {
+                font-size: 13px;
+                padding: 5px 8px;
+            }
+        }
+
+        .stats .stat-card h3 {
+            font-size: 20px;
+        }
+
+        .stats .stat-card p {
+            font-size: 12px;
+        }
+
+        .profile-info h3,
+        .achievements h3 {
+            font-size: 16px;
+        }
+
+        .info-grid .info-item label {
+            font-size: 11px;
+        }
+
+        .info-grid .info-item p {
+            font-size: 13px;
+        }
+
+        .achievements .achievement h4 {
+            font-size: 18px;
+        }
+
+        .achievements .achievement p {
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .profile-details-card {
+        padding: 10px !important;
+
+        .profile-title h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+
+            .avatar-wrapper .avatar {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            .user-info h2 {
+                font-size: 18px;
+            }
+
+            .role-badge {
+                font-size: 10px;
+            }
+
+            .designation,
+            .company {
+                font-size: 12px;
+            }
+
+            .status-tag {
+                font-size: 10px;
+            }
+
+            .edit-btn {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+        }
+
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .info-grid {
+            gap: 15px;
+        }
+
+        .achievements .achievement-cards {
+            gap: 15px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-details-card {
+        padding: 8px !important;
+
+        .profile-title h1 {
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .profile-header {
+            .avatar-wrapper .avatar {
+                width: 70px !important;
+                height: 70px !important;
+            }
+
+            .user-info h2 {
+                font-size: 17px;
+            }
+
+            .role-badge {
+                font-size: 9px;
+            }
+
+            .designation,
+            .company {
+                font-size: 11px;
+            }
+
+            .status-tag {
+                font-size: 9px;
+            }
+
+            .edit-btn {
+                font-size: 11px;
+                padding: 4px 7px;
+            }
+        }
+
+        .stats {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .achievements .achievement-cards {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-details-card {
+        padding: 6px !important;
+
+        .profile-title h1 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .profile-header {
+            .avatar-wrapper .avatar {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            .user-info h2 {
+                font-size: 16px;
+            }
+
+            .role-badge {
+                font-size: 8px;
+            }
+
+            .designation,
+            .company {
+                font-size: 10px;
+            }
+
+            .status-tag {
+                font-size: 8px;
+            }
+
+            .edit-btn {
+                font-size: 10px;
+                padding: 3px 6px;
+            }
+        }
+
+        .stats {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .info-grid {
+            gap: 12px;
+        }
+
+        .achievements .achievement-cards {
+            gap: 12px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-details-card {
+        padding: 5px !important;
+
+        .profile-title h1 {
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        .profile-header {
+            .avatar-wrapper .avatar {
+                width: 50px !important;
+                height: 50px !important;
+            }
+
+            .user-info h2 {
+                font-size: 15px;
+            }
+
+            .role-badge {
+                font-size: 7px;
+            }
+
+            .designation,
+            .company {
+                font-size: 9px;
+            }
+
+            .status-tag {
+                font-size: 7px;
+            }
+
+            .edit-btn {
+                font-size: 9px;
+                padding: 2px 5px;
+            }
+        }
+
+        .stats {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .info-grid {
+            gap: 10px;
+        }
+
+        .achievements .achievement-cards {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .achievements .achievement h4 {
+            font-size: 16px;
+        }
+
+        .achievements .achievement p {
+            font-size: 11px;
+        }
+    }
+}

@@ -86,3 +86,202 @@
         }
     }
 }
+
+// 🔹 Responsive SCSS for .supportInfo Component
+@media (max-width: 1200px) {
+    .supportInfo {
+        .header {
+            font-size: 17px;
+            padding: 14px 18px;
+
+            .headerIcon {
+                font-size: 20px;
+                margin-right: 8px;
+            }
+        }
+
+        .infoBox {
+            margin: 16px;
+            padding: 10px 14px;
+            gap: 10px;
+
+            div {
+                h4 {
+                    font-size: 13px;
+                }
+
+                p,
+                a {
+                    font-size: 12px;
+                }
+            }
+
+            .icon {
+                font-size: 13px;
+                min-width: 28px;
+                min-height: 28px;
+                padding: 7px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .supportInfo {
+        .header {
+            font-size: 16px;
+            padding: 12px 16px;
+
+            .headerIcon {
+                font-size: 18px;
+                margin-right: 8px;
+            }
+        }
+
+        .infoBox {
+            margin: 14px;
+            padding: 10px 12px;
+            gap: 8px;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .icon {
+                font-size: 12px;
+                min-width: 26px;
+                min-height: 26px;
+                padding: 6px;
+            }
+
+            div {
+                h4 {
+                    font-size: 13px;
+                }
+
+                p,
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .supportInfo {
+        .header {
+            font-size: 15px;
+            padding: 10px 14px;
+            text-align: center;
+            justify-content: center;
+
+            .headerIcon {
+                font-size: 17px;
+                margin-right: 6px;
+            }
+        }
+
+        .infoBox {
+            margin: 12px;
+            padding: 8px 10px;
+            gap: 8px;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .icon {
+                font-size: 12px;
+                min-width: 24px;
+                min-height: 24px;
+                padding: 6px;
+            }
+
+            div {
+                h4 {
+                    font-size: 12px;
+                }
+
+                p,
+                a {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .supportInfo {
+        .header {
+            font-size: 14px;
+            padding: 8px 10px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .headerIcon {
+                font-size: 16px;
+                margin: 0 0 4px 0;
+            }
+        }
+
+        .infoBox {
+            margin: 10px;
+            padding: 8px;
+            gap: 6px;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .icon {
+                font-size: 11px;
+                min-width: 22px;
+                min-height: 22px;
+                padding: 5px;
+            }
+
+            div {
+                h4 {
+                    font-size: 12px;
+                }
+
+                p,
+                a {
+                    font-size: 10.5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .supportInfo {
+        .header {
+            font-size: 13px;
+            padding: 6px 8px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .infoBox {
+            margin: 8px;
+            padding: 6px;
+            gap: 6px;
+            border-radius: 8px;
+
+            .icon {
+                font-size: 10px;
+                min-width: 20px;
+                min-height: 20px;
+                padding: 4px;
+            }
+
+            div {
+                h4 {
+                    font-size: 11px;
+                }
+
+                p,
+                a {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

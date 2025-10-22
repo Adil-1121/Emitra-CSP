@@ -16,3 +16,93 @@
         gap: 8px;
     }
 }
+
+// 🔹 Responsive SCSS for .chart Component
+@media (max-width: 1200px) {
+    .chart {
+        padding: 18px;
+
+        .title {
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        canvas {
+            height: 280px !important;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .chart {
+        padding: 16px;
+        border-radius: 10px;
+
+        .title {
+            font-size: 16px;
+            margin-bottom: 16px;
+            gap: 6px;
+        }
+
+        canvas {
+            height: 260px !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .chart {
+        flex: 1;
+        padding: 14px;
+        margin: 10px 0;
+        border-radius: 10px;
+
+        .title {
+            font-size: 15px;
+            margin-bottom: 14px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        canvas {
+            height: 240px !important;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .chart {
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.15);
+
+        .title {
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        canvas {
+            height: 220px !important;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .chart {
+        padding: 10px;
+        border-radius: 8px;
+
+        .title {
+            font-size: 13px;
+            margin-bottom: 10px;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        canvas {
+            height: 200px !important;
+        }
+    }
+}

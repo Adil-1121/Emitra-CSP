@@ -205,3 +205,228 @@
         }
     }
 }
+
+/* Responsive SCSS for all devices */
+
+/* Small desktops and laptops */
+@media (max-width: 1200px) {
+    .editUser {
+        padding-top: 50px;
+
+        .editUser-container {
+            .editUser-form-card {
+                margin: 15px;
+
+                .editUser-form {
+                    gap: 15px;
+
+                    .p-field {
+                        flex: 1 1 calc(50% - 15px);
+                        max-width: calc(50% - 15px);
+                    }
+
+                    .editUser-profile-upload-row {
+                        gap: 15px;
+
+                        .editUser-profile-preview {
+                            width: 70px;
+                            height: 70px;
+                        }
+
+                        .editUser-custom-upload .p-button {
+                            padding: 0.5rem 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .editUser {
+        padding-top: 40px;
+
+        .editUser-container {
+            .editUser-form-card {
+                margin: 12px;
+
+                .editUser-form {
+                    gap: 12px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .editUser-profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .editUser-profile-preview {
+                            width: 65px;
+                            height: 65px;
+                        }
+
+                        .editUser-custom-upload {
+                            width: 100%;
+
+                            .p-button {
+                                padding: 0.5rem 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Large mobiles / small tablets */
+@media (max-width: 768px) {
+    .editUser {
+        padding-top: 30px;
+
+        .editUser-container {
+            .editUser-form-card {
+                margin: 10px;
+
+                .editUser-form {
+                    gap: 10px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .editUser-profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .editUser-profile-preview {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        .editUser-custom-upload {
+                            width: 100%;
+
+                            .p-button {
+                                padding: 0.4rem 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+    .editUser {
+        padding-top: 20px;
+
+        .editUser-container {
+            .editUser-form-card {
+                margin: 8px;
+
+                .editUser-form {
+                    gap: 8px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+
+                        label {
+                            font-size: 13px;
+                        }
+
+                        .p-inputtext,
+                        .p-inputtextarea,
+                        .p-dropdown {
+                            font-size: 13px;
+                            padding: 8px;
+                        }
+                    }
+
+                    .editUser-profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .editUser-profile-preview {
+                            width: 50px;
+                            height: 50px;
+                        }
+
+                        .editUser-custom-upload {
+                            width: 100%;
+
+                            .p-button {
+                                padding: 0.35rem 0.8rem;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+
+                    .editUser-form-actions {
+                        justify-content: center;
+
+                        button {
+                            width: 100%;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Extra small mobiles */
+@media (max-width: 360px) {
+    .editUser {
+        padding-top: 15px;
+
+        .editUser-container {
+            .editUser-form-card {
+                margin: 5px;
+
+                .editUser-form {
+                    gap: 6px;
+
+                    .p-field {
+                        label {
+                            font-size: 12px;
+                        }
+
+                        .p-inputtext,
+                        .p-inputtextarea,
+                        .p-dropdown {
+                            font-size: 12px;
+                            padding: 6px;
+                        }
+                    }
+
+                    .editUser-profile-upload-row {
+                        .editUser-profile-preview {
+                            width: 45px;
+                            height: 45px;
+                        }
+
+                        .editUser-custom-upload .p-button {
+                            padding: 0.3rem 0.7rem;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .editUser-form-actions button {
+                        font-size: 13px;
+                        padding: 8px 0;
+                    }
+                }
+            }
+        }
+    }
+}

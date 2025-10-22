@@ -158,3 +158,240 @@
         }
     }
 }
+
+/* ===== Fully Responsive SCSS for Contact Form ===== */
+
+/* Small Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+    .contactForm {
+        border-radius: 8px;
+        padding: 0;
+
+        .header {
+            font-size: 16px;
+            padding: 15px 15px;
+        }
+
+        form {
+            padding: 15px;
+
+            .row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .formGroup {
+                width: 100%;
+
+                input,
+                textarea,
+                .p-dropdown {
+                    font-size: 13px;
+                    padding: 8px;
+                }
+
+                label {
+                    font-size: 13px;
+                }
+            }
+
+            .messageGroup {
+                width: 100%;
+            }
+
+            .sendBtn {
+                padding: 8px 15px;
+                min-width: 120px;
+                font-size: 14px;
+            }
+        }
+
+        .p-toast .p-toast-message {
+            font-size: 13px;
+        }
+    }
+}
+
+/* Mobile Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .contactForm {
+        border-radius: 10px;
+
+        .header {
+            font-size: 17px;
+            padding: 18px 18px;
+        }
+
+        form {
+            padding: 18px;
+
+            .row {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .formGroup {
+                width: 100%;
+
+                input,
+                textarea,
+                .p-dropdown {
+                    font-size: 13px;
+                    padding: 9px;
+                }
+
+                label {
+                    font-size: 14px;
+                }
+            }
+
+            .sendBtn {
+                padding: 9px 18px;
+                min-width: 130px;
+                font-size: 14px;
+            }
+        }
+
+        .p-toast .p-toast-message {
+            font-size: 13px;
+        }
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .contactForm {
+        border-radius: 12px;
+
+        .header {
+            font-size: 18px;
+            padding: 20px 20px;
+        }
+
+        form {
+            padding: 20px;
+
+            .row {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .formGroup {
+                width: calc(50% - 10px);
+
+                input,
+                textarea,
+                .p-dropdown {
+                    font-size: 14px;
+                    padding: 10px;
+                }
+
+                label {
+                    font-size: 14px;
+                }
+            }
+
+            .sendBtn {
+                padding: 10px 20px;
+                min-width: 150px;
+                font-size: 15px;
+            }
+        }
+
+        .p-toast .p-toast-message {
+            font-size: 14px;
+        }
+    }
+}
+
+/* Laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .contactForm {
+        border-radius: 12px;
+
+        .header {
+            font-size: 18px;
+            padding: 22px 22px;
+        }
+
+        form {
+            padding: 22px;
+
+            .row {
+                flex-wrap: wrap;
+                gap: 22px;
+            }
+
+            .formGroup {
+                width: calc(50% - 11px);
+
+                input,
+                textarea,
+                .p-dropdown {
+                    font-size: 14px;
+                    padding: 11px;
+                }
+
+                label {
+                    font-size: 15px;
+                }
+            }
+
+            .sendBtn {
+                padding: 11px 22px;
+                min-width: 160px;
+                font-size: 15px;
+            }
+        }
+
+        .p-toast .p-toast-message {
+            font-size: 14px;
+        }
+    }
+}
+
+/* Desktops (>= 1200px) */
+@media (min-width: 1200px) {
+    .contactForm {
+        border-radius: 12px;
+
+        .header {
+            font-size: 18px;
+            padding: 20px 20px;
+        }
+
+        form {
+            padding: 20px;
+
+            .row {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .formGroup {
+                width: calc(50% - 10px);
+
+                input,
+                textarea,
+                .p-dropdown {
+                    font-size: 14px;
+                    padding: 10px;
+                }
+
+                label {
+                    font-size: 14px;
+                }
+            }
+
+            .sendBtn {
+                padding: 10px 20px;
+                min-width: 150px;
+                font-size: 15px;
+            }
+        }
+
+        .p-toast .p-toast-message {
+            font-size: 14px;
+        }
+    }
+}

@@ -118,3 +118,270 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .notification-wrapper Component
+
+@media (max-width: 1200px) {
+    .notification-wrapper {
+        .item {
+            .counter {
+                width: 16px;
+                height: 16px;
+                font-size: 11px;
+                top: -4px;
+                right: -4px;
+            }
+
+            .icon {
+                font-size: 17px;
+            }
+        }
+
+        .notification-box {
+            width: 290px;
+
+            .box-header {
+                font-size: 13px;
+
+                .badge {
+                    font-size: 11px;
+                    padding: 2px 7px;
+                }
+            }
+
+            .notifications-list {
+                .notification-item {
+                    font-size: 12px;
+                    padding: 7px 9px;
+
+                    .content {
+                        font-size: 12px;
+                    }
+
+                    .footer {
+                        .status {
+                            font-size: 10px;
+                            padding: 2px 5px;
+                        }
+
+                        .datetime {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .notification-wrapper {
+        .item {
+            .counter {
+                width: 15px;
+                height: 15px;
+                font-size: 10px;
+                top: -3px;
+                right: -3px;
+            }
+
+            .icon {
+                font-size: 16px;
+            }
+        }
+
+        .notification-box {
+            width: 260px;
+
+            .box-header {
+                font-size: 12px;
+
+                .badge {
+                    font-size: 10px;
+                    padding: 2px 6px;
+                }
+            }
+
+            .notifications-list {
+                .notification-item {
+                    font-size: 11px;
+                    padding: 6px 8px;
+
+                    .content {
+                        font-size: 11px;
+                    }
+
+                    .footer {
+                        .status {
+                            font-size: 9px;
+                            padding: 1px 4px;
+                        }
+
+                        .datetime {
+                            font-size: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .notification-wrapper {
+        .item {
+            .counter {
+                width: 14px;
+                height: 14px;
+                font-size: 9px;
+                top: -2px;
+                right: -2px;
+            }
+
+            .icon {
+                font-size: 15px;
+            }
+        }
+
+        .notification-box {
+            width: 240px;
+
+            .box-header {
+                font-size: 11px;
+
+                .badge {
+                    font-size: 9px;
+                    padding: 1px 5px;
+                }
+            }
+
+            .notifications-list {
+                .notification-item {
+                    font-size: 10px;
+                    padding: 5px 7px;
+
+                    .content {
+                        font-size: 10px;
+                    }
+
+                    .footer {
+                        .status {
+                            font-size: 8px;
+                            padding: 1px 3px;
+                        }
+
+                        .datetime {
+                            font-size: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .notification-wrapper {
+        .item {
+            .counter {
+                width: 13px;
+                height: 13px;
+                font-size: 8px;
+                top: -2px;
+                right: -2px;
+            }
+
+            .icon {
+                font-size: 14px;
+            }
+        }
+
+        .notification-box {
+            width: 220px;
+
+            .box-header {
+                font-size: 10px;
+
+                .badge {
+                    font-size: 8px;
+                    padding: 1px 4px;
+                }
+            }
+
+            .notifications-list {
+                .notification-item {
+                    font-size: 9px;
+                    padding: 4px 6px;
+
+                    .content {
+                        font-size: 9px;
+                    }
+
+                    .footer {
+                        .status {
+                            font-size: 7px;
+                            padding: 1px 2px;
+                        }
+
+                        .datetime {
+                            font-size: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .notification-wrapper {
+        .item {
+            .counter {
+                width: 12px;
+                height: 12px;
+                font-size: 7px;
+                top: -1px;
+                right: -1px;
+            }
+
+            .icon {
+                font-size: 13px;
+            }
+        }
+
+        .notification-box {
+            width: 200px;
+
+            .box-header {
+                font-size: 9px;
+
+                .badge {
+                    font-size: 7px;
+                    padding: 1px 3px;
+                }
+            }
+
+            .notifications-list {
+                .notification-item {
+                    font-size: 8px;
+                    padding: 3px 5px;
+
+                    .content {
+                        font-size: 8px;
+                    }
+
+                    .footer {
+                        .status {
+                            font-size: 6px;
+                            padding: 1px 2px;
+                        }
+
+                        .datetime {
+                            font-size: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -205,3 +205,292 @@
         }
     }
 }
+
+/* Responsive SCSS for AddNewUser Component */
+
+/* Large Screens / Laptops (≤ 1200px) */
+@media (max-width: 1200px) {
+    .addUser {
+        .addUser-container {
+            .addUser-form-card {
+                margin: 18px;
+
+                .addUser-form-header {
+                    h2 {
+                        font-size: 20px;
+                    }
+
+                    .addUser-btn-group {
+                        gap: 8px;
+
+                        .p-button {
+                            padding: 0.55rem 1.1rem;
+                        }
+                    }
+                }
+
+                .addUser-form {
+                    gap: 18px;
+
+                    .p-field {
+                        flex: 1 1 calc(50% - 18px);
+                        max-width: calc(50% - 18px);
+
+                        label {
+                            font-size: 13px;
+                        }
+
+                        input,
+                        textarea {
+                            font-size: 13px;
+                            padding: 9px;
+                        }
+                    }
+
+                    .addUser-profile-upload-row {
+                        gap: 15px;
+
+                        .addUser-profile-preview {
+                            width: 75px;
+                            height: 75px;
+                        }
+
+                        .addUser-custom-upload .p-button {
+                            padding: 0.55rem 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Medium Screens / Tablets (≤ 992px) */
+@media (max-width: 992px) {
+    .addUser {
+        .addUser-container {
+            .addUser-form-card {
+                margin: 15px;
+
+                .addUser-form-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+
+                    .addUser-btn-group {
+                        width: 100%;
+                        justify-content: flex-start;
+
+                        .p-button {
+                            width: auto;
+                            font-size: 13px;
+                        }
+                    }
+
+                    h2 {
+                        font-size: 18px;
+                    }
+                }
+
+                .addUser-form {
+                    gap: 15px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .addUser-profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .addUser-profile-preview {
+                            width: 70px;
+                            height: 70px;
+                        }
+
+                        .addUser-custom-upload {
+                            width: 100%;
+
+                            .p-button {
+                                padding: 0.5rem 1rem;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Screens / Mobile Devices (≤ 768px) */
+@media (max-width: 768px) {
+    .addUser {
+        padding-top: 40px;
+
+        .addUser-container {
+            .addUser-form-card {
+                margin: 12px;
+
+                .addUser-form-header {
+                    gap: 6px;
+
+                    h2 {
+                        font-size: 16px;
+                    }
+
+                    .addUser-btn-group {
+                        flex-direction: column;
+                        width: 100%;
+                        gap: 6px;
+
+                        .p-button {
+                            width: 100%;
+                            font-size: 13px;
+                            padding: 0.5rem 1rem;
+                        }
+                    }
+                }
+
+                .addUser-form {
+                    gap: 12px;
+
+                    .addUser-profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .addUser-profile-preview {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        .addUser-custom-upload .p-button {
+                            width: 100%;
+                            padding: 0.45rem 0.9rem;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .p-field label {
+                        font-size: 12px;
+                    }
+
+                    .p-field input,
+                    .p-field textarea {
+                        font-size: 12px;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Devices / Small Mobiles (≤ 480px) */
+@media (max-width: 480px) {
+    .addUser {
+        padding-top: 30px;
+
+        .addUser-container {
+            .addUser-form-card {
+                margin: 8px;
+
+                .addUser-form-header {
+                    h2 {
+                        font-size: 15px;
+                    }
+
+                    .addUser-btn-group {
+                        gap: 4px;
+
+                        .p-button {
+                            font-size: 12px;
+                            padding: 0.45rem 0.85rem;
+                        }
+                    }
+                }
+
+                .addUser-form {
+                    gap: 10px;
+
+                    .addUser-profile-upload-row {
+                        .addUser-profile-preview {
+                            width: 50px;
+                            height: 50px;
+                        }
+
+                        .addUser-custom-upload .p-button {
+                            font-size: 12px;
+                            padding: 0.4rem 0.8rem;
+                        }
+                    }
+
+                    .p-field label {
+                        font-size: 11px;
+                    }
+
+                    .p-field input,
+                    .p-field textarea {
+                        font-size: 11px;
+                        padding: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Ultra Small Devices (≤ 360px) */
+@media (max-width: 360px) {
+    .addUser {
+        padding-top: 25px;
+
+        .addUser-container {
+            .addUser-form-card {
+                margin: 5px;
+
+                .addUser-form-header {
+                    h2 {
+                        font-size: 14px;
+                    }
+
+                    .addUser-btn-group {
+                        gap: 3px;
+
+                        .p-button {
+                            font-size: 11px;
+                            padding: 0.35rem 0.7rem;
+                        }
+                    }
+                }
+
+                .addUser-form {
+                    gap: 8px;
+
+                    .addUser-profile-upload-row {
+                        .addUser-profile-preview {
+                            width: 45px;
+                            height: 45px;
+                        }
+
+                        .addUser-custom-upload .p-button {
+                            font-size: 11px;
+                            padding: 0.35rem 0.7rem;
+                        }
+                    }
+
+                    .p-field label {
+                        font-size: 10px;
+                    }
+
+                    .p-field input,
+                    .p-field textarea {
+                        font-size: 10px;
+                        padding: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

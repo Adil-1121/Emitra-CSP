@@ -172,3 +172,232 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for ViewFaq Page
+
+
+// 🔹 Desktop Large (1400px+)
+@media (max-width: 1400px) {
+    .viewFaqPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 18px;
+
+                .faqDetailsCard {
+                    padding: 22px;
+
+                    h2 {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 🔹 Laptop (1200px)
+@media (max-width: 1200px) {
+    .viewFaqPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 16px;
+
+                .viewFaqHeader {
+                    padding: 8px 12px;
+
+                    .breadcrumbBack .backLink {
+                        font-size: 15px;
+                    }
+
+                    .createdDate {
+                        font-size: 15px;
+                    }
+                }
+
+                .faqDetailsCard {
+                    padding: 20px;
+
+                    h2 {
+                        font-size: 22px;
+                    }
+
+                    .faqRowWrapper {
+                        gap: 12px;
+
+                        .faqRow {
+                            font-size: 14px;
+
+                            .label {
+                                width: 120px;
+                                height: 38px;
+                                padding: 8px 16px;
+                            }
+
+                            .value {
+                                padding: 10px 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 🔹 Tablets (992px)
+@media (max-width: 992px) {
+    .viewFaqPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 14px;
+
+                .viewFaqHeader {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+
+                    .createdDate {
+                        text-align: left;
+                    }
+
+                    .breadcrumbBack .backLink {
+                        font-size: 14px;
+                    }
+                }
+
+                .faqDetailsCard {
+                    padding: 18px;
+
+                    h2 {
+                        font-size: 20px;
+                    }
+
+                    .faqRowWrapper {
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .faqRow {
+                            width: 100% !important;
+
+                            .label {
+                                width: 110px;
+                                height: 36px;
+                                padding: 6px 14px;
+                            }
+
+                            .value {
+                                padding: 8px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 🔹 Mobile (768px)
+@media (max-width: 768px) {
+    .viewFaqPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 12px;
+
+                .faqDetailsCard {
+                    padding: 15px;
+
+                    h2 {
+                        font-size: 18px;
+                    }
+
+                    .faqRowWrapper {
+                        flex-direction: column;
+                        gap: 8px;
+
+                        .faqRow {
+                            .label {
+                                width: 100px;
+                                height: 34px;
+                                font-size: 13px;
+                            }
+
+                            .value {
+                                font-size: 13px;
+                                padding: 6px 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 🔹 Small Mobile (576px)
+@media (max-width: 576px) {
+    .viewFaqPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 10px;
+
+                .faqDetailsCard {
+                    padding: 12px;
+
+                    h2 {
+                        font-size: 16px;
+                    }
+
+                    .faqRowWrapper {
+                        .faqRow {
+                            .label {
+                                width: 90px;
+                                height: 32px;
+                                font-size: 12px;
+                            }
+
+                            .value {
+                                font-size: 12px;
+                                padding: 5px 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 🔹 Extra Small Mobile (400px)
+@media (max-width: 400px) {
+    .viewFaqPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 8px;
+
+                .faqDetailsCard {
+                    padding: 10px;
+
+                    h2 {
+                        font-size: 15px;
+                    }
+
+                    .faqRowWrapper {
+                        .faqRow {
+                            .label {
+                                width: 80px;
+                                height: 30px;
+                                font-size: 11px;
+                                padding: 4px 6px;
+                            }
+
+                            .value {
+                                font-size: 11px;
+                                padding: 4px 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

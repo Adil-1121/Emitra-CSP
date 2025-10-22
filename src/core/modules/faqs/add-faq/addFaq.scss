@@ -117,3 +117,184 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for AddFaq Page
+
+@media (max-width: 1400px) {
+    .addFaq {
+        padding-top: 60px;
+
+        .addFaqContainer {
+            .addFaq-formCard {
+                margin: 18px;
+
+                form {
+                    gap: 18px;
+
+                    .p-field {
+                        flex: 1 1 calc(50% - 18px);
+                        max-width: calc(50% - 18px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .addFaq {
+        padding-top: 60px;
+
+        .addFaqContainer {
+            .addFaq-formCard {
+                margin: 16px;
+
+                form {
+                    gap: 16px;
+
+                    .p-field {
+                        flex: 1 1 calc(50% - 16px);
+                        max-width: calc(50% - 16px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .addFaq {
+        padding-top: 60px;
+
+        .addFaqContainer {
+            .addFaq-formCard {
+                margin: 14px;
+
+                form {
+                    gap: 14px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .addFaq {
+        padding-top: 60px;
+
+        .addFaqContainer {
+            .addFaq-formCard {
+                margin: 12px;
+
+                .addFaq-formHeader {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    .addFaq-btnGroup {
+                        width: 100%;
+                        justify-content: flex-start;
+                        gap: 8px;
+                    }
+                }
+
+                form {
+                    gap: 12px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .addFaq {
+        padding-top: 60px;
+
+        .addFaqContainer {
+            .addFaq-formCard {
+                margin: 10px;
+
+                .addFaq-formHeader {
+                    h2 {
+                        font-size: 18px;
+                    }
+                }
+
+                form {
+                    gap: 10px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+
+                        label {
+                            font-size: 13px;
+                        }
+
+                        .p-inputtext,
+                        .p-inputtextarea,
+                        select {
+                            padding: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .addFaq {
+        padding-top: 60px;
+
+        .addFaqContainer {
+            .addFaq-formCard {
+                margin: 8px;
+
+                .addFaq-formHeader {
+                    h2 {
+                        font-size: 16px;
+                    }
+
+                    .addFaq-btnGroup {
+                        flex-direction: column;
+                        gap: 6px;
+
+                        .p-button {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                form {
+                    gap: 8px;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+
+                        label {
+                            font-size: 12px;
+                        }
+
+                        .p-inputtext,
+                        .p-inputtextarea,
+                        select {
+                            padding: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

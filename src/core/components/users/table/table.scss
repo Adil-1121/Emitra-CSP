@@ -83,3 +83,176 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for UserActivityTable
+
+@media (max-width: 1400px) {
+    .table {
+        width: 90%;
+
+        .cellWrapper .image {
+            width: 28px;
+            height: 28px;
+        }
+
+        .status {
+            padding: 4px 8px;
+            font-size: 13px;
+        }
+
+        .cellAction .viewButton,
+        .cellAction .editButton,
+        .cellAction .deleteButton {
+            padding: 2px 6px;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .table {
+        width: 95%;
+
+        .cellWrapper .image {
+            width: 26px;
+            height: 26px;
+        }
+
+        .status {
+            padding: 3px 7px;
+            font-size: 12px;
+        }
+
+        .cellAction .viewButton,
+        .cellAction .editButton,
+        .cellAction .deleteButton {
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .table {
+        width: 100%;
+
+        .cellWrapper .image {
+            width: 24px;
+            height: 24px;
+        }
+
+        .status {
+            padding: 3px 6px;
+            font-size: 11px;
+        }
+
+        .cellAction .viewButton,
+        .cellAction .editButton,
+        .cellAction .deleteButton {
+            padding: 1px 5px;
+            font-size: 11px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .table {
+        width: 100%;
+
+        .cellWrapper {
+            gap: 8px;
+
+            .image {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .status {
+            padding: 2px 5px;
+            font-size: 11px;
+        }
+
+        .cellAction {
+            flex-wrap: wrap;
+            gap: 4px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 1px 4px;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .table {
+        width: 100%;
+
+        .cellWrapper {
+            gap: 6px;
+
+            .image {
+                width: 20px;
+                height: 20px;
+            }
+
+            .productName {
+                font-size: 13px;
+            }
+        }
+
+        .status {
+            padding: 2px 4px;
+            font-size: 10px;
+        }
+
+        .cellAction {
+            gap: 3px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 1px 3px;
+                font-size: 9px;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .table {
+        width: 100%;
+
+        .cellWrapper {
+            gap: 4px;
+
+            .image {
+                width: 18px;
+                height: 18px;
+            }
+
+            .productName {
+                font-size: 12px;
+            }
+        }
+
+        .status {
+            padding: 1px 3px;
+            font-size: 9px;
+        }
+
+        .cellAction {
+            gap: 2px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 1px 2px;
+                font-size: 8px;
+            }
+        }
+    }
+}

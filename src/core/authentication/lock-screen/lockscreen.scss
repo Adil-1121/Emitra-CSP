@@ -80,3 +80,183 @@
         }
     }
 }
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .lockscreen-page .lockscreen-box {
+        max-width: 450px;
+        padding: 50px;
+    }
+
+    .lockscreen-page .username {
+        font-size: 28px;
+    }
+
+    .lockscreen-page .password-input {
+        font-size: 16px;
+        padding: 12px 40px 12px 40px;
+    }
+
+    .lockscreen-page .lock-icon {
+        font-size: 20px;
+    }
+
+    .lockscreen-page .toggle-btn {
+        font-size: 18px;
+    }
+
+    .lockscreen-page .unlock-btn {
+        font-size: 16px;
+        padding: 14px 0;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .lockscreen-page .lockscreen-box {
+        max-width: 420px;
+        padding: 45px;
+    }
+
+    .lockscreen-page .username {
+        font-size: 26px;
+    }
+
+    .lockscreen-page .password-input {
+        font-size: 15px;
+        padding: 11px 38px 11px 38px;
+    }
+
+    .lockscreen-page .lock-icon {
+        font-size: 19px;
+    }
+
+    .lockscreen-page .toggle-btn {
+        font-size: 17px;
+    }
+
+    .lockscreen-page .unlock-btn {
+        font-size: 15px;
+        padding: 13px 0;
+    }
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .lockscreen-page .lockscreen-box {
+        max-width: 380px;
+        padding: 40px;
+    }
+
+    .lockscreen-page .username {
+        font-size: 24px;
+    }
+
+    .lockscreen-page .password-input {
+        font-size: 14px;
+        padding: 10px 36px 10px 36px;
+    }
+
+    .lockscreen-page .lock-icon {
+        font-size: 18px;
+    }
+
+    .lockscreen-page .toggle-btn {
+        font-size: 16px;
+    }
+
+    .lockscreen-page .unlock-btn {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 768px) {
+    .lockscreen-page .lockscreen-box {
+        max-width: 100%;
+        padding: 35px 25px;
+    }
+
+    .lockscreen-page .username {
+        font-size: 22px;
+    }
+
+    .lockscreen-page .password-input {
+        font-size: 14px;
+        padding: 9px 32px 9px 32px;
+    }
+
+    .lockscreen-page .lock-icon {
+        font-size: 16px;
+    }
+
+    .lockscreen-page .toggle-btn {
+        font-size: 15px;
+    }
+
+    .lockscreen-page .unlock-btn {
+        font-size: 13px;
+        padding: 11px 0;
+    }
+}
+
+/* Mobile */
+@media (min-width: 376px) and (max-width: 600px) {
+    .lockscreen-page .lockscreen-box {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .lockscreen-page .username {
+        font-size: 20px;
+    }
+
+    .lockscreen-page .password-input {
+        font-size: 13px;
+        padding: 8px 28px 8px 28px;
+    }
+
+    .lockscreen-page .lock-icon {
+        font-size: 15px;
+    }
+
+    .lockscreen-page .toggle-btn {
+        font-size: 14px;
+    }
+
+    .lockscreen-page .unlock-btn {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 375px) {
+    .lockscreen-page .lockscreen-box {
+        padding: 25px 15px;
+        max-width: 100%;
+    }
+
+    .lockscreen-page .username {
+        font-size: 18px;
+    }
+
+    .lockscreen-page .password-input {
+        font-size: 12px;
+        padding: 7px 25px 7px 25px;
+    }
+
+    .lockscreen-page .lock-icon {
+        font-size: 14px;
+    }
+
+    .lockscreen-page .toggle-btn {
+        font-size: 13px;
+    }
+
+    .lockscreen-page .unlock-btn {
+        font-size: 11px;
+        padding: 9px 0;
+    }
+}

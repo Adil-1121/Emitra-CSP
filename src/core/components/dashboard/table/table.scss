@@ -42,3 +42,166 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .table Component
+
+@media (max-width: 1200px) {
+    .table {
+        .cellWrapper {
+            .image {
+                width: 30px;
+                height: 30px;
+                margin-right: 8px;
+            }
+        }
+
+        .status {
+            font-size: 14px;
+            padding: 3px 6px;
+        }
+
+        .p-datatable {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .table {
+        .cellWrapper {
+            .image {
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
+        }
+
+        .status {
+            font-size: 13px;
+            padding: 2px 6px;
+        }
+
+        .p-datatable {
+            font-size: 14px;
+        }
+
+        .p-datatable-thead>tr>th,
+        .p-datatable-tbody>tr>td {
+            padding: 10px 8px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .table {
+        overflow-x: auto;
+
+        .cellWrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+
+            .image {
+                width: 26px;
+                height: 26px;
+                margin: 0 0 4px 0;
+            }
+        }
+
+        .status {
+            font-size: 12px;
+            padding: 2px 5px;
+        }
+
+        .p-datatable {
+            font-size: 13px;
+        }
+
+        .p-datatable-thead>tr>th {
+            font-size: 13px;
+            padding: 8px 6px;
+        }
+
+        .p-datatable-tbody>tr>td {
+            padding: 8px 6px;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .table {
+        .p-datatable {
+            font-size: 12px;
+        }
+
+        .p-datatable-thead {
+            display: none;
+        }
+
+        .p-datatable-tbody>tr {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .p-datatable-tbody>tr>td {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 12px;
+            border: none;
+        }
+
+        .cellWrapper {
+            flex-direction: row;
+            align-items: center;
+
+            .image {
+                width: 24px;
+                height: 24px;
+                margin-right: 6px;
+            }
+        }
+
+        .status {
+            font-size: 11px;
+            padding: 2px 5px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .table {
+        .p-datatable {
+            font-size: 11px;
+        }
+
+        .p-datatable-tbody>tr {
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .p-datatable-tbody>tr>td {
+            font-size: 11px;
+            padding: 5px 0;
+        }
+
+        .cellWrapper {
+            .image {
+                width: 22px;
+                height: 22px;
+                margin-right: 5px;
+            }
+        }
+
+        .status {
+            font-size: 10px;
+            padding: 1px 4px;
+        }
+    }
+}

@@ -173,3 +173,235 @@ $label-color: #666666; // muted gray
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .profile-avatar Component
+
+@media (max-width: 1200px) {
+    .profile-avatar {
+        .avatar {
+            width: 34px;
+            height: 34px;
+        }
+
+        .profile-dropdown {
+            width: 180px;
+
+            .profile-header {
+                padding: 10px;
+
+                .name {
+                    font-size: 15px;
+                }
+
+                .role-badge {
+                    font-size: 9px;
+                    padding: 3px 7px;
+                }
+
+                .subscription-badge {
+                    font-size: 9px;
+                    top: 6px;
+                    right: 6px;
+                    padding: 0px 3px;
+                }
+            }
+
+            ul li {
+                padding: 7px 10px;
+                font-size: 13px;
+
+                .icon {
+                    font-size: 13px;
+                }
+
+                .label {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .profile-avatar {
+        .avatar {
+            width: 32px;
+            height: 32px;
+        }
+
+        .profile-dropdown {
+            width: 160px;
+
+            .profile-header {
+                padding: 9px;
+
+                .name {
+                    font-size: 14px;
+                }
+
+                .role-badge {
+                    font-size: 8px;
+                    padding: 2px 6px;
+                }
+
+                .subscription-badge {
+                    font-size: 8px;
+                    top: 5px;
+                    right: 5px;
+                    padding: 0px 2px;
+                }
+            }
+
+            ul li {
+                padding: 6px 9px;
+                font-size: 12px;
+
+                .icon {
+                    font-size: 12px;
+                }
+
+                .label {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-avatar {
+        .avatar {
+            width: 30px;
+            height: 30px;
+        }
+
+        .profile-dropdown {
+            width: 150px;
+
+            .profile-header {
+                padding: 8px;
+
+                .name {
+                    font-size: 13px;
+                }
+
+                .role-badge {
+                    font-size: 8px;
+                    padding: 2px 5px;
+                }
+
+                .subscription-badge {
+                    font-size: 7px;
+                    top: 4px;
+                    right: 4px;
+                    padding: 0px 2px;
+                }
+            }
+
+            ul li {
+                padding: 5px 8px;
+                font-size: 11px;
+
+                .icon {
+                    font-size: 11px;
+                }
+
+                .label {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-avatar {
+        .avatar {
+            width: 28px;
+            height: 28px;
+        }
+
+        .profile-dropdown {
+            width: 140px;
+
+            .profile-header {
+                padding: 7px;
+
+                .name {
+                    font-size: 12px;
+                }
+
+                .role-badge {
+                    font-size: 7px;
+                    padding: 1px 4px;
+                }
+
+                .subscription-badge {
+                    font-size: 7px;
+                    top: 3px;
+                    right: 3px;
+                    padding: 0px 2px;
+                }
+            }
+
+            ul li {
+                padding: 4px 7px;
+                font-size: 10px;
+
+                .icon {
+                    font-size: 10px;
+                }
+
+                .label {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-avatar {
+        .avatar {
+            width: 26px;
+            height: 26px;
+        }
+
+        .profile-dropdown {
+            width: 130px;
+
+            .profile-header {
+                padding: 6px;
+
+                .name {
+                    font-size: 11px;
+                }
+
+                .role-badge {
+                    font-size: 6px;
+                    padding: 1px 3px;
+                }
+
+                .subscription-badge {
+                    font-size: 6px;
+                    top: 2px;
+                    right: 2px;
+                    padding: 0px 2px;
+                }
+            }
+
+            ul li {
+                padding: 3px 6px;
+                font-size: 9px;
+
+                .icon {
+                    font-size: 9px;
+                }
+
+                .label {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+}

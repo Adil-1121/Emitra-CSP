@@ -77,3 +77,246 @@
         }
     }
 }
+
+// 🔹 Responsive SCSS for .featured Component
+
+@media (max-width: 1200px) {
+    .featured {
+        padding: 12px;
+
+        .bottom {
+            padding: 18px;
+            gap: 12px;
+
+            .featuredChart {
+                width: 90px;
+                height: 90px;
+            }
+
+            .amount {
+                font-size: 26px;
+            }
+
+            .summary .item .itemTitle {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .featured {
+        flex: 1.5;
+        padding: 12px;
+
+        .top {
+            .title {
+                font-size: 15px;
+            }
+
+            svg {
+                font-size: 14px;
+            }
+        }
+
+        .bottom {
+            padding: 15px;
+            gap: 10px;
+
+            .featuredChart {
+                width: 80px;
+                height: 80px;
+            }
+
+            .title {
+                font-size: 14px;
+            }
+
+            .amount {
+                font-size: 24px;
+            }
+
+            .desc {
+                font-size: 11px;
+            }
+
+            .summary {
+                flex-wrap: wrap;
+                gap: 8px;
+
+                .item {
+                    flex: 1 1 30%;
+
+                    .itemTitle {
+                        font-size: 13px;
+                    }
+
+                    .itemResult {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .featured {
+        flex: 1;
+        padding: 10px;
+
+        .top {
+            .title {
+                font-size: 14px;
+            }
+        }
+
+        .bottom {
+            padding: 12px;
+            gap: 10px;
+
+            .featuredChart {
+                width: 70px;
+                height: 70px;
+            }
+
+            .title {
+                font-size: 13px;
+            }
+
+            .amount {
+                font-size: 22px;
+            }
+
+            .desc {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+
+            .summary {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+                .item {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 5px 10px;
+                    border: 1px solid #eee;
+                    border-radius: 6px;
+
+                    .itemTitle {
+                        font-size: 13px;
+                    }
+
+                    .itemResult {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .featured {
+        padding: 8px;
+        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.15);
+
+        .top {
+            flex-direction: row;
+            justify-content: space-between;
+
+            .title {
+                font-size: 13px;
+            }
+        }
+
+        .bottom {
+            padding: 10px;
+            gap: 8px;
+
+            .featuredChart {
+                width: 65px;
+                height: 65px;
+            }
+
+            .amount {
+                font-size: 20px;
+            }
+
+            .title,
+            .desc {
+                font-size: 12px;
+                text-align: center;
+            }
+
+            .summary {
+                .item {
+                    .itemTitle {
+                        font-size: 12px;
+                    }
+
+                    .itemResult {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .featured {
+        padding: 6px;
+
+        .top {
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+
+            .title {
+                font-size: 12px;
+            }
+        }
+
+        .bottom {
+            padding: 8px;
+            gap: 6px;
+
+            .featuredChart {
+                width: 60px;
+                height: 60px;
+            }
+
+            .amount {
+                font-size: 18px;
+            }
+
+            .desc {
+                font-size: 11px;
+            }
+
+            .summary {
+                width: 100%;
+                gap: 8px;
+
+                .item {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 6px;
+
+                    .itemTitle {
+                        font-size: 12px;
+                    }
+
+                    .itemResult {
+                        font-size: 12px;
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

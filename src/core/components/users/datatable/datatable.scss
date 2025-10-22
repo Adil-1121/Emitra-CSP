@@ -112,7 +112,6 @@
         &.inactive {
             background-color: rgba(255, 0, 0, 0.1);
             color: crimson;
-            color: rebeccapurple;
         }
     }
 
@@ -196,4 +195,251 @@
         }
     }
 
+}
+
+// 🔹 Fully Responsive SCSS for DataTableComponent
+
+@media (max-width: 1400px) {
+    .datatable {
+        padding: 18px;
+        margin: 18px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 24px;
+            }
+
+            .rightActions {
+                gap: 25px;
+
+                .searchInput {
+                    min-width: 180px;
+                }
+            }
+        }
+
+        .cellWithImg .cellImg {
+            width: 28px;
+            height: 28px;
+            margin-right: 16px;
+        }
+
+        .cellAction .viewButton,
+        .cellAction .editButton,
+        .cellAction .deleteButton {
+            padding: 2px 4px !important;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .datatable {
+        padding: 16px;
+        margin: 16px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 23px;
+            }
+
+            .rightActions {
+                gap: 22px;
+
+                .searchInput {
+                    min-width: 160px;
+                }
+            }
+        }
+
+        .cellWithImg .cellImg {
+            width: 26px;
+            height: 26px;
+            margin-right: 14px;
+        }
+
+        .cellAction .viewButton,
+        .cellAction .editButton,
+        .cellAction .deleteButton {
+            padding: 2px 4px !important;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .datatable {
+        padding: 14px;
+        margin: 14px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 22px;
+            }
+
+            .rightActions {
+                gap: 18px;
+
+                .searchInput {
+                    min-width: 140px;
+                }
+            }
+        }
+
+        .cellWithImg .cellImg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+
+        .cellAction .viewButton,
+        .cellAction .editButton,
+        .cellAction .deleteButton {
+            padding: 2px 3px !important;
+            font-size: 12px !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .datatable {
+        padding: 12px;
+        margin: 12px;
+
+        .dataTableTitle {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .rightActions {
+                gap: 15px;
+                width: 100%;
+
+                .searchInput {
+                    min-width: 100%;
+                }
+
+                .link {
+                    font-size: 13px;
+                    padding: 5px 8px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            flex-direction: row;
+
+            .cellImg {
+                width: 22px;
+                height: 22px;
+                margin-right: 10px;
+            }
+        }
+
+        .cellAction {
+            flex-wrap: wrap;
+            gap: 4px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 2px 3px !important;
+                font-size: 11px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .datatable {
+        padding: 10px;
+        margin: 10px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 18px;
+            }
+
+            .rightActions {
+                flex-direction: column;
+                gap: 8px;
+
+                .searchInput {
+                    min-width: 100%;
+                    font-size: 12px;
+                }
+
+                .link {
+                    font-size: 12px;
+                    padding: 4px 6px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            .cellImg {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
+        }
+
+        .cellAction {
+            gap: 3px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                font-size: 10px !important;
+                padding: 2px 2px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .datatable {
+        padding: 8px;
+        margin: 8px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 16px;
+            }
+
+            .rightActions {
+                gap: 6px;
+
+                .searchInput {
+                    font-size: 11px;
+                }
+
+                .link {
+                    font-size: 11px;
+                    padding: 3px 5px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            .cellImg {
+                width: 18px;
+                height: 18px;
+                margin-right: 6px;
+            }
+        }
+
+        .cellAction {
+            gap: 2px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                font-size: 9px !important;
+                padding: 1px 2px !important;
+            }
+        }
+    }
 }

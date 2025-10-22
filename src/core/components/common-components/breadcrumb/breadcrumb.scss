@@ -83,3 +83,140 @@
         color: #aaa;
     }
 }
+
+/* ===== Fully Responsive SCSS for Breadcrumb ===== */
+
+/* Small Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+    .p-breadcrumb {
+        margin: 20px 10px 8px 10px;
+        font-size: 12px;
+
+        .p-menuitem {
+            padding: 2px 4px;
+
+            .p-menuitem-text {
+                font-size: 13px;
+            }
+
+            &:last-child {
+                .p-menuitem-text {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .custom-separator-icon {
+        margin: 0 4px;
+        font-size: 16px;
+    }
+}
+
+/* Mobile Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .p-breadcrumb {
+        margin: 25px 15px 9px 15px;
+        font-size: 13px;
+
+        .p-menuitem {
+            padding: 3px 6px;
+
+            .p-menuitem-text {
+                font-size: 14px;
+            }
+
+            &:last-child {
+                .p-menuitem-text {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .custom-separator-icon {
+        margin: 0 6px;
+        font-size: 18px;
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .p-breadcrumb {
+        margin: 28px 18px 10px 18px;
+        font-size: 14px;
+
+        .p-menuitem {
+            padding: 3px 7px;
+
+            .p-menuitem-text {
+                font-size: 15px;
+            }
+
+            &:last-child {
+                .p-menuitem-text {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .custom-separator-icon {
+        margin: 0 7px;
+        font-size: 19px;
+    }
+}
+
+/* Laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .p-breadcrumb {
+        margin: 30px 20px 10px 20px;
+        font-size: 15px;
+
+        .p-menuitem {
+            padding: 4px 8px;
+
+            .p-menuitem-text {
+                font-size: 15px;
+            }
+
+            &:last-child {
+                .p-menuitem-text {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .custom-separator-icon {
+        margin: 0 8px;
+        font-size: 20px;
+    }
+}
+
+/* Desktops (>= 1200px) */
+@media (min-width: 1200px) {
+    .p-breadcrumb {
+        margin: 30px 20px 10px 20px;
+        font-size: 15px;
+
+        .p-menuitem {
+            padding: 4px 8px;
+
+            .p-menuitem-text {
+                font-size: 15px;
+            }
+
+            &:last-child {
+                .p-menuitem-text {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .custom-separator-icon {
+        margin: 0 8px;
+        font-size: 20px;
+    }
+}

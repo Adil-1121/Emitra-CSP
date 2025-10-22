@@ -32,3 +32,138 @@
         }
     }
 }
+
+/* 🔹 Responsive SCSS for Home Dashboard Page */
+
+/* Large Desktop (>=1400px) */
+@media (max-width: 1400px) {
+    .dashboardHome {
+        .dashboardContainer {
+
+            .widgets,
+            .charts {
+                gap: 18px;
+                padding: 18px;
+            }
+
+            .listContainer {
+                padding: 18px;
+                margin: 18px;
+            }
+        }
+    }
+}
+
+/* Laptop (<=1200px) */
+@media (max-width: 1200px) {
+    .dashboardHome {
+        .dashboardContainer {
+
+            .widgets,
+            .charts {
+                gap: 16px;
+                padding: 16px;
+                flex-wrap: wrap;
+            }
+
+            .listContainer {
+                padding: 16px;
+                margin: 16px;
+            }
+        }
+    }
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+    .dashboardHome {
+        .dashboardContainer {
+            padding-top: 60px;
+
+            .widgets,
+            .charts {
+                flex-direction: column;
+                gap: 14px;
+                padding: 14px;
+            }
+
+            .listContainer {
+                padding: 14px;
+                margin: 14px;
+            }
+        }
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .dashboardHome {
+        .dashboardContainer {
+            padding-top: 60px;
+
+            .widgets,
+            .charts {
+                flex-direction: column;
+                padding: 12px;
+                gap: 12px;
+            }
+
+            .listContainer {
+                padding: 12px;
+                margin: 12px;
+
+                .listTitle {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+/* Small Mobile (<=576px) */
+@media (max-width: 576px) {
+    .dashboardHome {
+        .dashboardContainer {
+            padding-top: 60px;
+
+            .widgets,
+            .charts {
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .listContainer {
+                padding: 10px;
+                margin: 10px;
+
+                .listTitle {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Mobile (<=400px) */
+@media (max-width: 400px) {
+    .dashboardHome {
+        .dashboardContainer {
+            padding-top: 60px;
+
+            .widgets,
+            .charts {
+                padding: 8px;
+                gap: 8px;
+            }
+
+            .listContainer {
+                padding: 8px;
+                margin: 8px;
+
+                .listTitle {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

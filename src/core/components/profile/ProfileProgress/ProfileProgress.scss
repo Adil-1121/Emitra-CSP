@@ -140,3 +140,238 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .profile-progress-card Component
+
+@media (max-width: 1200px) {
+    .profile-progress-card {
+        padding: 12px !important;
+
+        .p-card-title {
+            font-size: 17px;
+        }
+
+        .progress-section .circle-container {
+            width: 110px;
+            height: 110px;
+
+            .circle {
+                width: 90px;
+                height: 90px;
+
+                .percentage {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .progress-bar {
+            width: 95%;
+            height: 9px;
+        }
+
+        .task-list .task {
+            padding: 9px 10px;
+
+            .left .icon {
+                font-size: 15px;
+            }
+
+            .left .label {
+                font-size: 14px;
+            }
+
+            .right .p-tag {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .profile-progress-card {
+        padding: 10px !important;
+
+        .p-card-title {
+            font-size: 16px;
+        }
+
+        .progress-section .circle-container {
+            width: 100px;
+            height: 100px;
+
+            .circle {
+                width: 80px;
+                height: 80px;
+
+                .percentage {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .progress-bar {
+            width: 90%;
+            height: 8px;
+        }
+
+        .task-list .task {
+            padding: 8px 10px;
+
+            .left .icon {
+                font-size: 14px;
+            }
+
+            .left .label {
+                font-size: 13px;
+            }
+
+            .right .p-tag {
+                font-size: 10px;
+                padding: 3px 7px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-progress-card {
+        padding: 8px !important;
+
+        .p-card-title {
+            font-size: 15px;
+        }
+
+        .progress-section .circle-container {
+            width: 90px;
+            height: 90px;
+
+            .circle {
+                width: 70px;
+                height: 70px;
+
+                .percentage {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .progress-bar {
+            width: 85%;
+            height: 7px;
+        }
+
+        .task-list .task {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 7px 10px;
+
+            .left .icon {
+                font-size: 13px;
+            }
+
+            .left .label {
+                font-size: 12px;
+            }
+
+            .right .p-tag {
+                font-size: 9px;
+                padding: 3px 6px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-progress-card {
+        padding: 6px !important;
+
+        .p-card-title {
+            font-size: 14px;
+        }
+
+        .progress-section .circle-container {
+            width: 80px;
+            height: 80px;
+
+            .circle {
+                width: 60px;
+                height: 60px;
+
+                .percentage {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .progress-bar {
+            width: 80%;
+            height: 6px;
+        }
+
+        .task-list .task {
+            padding: 6px 8px;
+
+            .left .icon {
+                font-size: 12px;
+            }
+
+            .left .label {
+                font-size: 11px;
+            }
+
+            .right .p-tag {
+                font-size: 8px;
+                padding: 2px 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-progress-card {
+        padding: 5px !important;
+
+        .p-card-title {
+            font-size: 13px;
+        }
+
+        .progress-section .circle-container {
+            width: 70px;
+            height: 70px;
+
+            .circle {
+                width: 55px;
+                height: 55px;
+
+                .percentage {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .progress-bar {
+            width: 75%;
+            height: 5px;
+        }
+
+        .task-list .task {
+            padding: 5px 6px;
+
+            .left .icon {
+                font-size: 11px;
+            }
+
+            .left .label {
+                font-size: 10px;
+            }
+
+            .right .p-tag {
+                font-size: 7px;
+                padding: 2px 4px;
+            }
+        }
+    }
+}

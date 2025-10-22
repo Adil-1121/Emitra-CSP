@@ -32,3 +32,157 @@
         }
     }
 }
+
+/* 🔹 Responsive SCSS for ProfilePage */
+
+/* Large Desktop (>=1400px) */
+@media (max-width: 1400px) {
+    .profile-page {
+        .profile-container {
+            padding: 18px;
+
+            .profile-content {
+                gap: 20px;
+
+                .right-column {
+                    .right-progress {
+                        height: 650px;
+                    }
+
+                    .admin-action-progress {
+                        height: 270px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Laptop (<=1200px) */
+@media (max-width: 1200px) {
+    .profile-page {
+        .profile-container {
+            padding: 16px;
+
+            .profile-content {
+                gap: 18px;
+
+                .right-column {
+                    .right-progress {
+                        height: 600px;
+                    }
+
+                    .admin-action-progress {
+                        height: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+    .profile-page {
+        padding-top: 50px;
+
+        .profile-container {
+            padding: 12px;
+
+            .profile-content {
+                flex-direction: column;
+
+                .right-column {
+                    width: 100%;
+
+                    .right-progress {
+                        height: 500px;
+                    }
+
+                    .admin-action-progress {
+                        height: 220px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .profile-page {
+        padding-top: 45px;
+        padding-bottom: 100px;
+
+        .profile-container {
+            padding: 10px;
+
+            .profile-content {
+                flex-direction: column;
+                gap: 15px;
+
+                .right-column {
+                    .right-progress {
+                        height: 400px;
+                    }
+
+                    .admin-action-progress {
+                        height: 180px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Mobile (<=576px) */
+@media (max-width: 576px) {
+    .profile-page {
+        padding-top: 40px;
+        padding-bottom: 80px;
+
+        .profile-container {
+            padding: 8px;
+
+            .profile-content {
+                gap: 12px;
+
+                .right-column {
+                    .right-progress {
+                        height: 350px;
+                    }
+
+                    .admin-action-progress {
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Mobile (<=400px) */
+@media (max-width: 400px) {
+    .profile-page {
+        padding-top: 35px;
+        padding-bottom: 70px;
+
+        .profile-container {
+            padding: 6px;
+
+            .profile-content {
+                gap: 10px;
+
+                .right-column {
+                    .right-progress {
+                        height: 300px;
+                    }
+
+                    .admin-action-progress {
+                        height: 130px;
+                    }
+                }
+            }
+        }
+    }
+}

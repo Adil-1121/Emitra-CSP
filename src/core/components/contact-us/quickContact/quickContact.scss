@@ -125,3 +125,271 @@
         }
     }
 }
+
+/* 🌐 Responsive SCSS for .quickContact component */
+
+@media (max-width: 1400px) {
+    .quickContact {
+        .header {
+            padding: 18px;
+
+            .title {
+                font-size: 17px;
+            }
+
+            .headphoneIcon {
+                font-size: 26px;
+            }
+        }
+
+        .contactOption {
+            margin: 18px;
+            padding: 14px;
+
+            .icon {
+                font-size: 28px;
+                margin-right: 14px;
+            }
+
+            .info {
+                h4 {
+                    font-size: 14px;
+                }
+
+                p {
+                    font-size: 12.5px;
+                }
+
+                .chatBtn,
+                .callBtn {
+                    padding: 6px 14px;
+                    min-width: 90px;
+                }
+            }
+        }
+    }
+}
+
+/* 💻 Laptops (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .quickContact {
+        .header {
+            padding: 16px;
+
+            .title {
+                font-size: 16px;
+            }
+
+            .headphoneIcon {
+                font-size: 24px;
+            }
+        }
+
+        .contactOption {
+            margin: 15px;
+            padding: 12px;
+            flex-direction: row;
+
+            .icon {
+                font-size: 26px;
+            }
+
+            .info {
+                h4 {
+                    font-size: 14px;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+/* 📱 Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+    .quickContact {
+        .header {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+
+            .headphoneIcon {
+                margin-right: 0;
+                margin-bottom: 8px;
+                font-size: 24px;
+            }
+
+            .title {
+                font-size: 16px;
+            }
+        }
+
+        .contactOption {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 15px;
+            padding: 14px;
+
+            .icon {
+                margin: 0 0 10px 0;
+                font-size: 26px;
+            }
+
+            .info {
+                h4 {
+                    font-size: 14px;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+
+                .chatBtn,
+                .callBtn {
+                    min-width: 90px;
+                    padding: 6px 12px;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+/* 📲 Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .quickContact {
+        border-radius: 10px;
+
+        .header {
+            padding: 12px;
+
+            .headphoneIcon {
+                font-size: 22px;
+            }
+
+            .title {
+                font-size: 15px;
+            }
+        }
+
+        .contactOption {
+            margin: 12px;
+            padding: 12px;
+
+            .icon {
+                font-size: 24px;
+            }
+
+            .info {
+                h4 {
+                    font-size: 13.5px;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+
+                .chatBtn,
+                .callBtn {
+                    min-width: 80px;
+                    padding: 5px 10px;
+                    font-size: 12.5px;
+                }
+            }
+        }
+    }
+}
+
+/* 📞 Small Mobile Devices (max-width: 576px) */
+@media (max-width: 576px) {
+    .quickContact {
+        .header {
+            padding: 10px;
+
+            .headphoneIcon {
+                font-size: 20px;
+            }
+
+            .title {
+                font-size: 14px;
+            }
+        }
+
+        .contactOption {
+            margin: 10px;
+            padding: 10px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .icon {
+                font-size: 22px;
+                margin-bottom: 8px;
+            }
+
+            .info {
+                h4 {
+                    font-size: 13px;
+                }
+
+                p {
+                    font-size: 11.5px;
+                }
+
+                .chatBtn,
+                .callBtn {
+                    padding: 5px 10px;
+                    font-size: 12px;
+                    min-width: 75px;
+                }
+            }
+        }
+    }
+}
+
+/* 📱 Extra Small Devices (max-width: 400px) */
+@media (max-width: 400px) {
+    .quickContact {
+        .header {
+            padding: 8px;
+
+            .headphoneIcon {
+                font-size: 18px;
+            }
+
+            .title {
+                font-size: 13px;
+            }
+        }
+
+        .contactOption {
+            margin: 8px;
+            padding: 8px;
+
+            .icon {
+                font-size: 20px;
+                margin-bottom: 6px;
+            }
+
+            .info {
+                h4 {
+                    font-size: 12.5px;
+                }
+
+                p {
+                    font-size: 11px;
+                }
+
+                .chatBtn,
+                .callBtn {
+                    min-width: 70px;
+                    padding: 4px 8px;
+                    font-size: 11.5px;
+                }
+            }
+        }
+    }
+}

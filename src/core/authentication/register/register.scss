@@ -193,3 +193,263 @@ $icon-color: #8e44ad;
         }
     }
 }
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+
+    .register-container .left-panel,
+    .register-container .right-panel {
+        padding: 4rem;
+    }
+
+    .register-container .left-panel .register-box {
+        max-width: 450px;
+        padding: 3rem;
+    }
+
+    .register-container .left-panel .register-box h2 {
+        font-size: 2.25rem;
+    }
+
+    .register-container .left-panel .register-box .input-group input.p-inputtext {
+        font-size: 1.1rem;
+        height: 2.8rem;
+    }
+
+    .register-container .left-panel .register-box .input-icon,
+    .register-container .left-panel .register-box .password-toggle {
+        font-size: 1.3rem;
+    }
+
+    .register-container .left-panel .register-box .register-btn {
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+    }
+
+    .register-container .right-panel h2 {
+        font-size: 2.25rem;
+    }
+
+    .register-container .right-panel p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1399px) {
+
+    .register-container .left-panel,
+    .register-container .right-panel {
+        padding: 3.5rem;
+    }
+
+    .register-container .left-panel .register-box {
+        max-width: 420px;
+        padding: 2.5rem;
+    }
+
+    .register-container .left-panel .register-box h2 {
+        font-size: 2rem;
+    }
+
+    .register-container .left-panel .register-box .input-group input.p-inputtext {
+        font-size: 1rem;
+        height: 2.5rem;
+    }
+
+    .register-container .left-panel .register-box .input-icon,
+    .register-container .left-panel .register-box .password-toggle {
+        font-size: 1.2rem;
+    }
+
+    .register-container .left-panel .register-box .register-btn {
+        font-size: 1rem;
+        padding: 0.75rem 0;
+    }
+
+    .register-container .right-panel h2 {
+        font-size: 2rem;
+    }
+
+    .register-container .right-panel p {
+        font-size: 1rem;
+    }
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .register-container .left-panel,
+    .register-container .right-panel {
+        padding: 3rem;
+    }
+
+    .register-container .left-panel .register-box {
+        max-width: 400px;
+        padding: 2rem;
+    }
+
+    .register-container .left-panel .register-box h2 {
+        font-size: 1.9rem;
+    }
+
+    .register-container .left-panel .register-box .input-group input.p-inputtext {
+        font-size: 0.95rem;
+        height: 2.3rem;
+    }
+
+    .register-container .left-panel .register-box .input-icon,
+    .register-container .left-panel .register-box .password-toggle {
+        font-size: 1.1rem;
+    }
+
+    .register-container .left-panel .register-box .register-btn {
+        font-size: 0.95rem;
+        padding: 0.7rem 0;
+    }
+
+    .register-container .right-panel h2 {
+        font-size: 1.9rem;
+    }
+
+    .register-container .right-panel p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .register-container .left-panel,
+    .register-container .right-panel {
+        width: 100%;
+        padding: 2rem 1.5rem;
+        border-radius: 0;
+    }
+
+    .register-container .left-panel .register-box {
+        max-width: 100%;
+        padding: 1.8rem;
+    }
+
+    .register-container .left-panel .register-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .register-container .left-panel .register-box .input-group input.p-inputtext {
+        font-size: 0.9rem;
+        height: 2.1rem;
+    }
+
+    .register-container .left-panel .register-box .input-icon,
+    .register-container .left-panel .register-box .password-toggle {
+        font-size: 1rem;
+    }
+
+    .register-container .left-panel .register-box .register-btn {
+        font-size: 0.9rem;
+        padding: 0.65rem 0;
+    }
+
+    .register-container .right-panel h2 {
+        font-size: 1.6rem;
+    }
+
+    .register-container .right-panel p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile */
+@media (min-width: 376px) and (max-width: 600px) {
+    .register-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .register-container .left-panel,
+    .register-container .right-panel {
+        padding: 1.5rem;
+        border-radius: 0;
+    }
+
+    .register-container .left-panel .register-box {
+        padding: 1.5rem;
+    }
+
+    .register-container .left-panel .register-box h2 {
+        font-size: 1.4rem;
+    }
+
+    .register-container .left-panel .register-box .input-group input.p-inputtext {
+        font-size: 0.85rem;
+        height: 2rem;
+    }
+
+    .register-container .left-panel .register-box .input-icon,
+    .register-container .left-panel .register-box .password-toggle {
+        font-size: 0.95rem;
+    }
+
+    .register-container .left-panel .register-box .register-btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 0;
+    }
+
+    .register-container .right-panel h2 {
+        font-size: 1.4rem;
+    }
+
+    .register-container .right-panel p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 375px) {
+    .register-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .register-container .left-panel,
+    .register-container .right-panel {
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    .register-container .left-panel .register-box {
+        padding: 1.2rem;
+    }
+
+    .register-container .left-panel .register-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .register-container .left-panel .register-box .input-group input.p-inputtext {
+        font-size: 0.8rem;
+        height: 1.8rem;
+    }
+
+    .register-container .left-panel .register-box .input-icon,
+    .register-container .left-panel .register-box .password-toggle {
+        font-size: 0.9rem;
+    }
+
+    .register-container .left-panel .register-box .register-btn {
+        font-size: 0.8rem;
+        padding: 0.55rem 0;
+    }
+
+    .register-container .right-panel h2 {
+        font-size: 1.2rem;
+    }
+
+    .register-container .right-panel p {
+        font-size: 0.8rem;
+    }
+}

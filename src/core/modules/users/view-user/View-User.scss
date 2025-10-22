@@ -198,3 +198,182 @@
         }
     }
 }
+
+/* Responsive SCSS for View-User Component */
+
+/* Large desktops and laptops */
+@media (max-width: 1440px) {
+    .viewUser {
+        padding-top: 55px;
+
+        .viewUser-container {
+            padding: 0 15px;
+        }
+
+        .viewUser-top {
+            gap: 15px;
+        }
+    }
+}
+
+/* Medium laptops / tablets landscape */
+@media (max-width: 1200px) {
+    .viewUser {
+        padding-top: 50px;
+
+        .viewUser-top {
+            flex-direction: column;
+
+            .viewUser-left,
+            .viewUser-right {
+                width: 100%;
+                flex: 1 1 100%;
+            }
+        }
+
+        .viewUser-bottom {
+            margin: 10px 15px;
+            padding: 15px;
+        }
+    }
+}
+
+/* Tablets portrait / large mobiles */
+@media (max-width: 992px) {
+    .viewUser {
+        padding-top: 45px;
+
+        .viewUser-left {
+            padding: 15px;
+
+            .viewUser-itemImg {
+                width: 90px;
+                height: 90px;
+            }
+
+            .viewUser-itemTitle {
+                font-size: 16px;
+            }
+
+            .viewUser-detailItem {
+                font-size: 13px;
+            }
+        }
+
+        .viewUser-right {
+            padding: 15px;
+        }
+
+        .viewUser-bottom {
+            margin: 10px;
+            padding: 12px;
+        }
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .viewUser {
+        padding-top: 40px;
+
+        .viewUser-left {
+            padding: 12px;
+
+            .viewUser-itemImg {
+                width: 80px;
+                height: 80px;
+            }
+
+            .viewUser-itemTitle {
+                font-size: 15px;
+            }
+
+            .viewUser-detailItem {
+                font-size: 12px;
+            }
+        }
+
+        .viewUser-right {
+            padding: 12px;
+        }
+
+        .viewUser-bottom {
+            margin: 8px;
+            padding: 10px;
+        }
+
+        .viewUser-title {
+            font-size: 14px;
+        }
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .viewUser {
+        padding-top: 35px;
+
+        .viewUser-left,
+        .viewUser-right {
+            padding: 10px;
+        }
+
+        .viewUser-itemImg {
+            width: 70px;
+            height: 70px;
+        }
+
+        .viewUser-itemTitle {
+            font-size: 14px;
+        }
+
+        .viewUser-detailItem {
+            font-size: 11px;
+        }
+
+        .viewUser-title {
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .viewUser-bottom {
+            margin: 5px;
+            padding: 8px;
+        }
+    }
+}
+
+/* Extra small mobiles */
+@media (max-width: 360px) {
+    .viewUser {
+        padding-top: 30px;
+
+        .viewUser-left,
+        .viewUser-right {
+            padding: 8px;
+        }
+
+        .viewUser-itemImg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .viewUser-itemTitle {
+            font-size: 13px;
+        }
+
+        .viewUser-detailItem {
+            font-size: 10px;
+        }
+
+        .viewUser-title {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .viewUser-bottom {
+            margin: 4px;
+            padding: 6px;
+        }
+    }
+}

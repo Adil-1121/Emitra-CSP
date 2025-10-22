@@ -167,3 +167,247 @@
         }
     }
 }
+
+/* 🔹 Responsive SCSS for Edit Profile Page */
+
+/* Large Desktop (>=1400px) */
+@media (max-width: 1400px) {
+    .edit-profile {
+        .edit-profile-container {
+            padding: 8px;
+
+            .edit-card {
+                margin: 18px;
+
+                .header h2 {
+                    font-size: 26px;
+                }
+
+                .btn-group {
+                    gap: 8px;
+
+                    .cancel-btn {
+                        width: 90px;
+                        padding: 7px 16px;
+                    }
+
+                    .save-btn {
+                        width: 140px;
+                        padding: 7px 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Laptop (<=1200px) */
+@media (max-width: 1200px) {
+    .edit-profile {
+        .edit-profile-container {
+            padding: 6px;
+
+            .edit-card {
+                margin: 16px;
+
+                .header h2 {
+                    font-size: 24px;
+                }
+
+                .btn-group {
+                    gap: 6px;
+
+                    .cancel-btn {
+                        width: 85px;
+                        padding: 6px 14px;
+                    }
+
+                    .save-btn {
+                        width: 130px;
+                        padding: 6px 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+    .edit-profile {
+        padding-top: 50px;
+
+        .edit-profile-container {
+            .edit-card {
+                margin: 14px;
+
+                .header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    h2 {
+                        font-size: 22px;
+                    }
+
+                    .btn-group {
+                        width: 100%;
+                        justify-content: flex-start;
+                        gap: 10px;
+
+                        .cancel-btn {
+                            width: 45%;
+                        }
+
+                        .save-btn {
+                            width: 45%;
+                        }
+                    }
+                }
+
+                .profile-section {
+                    flex-direction: column;
+                    align-items: center;
+
+                    .profile-img-wrapper {
+                        .profile-img {
+                            width: 100px;
+                            height: 100px;
+                        }
+
+                        .p-button {
+                            padding: 5px 12px;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+
+                .form-row {
+                    flex-direction: column;
+
+                    .form-field {
+                        flex: 1 1 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .edit-profile {
+        padding-top: 45px;
+
+        .edit-profile-container {
+            .edit-card {
+                margin: 12px;
+                padding: 15px;
+
+                .header h2 {
+                    font-size: 20px;
+                }
+
+                .btn-group {
+                    gap: 8px;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .cancel-btn,
+                    .save-btn {
+                        width: 100%;
+                    }
+                }
+
+                .profile-section {
+                    .profile-img-wrapper {
+                        .profile-img {
+                            width: 90px;
+                            height: 90px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Mobile (<=576px) */
+@media (max-width: 576px) {
+    .edit-profile {
+        padding-top: 40px;
+
+        .edit-profile-container {
+            .edit-card {
+                margin: 10px;
+                padding: 12px;
+
+                .header h2 {
+                    font-size: 18px;
+                }
+
+                .profile-section {
+                    .profile-img-wrapper {
+                        .profile-img {
+                            width: 80px;
+                            height: 80px;
+                        }
+
+                        .p-button {
+                            padding: 4px 10px;
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+
+                .form-grid {
+                    gap: 15px;
+
+                    .form-row {
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Mobile (<=400px) */
+@media (max-width: 400px) {
+    .edit-profile {
+        padding-top: 35px;
+
+        .edit-profile-container {
+            .edit-card {
+                margin: 8px;
+                padding: 10px;
+
+                .header h2 {
+                    font-size: 16px;
+                }
+
+                .profile-section {
+                    .profile-img-wrapper {
+                        .profile-img {
+                            width: 70px;
+                            height: 70px;
+                        }
+
+                        .p-button {
+                            padding: 3px 8px;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+
+                .form-grid {
+                    gap: 12px;
+
+                    .form-row {
+                        gap: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -45,10 +45,20 @@ import "./core/shared/style/dark.scss";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // ✅ Load sidebar state from localStorage
+  const [sidebarOpen, setSidebarOpen] = useState(() => {
+    const saved = localStorage.getItem("sidebarOpen");
+    return saved ? JSON.parse(saved) : true; // default true
+  });
   const [sidebarHovered, setSidebarHovered] = useState(false);
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleSidebar = () => {
+    setSidebarOpen((prev) => {
+      localStorage.setItem("sidebarOpen", JSON.stringify(!prev)); // save state
+      return !prev;
+    });
+  };
   const effectiveSidebarWidth = sidebarHovered || sidebarOpen ? 250 : 70;
 
   return (
@@ -86,7 +96,8 @@ function MainLayout({
     "/forgot-password",
     "/lock-screen",
     "/change-password",
-    "/reset-password"
+    "/reset-password",
+    "/server-error",
   ].includes(location.pathname);
 
   // -----------------------------
@@ -204,6 +215,7 @@ function MainLayout({
           <Route path="*" element={<Error404 />} />
           <Route path="/server-error" element={<Error500 />} />
         </Routes>
+
       </div>
     </>
   );

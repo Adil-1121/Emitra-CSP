@@ -209,3 +209,292 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for TestimonialsDataTable Component
+
+@media (max-width: 1200px) {
+    .datatable {
+        padding: 18px;
+        margin: 18px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 22px;
+            }
+
+            .rightActions {
+                gap: 20px;
+
+                .searchInput {
+                    min-width: 180px;
+                    font-size: 13px;
+                }
+
+                .link {
+                    font-size: 13px;
+                    padding: 5px 8px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            .cellImg {
+                width: 28px;
+                height: 28px;
+                margin-right: 15px;
+            }
+        }
+
+        .testimonialText {
+            max-width: 180px;
+            font-size: 13px;
+        }
+
+        .cellWithStatus {
+            padding: 6px 16px;
+            font-size: 13px;
+        }
+
+        .cellAction {
+            gap: 4px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 2px 4px !important;
+                font-size: 13px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .datatable {
+        padding: 15px;
+        margin: 15px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 20px;
+            }
+
+            .rightActions {
+                gap: 15px;
+
+                .searchInput {
+                    min-width: 150px;
+                    font-size: 12px;
+                }
+
+                .link {
+                    font-size: 12px;
+                    padding: 4px 7px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            .cellImg {
+                width: 24px;
+                height: 24px;
+                margin-right: 12px;
+            }
+        }
+
+        .testimonialText {
+            max-width: 150px;
+            font-size: 12px;
+        }
+
+        .cellWithStatus {
+            padding: 5px 14px;
+            font-size: 12px;
+        }
+
+        .cellAction {
+            gap: 3px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 2px 4px !important;
+                font-size: 12px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .datatable {
+        padding: 12px;
+        margin: 12px;
+
+        .dataTableTitle {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .rightActions {
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .searchInput {
+                    min-width: 140px;
+                    font-size: 11px;
+                }
+
+                .link {
+                    font-size: 11px;
+                    padding: 3px 6px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            .cellImg {
+                width: 22px;
+                height: 22px;
+                margin-right: 10px;
+            }
+        }
+
+        .testimonialText {
+            max-width: 130px;
+            font-size: 11px;
+        }
+
+        .cellWithStatus {
+            padding: 4px 12px;
+            font-size: 11px;
+        }
+
+        .cellAction {
+            flex-wrap: wrap;
+            gap: 2px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 2px 3px !important;
+                font-size: 11px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .datatable {
+        padding: 10px;
+        margin: 10px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 16px;
+            }
+
+            .rightActions {
+                gap: 8px;
+
+                .searchInput {
+                    min-width: 120px;
+                    font-size: 10px;
+                }
+
+                .link {
+                    font-size: 10px;
+                    padding: 2px 5px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            .cellImg {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
+        }
+
+        .testimonialText {
+            max-width: 110px;
+            font-size: 10px;
+        }
+
+        .cellWithStatus {
+            padding: 3px 10px;
+            font-size: 10px;
+        }
+
+        .cellAction {
+            gap: 2px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 1px 3px !important;
+                font-size: 10px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .datatable {
+        padding: 8px;
+        margin: 8px;
+
+        .dataTableTitle {
+            h3 {
+                font-size: 14px;
+            }
+
+            .rightActions {
+                gap: 5px;
+
+                .searchInput {
+                    min-width: 100px;
+                    font-size: 9px;
+                }
+
+                .link {
+                    font-size: 9px;
+                    padding: 1px 4px;
+                }
+            }
+        }
+
+        .cellWithImg {
+            .cellImg {
+                width: 18px;
+                height: 18px;
+                margin-right: 5px;
+            }
+        }
+
+        .testimonialText {
+            max-width: 90px;
+            font-size: 9px;
+        }
+
+        .cellWithStatus {
+            padding: 2px 8px;
+            font-size: 9px;
+        }
+
+        .cellAction {
+            flex-wrap: wrap;
+            gap: 1px;
+
+            .viewButton,
+            .editButton,
+            .deleteButton {
+                padding: 1px 2px !important;
+                font-size: 9px !important;
+            }
+        }
+    }
+}

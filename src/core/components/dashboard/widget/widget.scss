@@ -56,3 +56,188 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .widget Component
+
+@media (max-width: 1200px) {
+    .widget {
+        height: 95px;
+        padding: 9px;
+
+        .left .title {
+            font-size: 13px;
+        }
+
+        .left .counter {
+            font-size: 26px;
+        }
+
+        .left .link {
+            font-size: 11px;
+        }
+
+        .right .percentage {
+            font-size: 13px;
+        }
+
+        .right .icon {
+            font-size: 17px;
+            padding: 4px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .widget {
+        height: 90px;
+        padding: 8px;
+        border-radius: 8px;
+
+        .left,
+        .right {
+            .title {
+                font-size: 12px;
+            }
+
+            .counter {
+                font-size: 24px;
+            }
+
+            .link {
+                font-size: 11px;
+            }
+
+            .percentage {
+                font-size: 12px;
+            }
+
+            .icon {
+                font-size: 16px;
+                padding: 4px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .widget {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 12px;
+        gap: 10px;
+
+        .left,
+        .right {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left {
+            .title {
+                font-size: 13px;
+            }
+
+            .counter {
+                font-size: 22px;
+            }
+
+            .link {
+                font-size: 11px;
+            }
+        }
+
+        .right {
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+
+            .percentage {
+                font-size: 12px;
+            }
+
+            .icon {
+                font-size: 18px;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .widget {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.15);
+        gap: 8px;
+
+        .left {
+            .title {
+                font-size: 12px;
+            }
+
+            .counter {
+                font-size: 20px;
+            }
+
+            .link {
+                font-size: 10px;
+            }
+        }
+
+        .right {
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+
+            .percentage {
+                font-size: 11px;
+            }
+
+            .icon {
+                font-size: 16px;
+                padding: 4px;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .widget {
+        flex-direction: column;
+        padding: 8px;
+        gap: 6px;
+
+        .left {
+            .title {
+                font-size: 11px;
+            }
+
+            .counter {
+                font-size: 18px;
+            }
+
+            .link {
+                font-size: 9px;
+            }
+        }
+
+        .right {
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+
+            .percentage {
+                font-size: 10px;
+            }
+
+            .icon {
+                font-size: 15px;
+                padding: 3px;
+            }
+        }
+    }
+}

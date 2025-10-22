@@ -63,3 +63,151 @@
         }
     }
 }
+
+// 🔹 Responsive SCSS for .dateFilterContainer Component
+
+@media (max-width: 1200px) {
+    .dateFilterContainer {
+        margin: 25px 25px 18px 25px;
+
+        .selectWrapper,
+        .dateBox {
+            width: 280px;
+        }
+
+        .dateBox {
+            font-size: 15px;
+            padding: 9px 18px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .dateFilterContainer {
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 20px 20px 15px 20px;
+
+        .selectWrapper,
+        .dateBox {
+            width: 260px;
+        }
+
+        .dateBox {
+            font-size: 15px;
+            padding: 8px 16px;
+
+            .calendarWrapper .calendarIcon {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dateFilterContainer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin: 20px 15px;
+
+        .selectWrapper {
+            width: 100%;
+
+            .p-dropdown {
+                width: 100%;
+
+                .p-dropdown-label {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .dateBox {
+            width: 100%;
+            font-size: 15px;
+            padding: 10px 14px;
+            justify-content: space-between;
+
+            .calendarWrapper {
+                .calendarIcon {
+                    font-size: 18px;
+                }
+
+                .calendarPopup {
+                    top: 45px;
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .dateFilterContainer {
+        margin: 15px 10px;
+        gap: 12px;
+
+        .selectWrapper {
+            width: 100%;
+
+            .p-dropdown-label {
+                font-size: 14px;
+            }
+        }
+
+        .dateBox {
+            font-size: 14px;
+            padding: 8px 12px;
+
+            .calendarWrapper .calendarIcon {
+                font-size: 17px;
+                margin-left: 8px;
+            }
+
+            .calendarWrapper .calendarPopup {
+                top: 42px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .dateFilterContainer {
+        margin: 10px;
+        gap: 10px;
+
+        .selectWrapper {
+            width: 100%;
+
+            .p-dropdown-label {
+                font-size: 13px;
+            }
+        }
+
+        .dateBox {
+            font-size: 13px;
+            padding: 7px 10px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+
+            .calendarWrapper {
+                align-self: flex-end;
+
+                .calendarIcon {
+                    font-size: 16px;
+                    margin-left: 6px;
+                }
+
+                .calendarPopup {
+                    top: 40px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

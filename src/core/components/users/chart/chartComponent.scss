@@ -16,3 +16,71 @@
         gap: 8px;
     }
 }
+
+// 🔹 Fully Responsive SCSS for ChartComponent
+
+@media (max-width: 1400px) {
+    .chart {
+        padding: 18px;
+
+        .title {
+            font-size: 17px;
+            gap: 7px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .chart {
+        padding: 16px;
+
+        .title {
+            font-size: 16px;
+            gap: 6px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .chart {
+        padding: 14px;
+
+        .title {
+            font-size: 15px;
+            gap: 5px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .chart {
+        padding: 12px;
+
+        .title {
+            font-size: 14px;
+            gap: 4px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .chart {
+        padding: 10px;
+
+        .title {
+            font-size: 13px;
+            gap: 3px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .chart {
+        padding: 8px;
+
+        .title {
+            font-size: 12px;
+            gap: 2px;
+        }
+    }
+}

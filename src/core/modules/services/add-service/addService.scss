@@ -167,3 +167,178 @@
         }
     }
 }
+
+/* 🔹 Responsive SCSS for AddService Page */
+
+/* Large Desktop (>=1400px) */
+@media (max-width: 1400px) {
+    .edit {
+        .editContainer {
+            .form-card {
+                margin: 18px;
+
+                form {
+                    gap: 18px;
+
+                    .profile-upload-row {
+                        gap: 16px;
+
+                        .profile-preview {
+                            width: 70px;
+                            height: 70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Laptop (<=1200px) */
+@media (max-width: 1200px) {
+    .edit {
+        .editContainer {
+            .form-card {
+                margin: 16px;
+
+                .form-header h2 {
+                    font-size: 20px;
+                }
+
+                form {
+                    gap: 16px;
+
+                    .profile-upload-row {
+                        gap: 14px;
+
+                        .profile-preview {
+                            width: 65px;
+                            height: 65px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+    .edit {
+        padding-top: 50px;
+
+        .editContainer {
+            .form-card {
+                margin: 14px;
+
+                form {
+                    flex-direction: column;
+
+                    .p-field {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                    }
+
+                    .profile-upload-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 12px;
+
+                        .profile-preview {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        .custom-upload {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .edit {
+        padding-top: 45px;
+
+        .editContainer {
+            .form-card {
+                margin: 12px;
+
+                .form-header h2 {
+                    font-size: 18px;
+                }
+
+                .btn-group {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                form {
+                    .profile-upload-row {
+                        .profile-preview {
+                            width: 55px;
+                            height: 55px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Mobile (<=576px) */
+@media (max-width: 576px) {
+    .edit {
+        padding-top: 40px;
+
+        .editContainer {
+            .form-card {
+                margin: 10px;
+
+                form {
+                    .profile-upload-row {
+                        .profile-preview {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Mobile (<=400px) */
+@media (max-width: 400px) {
+    .edit {
+        padding-top: 35px;
+
+        .editContainer {
+            .form-card {
+                margin: 8px;
+
+                .form-header h2 {
+                    font-size: 16px;
+                }
+
+                .btn-group {
+                    flex-direction: column;
+                    gap: 8px;
+                }
+
+                form {
+                    .profile-upload-row {
+                        .profile-preview {
+                            width: 45px;
+                            height: 45px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

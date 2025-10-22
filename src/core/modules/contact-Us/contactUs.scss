@@ -28,3 +28,108 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for ContactUs Page
+
+@media (max-width: 1400px) {
+    .list {
+        padding-top: 50px;
+
+        .listContainer {
+            .contactGrid {
+                gap: 18px;
+
+                .leftColumn,
+                .rightColumn {
+                    gap: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .list {
+        padding-top: 45px;
+
+        .listContainer {
+            .contactGrid {
+                gap: 15px;
+
+                .leftColumn,
+                .rightColumn {
+                    gap: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .list {
+        padding-top: 60px;
+
+        .listContainer {
+            .contactGrid {
+                grid-template-columns: 1fr; // single column for tablets
+                margin: 15px;
+
+                .leftColumn,
+                .rightColumn {
+                    gap: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .list {
+        padding-top: 60px;
+
+        .listContainer {
+            .contactGrid {
+                margin: 10px;
+
+                .leftColumn,
+                .rightColumn {
+                    gap: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .list {
+        padding-top: 60px;
+
+        .listContainer {
+            .contactGrid {
+                margin: 8px;
+
+                .leftColumn,
+                .rightColumn {
+                    gap: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .list {
+        padding-top: 60px;
+
+        .listContainer {
+            .contactGrid {
+                margin: 5px;
+
+                .leftColumn,
+                .rightColumn {
+                    gap: 6px;
+                }
+            }
+        }
+    }
+}

@@ -52,3 +52,120 @@
         }
     }
 }
+
+// 🔹 Fully Responsive SCSS for .addnew-wrapper Component
+
+@media (max-width: 1200px) {
+    .addnew-wrapper {
+        .item .icon {
+            font-size: 17px;
+        }
+
+        .addnew-dropdown {
+            min-width: 160px;
+
+            .dropdown-item {
+                font-size: 13px;
+                padding: 9px 12px;
+
+                .dropdown-icon {
+                    font-size: 15px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .addnew-wrapper {
+        .item .icon {
+            font-size: 16px;
+        }
+
+        .addnew-dropdown {
+            min-width: 150px;
+            top: 32px;
+
+            .dropdown-item {
+                font-size: 13px;
+                padding: 8px 12px;
+
+                .dropdown-icon {
+                    font-size: 14px;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .addnew-wrapper {
+        .item .icon {
+            font-size: 15px;
+        }
+
+        .addnew-dropdown {
+            min-width: 140px;
+            top: 30px;
+            right: 0;
+
+            .dropdown-item {
+                font-size: 12px;
+                padding: 7px 10px;
+
+                .dropdown-icon {
+                    font-size: 13px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .addnew-wrapper {
+        .item .icon {
+            font-size: 14px;
+        }
+
+        .addnew-dropdown {
+            min-width: 130px;
+            top: 28px;
+
+            .dropdown-item {
+                font-size: 12px;
+                padding: 6px 9px;
+
+                .dropdown-icon {
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .addnew-wrapper {
+        .item .icon {
+            font-size: 13px;
+        }
+
+        .addnew-dropdown {
+            min-width: 120px;
+            top: 25px;
+
+            .dropdown-item {
+                font-size: 11px;
+                padding: 5px 8px;
+
+                .dropdown-icon {
+                    font-size: 11px;
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}

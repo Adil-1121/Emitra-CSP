@@ -8,3 +8,68 @@
         flex: 6;
     }
 }
+
+/* 🔹 Responsive SCSS for ServicesList Page */
+
+/* Large Desktop (>=1400px) */
+@media (max-width: 1400px) {
+    .list {
+        .listContainer {
+            padding: 18px;
+        }
+    }
+}
+
+/* Laptop (<=1200px) */
+@media (max-width: 1200px) {
+    .list {
+        .listContainer {
+            padding: 16px;
+        }
+    }
+}
+
+/* Tablet (<=992px) */
+@media (max-width: 992px) {
+    .list {
+        padding-top: 50px;
+
+        .listContainer {
+            flex: 1;
+            padding: 14px;
+        }
+    }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+    .list {
+        padding-top: 45px;
+
+        .listContainer {
+            padding: 12px;
+        }
+    }
+}
+
+/* Small Mobile (<=576px) */
+@media (max-width: 576px) {
+    .list {
+        padding-top: 40px;
+
+        .listContainer {
+            padding: 10px;
+        }
+    }
+}
+
+/* Extra Small Mobile (<=400px) */
+@media (max-width: 400px) {
+    .list {
+        padding-top: 35px;
+
+        .listContainer {
+            padding: 8px;
+        }
+    }
+}

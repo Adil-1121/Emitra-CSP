@@ -177,3 +177,314 @@
         }
     }
 }
+
+/* Responsive SCSS for ViewTestimonial Component */
+
+/* Laptops / Large Screens (≤ 1200px) */
+@media (max-width: 1200px) {
+    .viewTestimonialPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 18px;
+
+                .testimonialDetailsCard {
+                    padding: 20px;
+
+                    h2 {
+                        font-size: 24px;
+                    }
+
+                    .testimonialRowWrapper {
+                        gap: 12px;
+
+                        .testimonialRow {
+                            font-size: 14px;
+
+                            .label {
+                                width: 130px;
+                                font-size: 14px;
+                                height: 45px;
+                            }
+
+                            .value {
+                                font-size: 14px;
+
+                                .profileImg {
+                                    width: 55px;
+                                    height: 55px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablets / Medium Screens (≤ 992px) */
+@media (max-width: 992px) {
+    .viewTestimonialPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 15px;
+
+                .viewTestimonialHeader {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+
+                    .breadcrumbBack {
+                        .backLink {
+                            font-size: 14px;
+
+                            .fa-icon {
+                                font-size: 11px;
+                                width: 14px;
+                                height: 14px;
+                                padding: 4px;
+                            }
+                        }
+                    }
+
+                    .createdDate {
+                        font-size: 14px;
+                        text-align: left;
+                    }
+                }
+
+                .testimonialDetailsCard {
+                    padding: 18px;
+
+                    h2 {
+                        font-size: 22px;
+                    }
+
+                    .testimonialRowWrapper {
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .testimonialRow {
+                            width: 100% !important;
+                            font-size: 13px;
+
+                            .label {
+                                width: 120px;
+                                font-size: 13px;
+                                height: 42px;
+                            }
+
+                            .value {
+                                font-size: 13px;
+
+                                .profileImg {
+                                    width: 50px;
+                                    height: 50px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Devices (≤ 768px) */
+@media (max-width: 768px) {
+    .viewTestimonialPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 12px;
+
+                .viewTestimonialHeader {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 6px;
+
+                    .breadcrumbBack {
+                        .backLink {
+                            font-size: 13px;
+
+                            .fa-icon {
+                                font-size: 10px;
+                                width: 12px;
+                                height: 12px;
+                                padding: 3px;
+                            }
+                        }
+                    }
+
+                    .createdDate {
+                        font-size: 13px;
+                    }
+                }
+
+                .testimonialDetailsCard {
+                    padding: 15px;
+
+                    h2 {
+                        font-size: 20px;
+                    }
+
+                    .testimonialRowWrapper {
+                        flex-direction: column;
+
+                        .testimonialRow {
+                            width: 100% !important;
+                            font-size: 12px;
+
+                            .label {
+                                width: 100px;
+                                font-size: 12px;
+                                height: 40px;
+                                padding: 8px 15px;
+                            }
+
+                            .value {
+                                font-size: 12px;
+                                padding: 10px 12px;
+
+                                .profileImg {
+                                    width: 45px;
+                                    height: 45px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Mobile Devices (≤ 480px) */
+@media (max-width: 480px) {
+    .viewTestimonialPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 8px;
+
+                .viewTestimonialHeader {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 5px;
+
+                    .breadcrumbBack {
+                        .backLink {
+                            font-size: 12px;
+
+                            .fa-icon {
+                                font-size: 9px;
+                                width: 11px;
+                                height: 11px;
+                                padding: 2px;
+                            }
+                        }
+                    }
+
+                    .createdDate {
+                        font-size: 12px;
+                    }
+                }
+
+                .testimonialDetailsCard {
+                    padding: 12px;
+
+                    h2 {
+                        font-size: 18px;
+                    }
+
+                    .testimonialRowWrapper {
+                        flex-direction: column;
+
+                        .testimonialRow {
+                            width: 100% !important;
+                            font-size: 11px;
+
+                            .label {
+                                width: 90px;
+                                font-size: 11px;
+                                height: 38px;
+                                padding: 6px 12px;
+                            }
+
+                            .value {
+                                font-size: 11px;
+                                padding: 8px 10px;
+
+                                .profileImg {
+                                    width: 40px;
+                                    height: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Mobile (≤ 360px) */
+@media (max-width: 360px) {
+    .viewTestimonialPage {
+        .listContainer {
+            .contentWrapper {
+                padding: 5px;
+
+                .viewTestimonialHeader {
+                    .breadcrumbBack {
+                        .backLink {
+                            font-size: 11px;
+
+                            .fa-icon {
+                                font-size: 8px;
+                                width: 10px;
+                                height: 10px;
+                                padding: 2px;
+                            }
+                        }
+                    }
+
+                    .createdDate {
+                        font-size: 11px;
+                    }
+                }
+
+                .testimonialDetailsCard {
+                    padding: 10px;
+
+                    h2 {
+                        font-size: 16px;
+                    }
+
+                    .testimonialRowWrapper {
+                        flex-direction: column;
+
+                        .testimonialRow {
+                            font-size: 10px;
+
+                            .label {
+                                width: 80px;
+                                font-size: 10px;
+                                height: 35px;
+                                padding: 5px 10px;
+                            }
+
+                            .value {
+                                font-size: 10px;
+                                padding: 6px 8px;
+
+                                .profileImg {
+                                    width: 35px;
+                                    height: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

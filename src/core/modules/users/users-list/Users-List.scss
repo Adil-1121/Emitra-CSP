@@ -7,3 +7,60 @@
         flex: 6;
     }
 }
+
+/* Responsive SCSS for Users-List Component */
+
+/* Small desktops and laptops */
+@media (max-width: 1200px) {
+    .list {
+        padding-top: 50px;
+
+        .listContainer {
+            margin: 10px;
+        }
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .list {
+        padding-top: 40px;
+
+        .listContainer {
+            margin: 8px;
+        }
+    }
+}
+
+/* Large mobiles / small tablets */
+@media (max-width: 768px) {
+    .list {
+        padding-top: 30px;
+
+        .listContainer {
+            margin: 6px;
+        }
+    }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+    .list {
+        padding-top: 20px;
+
+        .listContainer {
+            margin: 4px;
+        }
+    }
+}
+
+/* Extra small mobiles */
+@media (max-width: 360px) {
+    .list {
+        padding-top: 15px;
+
+        .listContainer {
+            margin: 2px;
+        }
+    }
+}
