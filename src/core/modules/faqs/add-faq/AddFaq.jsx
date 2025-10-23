@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 
-import "./AddFaq.scss";
+import "./addFaq.scss";
 
 const AddFaq = () => {
     const toast = useRef(null);

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./ViewService.scss";
+import "./viewService.scss";
 
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 import ServiceActivityTable from "../../../components/services/seviceActivityTable/ServiceActivityTable";

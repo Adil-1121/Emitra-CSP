@@ -11,7 +11,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";
 
-import "./EditFaq.scss";
+import "./editFaq.scss";
 
 const EditFaq = () => {
     const toast = useRef(null);
