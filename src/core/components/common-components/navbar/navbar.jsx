@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './navbar.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "./navbar.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faSearch,
     faMoon,
@@ -9,7 +9,7 @@ import {
     faExpand,
     faBell,
     faCommentDots,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 import { DarkModeContext } from "../../../shared/context/darkModeContext";
 import NotificationBox from "../../navbar-components/notification-box/NotificationBox";
 import MessagesBox from "../../navbar-components/message-box/Messages";
@@ -24,13 +24,41 @@ const Navbar = ({ sidebarWidth }) => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    // ✅ Listen for window resize
+    // ✅ Search bar states
+    const [searchTerm, setSearchTerm] = useState("");
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [searchResults, setSearchResults] = useState([]);
+
+    // ✅ Window resize listener
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    // ✅ Handle search functionality
+    useEffect(() => {
+        if (searchTerm.trim() === "") {
+            setSearchResults([]);
+            setShowDropdown(false);
+            return;
+        }
+
+        const filtered = userRows.filter((user) =>
+            user.userName.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        setSearchResults(filtered);
+        setShowDropdown(true);
+    }, [searchTerm]);
+
+    // ✅ Handle user click in dropdown
+    const handleUserClick = (id) => {
+        navigate(`/users/${id}`);
+        setShowDropdown(false);
+    };
+
+    // ✅ Fullscreen toggle
     const toggleFullscreen = () => {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
@@ -39,8 +67,9 @@ const Navbar = ({ sidebarWidth }) => {
         }
     };
 
-    // ✅ Calculate dynamic width and left for navbar
-    const effectiveWidth = windowWidth < 760 ? '100%' : `calc(100% - ${sidebarWidth}px)`;
+    // ✅ Responsive navbar width calculation
+    const effectiveWidth =
+        windowWidth < 760 ? "100%" : `calc(100% - ${sidebarWidth}px)`;
     const effectiveLeft = windowWidth < 760 ? 0 : `${sidebarWidth}px`;
 
     return (
@@ -49,29 +78,35 @@ const Navbar = ({ sidebarWidth }) => {
             style={{
                 width: effectiveWidth,
                 left: effectiveLeft,
-                transition: "all 0.3s ease"
+                transition: "all 0.3s ease",
             }}
         >
             <div className="wrapper">
-                {/* Search */}
+                {/* 🔍 Search Section */}
                 <div className="search">
                     <input
                         type="text"
                         placeholder="Search users..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
+                        onFocus={() => setShowDropdown(true)}
                         onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
                     />
                     <FontAwesomeIcon icon={faSearch} className="search-icon" />
+
                     {showDropdown && searchResults.length > 0 && (
-                        <div className="search-dropdown">
-                            {searchResults.map(user => (
+                        <div className={`search-dropdown ${darkMode ? "dark" : ""}`}>
+                            {searchResults.map((user) => (
                                 <div
                                     key={user.id}
                                     className="search-item"
                                     onClick={() => handleUserClick(user.id)}
                                 >
-                                    <img src={user.img} alt={user.userName} className="search-avatar" />
+                                    <img
+                                        src={user.img}
+                                        alt={user.userName}
+                                        className="search-avatar"
+                                    />
                                     <div className="search-info">
                                         <span className="search-name">{user.userName}</span>
                                         <span className="search-email">{user.email}</span>
@@ -82,34 +117,39 @@ const Navbar = ({ sidebarWidth }) => {
                     )}
                 </div>
 
+                {/* 🌙 Navbar Items */}
                 <div className="items">
-                    {/* Language */}
+                    {/* Language Dropdown */}
                     <LanguageDropdown />
 
-                    {/* Fullscreen */}
+                    {/* Fullscreen Toggle */}
                     <div className="item" onClick={toggleFullscreen}>
                         <FontAwesomeIcon icon={faExpand} className="icon" />
                     </div>
 
                     {/* Dark Mode Toggle */}
                     <div className="item" onClick={toggleDarkMode}>
-                        <FontAwesomeIcon icon={darkMode ? faSun : faMoon} className="icon" />
+                        <FontAwesomeIcon
+                            icon={darkMode ? faSun : faMoon}
+                            className="icon"
+                        />
                     </div>
 
-                    {/* AI Assistant */}
+                    {/* AI Assistant Button */}
                     <div className="item" onClick={() => navigate("/gn-emitra-ai")}>
                         <span className="text">AI</span>
                     </div>
 
-                    {/* Add New */}
+                    {/* Add New Dropdown */}
                     <AddNewDropdown />
 
                     {/* Notifications */}
                     <NotificationBox icon={faBell} />
+
                     {/* Chat / Messages */}
                     <MessagesBox icon={faCommentDots} />
 
-                    {/* Avatar */}
+                    {/* Profile Avatar */}
                     <ProfileAvatar />
                 </div>
             </div>
