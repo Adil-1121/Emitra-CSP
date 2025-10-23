@@ -16,6 +16,7 @@ import MessagesBox from "../../navbar-components/message-box/Messages";
 import LanguageDropdown from "../../navbar-components/language-box/LanguageDropdown";
 import AddNewDropdown from "../../navbar-components/add-dropdown-box/AddNewDropdown";
 import ProfileAvatar from "../../navbar-components/profile-avatar/ProfileAvatar";
+import { userRows } from "../../../../datatablesource";
 
 const Navbar = ({ sidebarWidth }) => {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
@@ -54,8 +55,31 @@ const Navbar = ({ sidebarWidth }) => {
             <div className="wrapper">
                 {/* Search */}
                 <div className="search">
-                    <input type="text" placeholder="Type here to search..." />
+                    <input
+                        type="text"
+                        placeholder="Search users..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
+                    />
                     <FontAwesomeIcon icon={faSearch} className="search-icon" />
+                    {showDropdown && searchResults.length > 0 && (
+                        <div className="search-dropdown">
+                            {searchResults.map(user => (
+                                <div
+                                    key={user.id}
+                                    className="search-item"
+                                    onClick={() => handleUserClick(user.id)}
+                                >
+                                    <img src={user.img} alt={user.userName} className="search-avatar" />
+                                    <div className="search-info">
+                                        <span className="search-name">{user.userName}</span>
+                                        <span className="search-email">{user.email}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 <div className="items">

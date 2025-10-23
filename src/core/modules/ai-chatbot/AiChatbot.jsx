@@ -74,7 +74,7 @@ const AiChatbot = () => {
                                             <FontAwesomeIcon icon={faRobot} className="bot-icon" />
                                         ) : (
                                             <img
-                                                src={avatar} alt="User"
+                                                src={faQuestion} alt="User"
                                             />
                                         )}
                                     </span>
