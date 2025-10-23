@@ -96,54 +96,49 @@
     }
 
 
-    /* ===== Sidebar Dark Mode Styling  ===== */
+    /* 🌙 Dark Mode for Sidebar */
     .sidebar {
-        background-color: #111; // dark bg
-        color: #ccc;
-        box-shadow:
-            0 0 20px rgba(255, 255, 255, 0.05), // subtle light outer glow
-            5px 0 15px rgba(255, 255, 255, 0.1); // soft left highlight
-        border-color: #222;
-        transition: all 0.3s ease;
-
-        &.closed,
-        &.hovered {
-            box-shadow:
-                0 0 20px rgba(255, 255, 255, 0.03),
-                5px 0 15px rgba(255, 255, 255, 0.08);
-        }
+        background-color: #1a1d24;
+        box-shadow: 5px 0 15px rgba(255, 255, 255, 0.08);
 
         .top {
             .logo {
-                color: #b48ddb;
+                color: #c8a4ff;
 
                 .avatar {
-                    border: 2px solid #b48ddb;
+                    border: 2px solid #c8a4ff;
                 }
             }
+        }
 
-            hr {
-                border-color: #333;
-            }
+        hr {
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .center {
             ul {
                 .title {
-                    color: #b48ddb;
+                    color: #c8a4ff;
+                }
+
+                .portfolio.active {
+                    font-weight: 700;
+                    background: #333;
                 }
 
                 li {
-                    color: #ccc;
+                    color: #e0e0e0;
 
                     &:hover {
-                        background-color: #222;
-                        box-shadow: inset 3px 0 0 #8e44ad;
-                        /* small left accent line */
+                        background-color: rgba(200, 164, 255, 0.1);
+                    }
+
+                    .arrowIcon {
+                        color: #aaa;
                     }
 
                     .icon {
-                        color: #b48ddb;
+                        color: #c8a4ff;
                     }
 
                     span {
@@ -156,34 +151,26 @@
                         color: #bbb;
 
                         &:hover {
-                            background-color: #2a2a2d;
-                            color: #4d88ff;
+                            background-color: rgba(200, 164, 255, 0.15);
+                            color: #fff;
                         }
                     }
-
-                    .arrowIcon {
-                        color: #aaa;
-                    }
-                }
-
-                .portfolio.active {
-                    background-color: #2a2a2d;
                 }
             }
         }
 
         .bottom {
-            border-top: 1px solid #333;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
 
             .profile {
                 .profileImg {
-                    border-color: #888;
+                    border: 2px solid #c8a4ff;
                 }
 
                 .profileInfo {
                     .nameRow {
                         .name {
-                            color: #ccc;
+                            color: #e0e0e0;
                         }
 
                         .verifiedIcon {
@@ -197,54 +184,44 @@
                 }
 
                 .logoutIcon {
-                    color: #ff4d6d;
+                    color: #ff6b6b;
 
                     &:hover {
-                        color: #d32f2f;
+                        color: #ff3b3b;
                     }
                 }
             }
         }
-    }
 
-    /* Sidebar hover shadow animation */
-    .sidebar {
-        &:hover {
-            box-shadow:
-                0 0 25px rgba(255, 255, 255, 0.08),
-                5px 0 20px rgba(255, 255, 255, 0.15);
+        &.closed {
+            background-color: #1a1d24;
+        }
+
+        &.hovered {
+            background-color: #1a1d24;
         }
     }
-
-
 
     /* Menu Button Dark Mode */
-    .menuBtn {
-        background-color: #1c1c1e;
-        color: #b48ddb;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    .menuBtn,
+    .mobile-sidebar-btn {
+        background-color: #1a1d24;
+        color: #c8a4ff;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 
         &:hover {
-            background-color: #2a2a2d;
-            transform: scale(1.1);
+            background-color: rgba(200, 164, 255, 0.1);
         }
     }
 
-    /* Sidebar closed / hovered dark adjustments */
-    .sidebar.closed .arrowIcon,
-    .sidebar.closed .submenu,
-    .sidebar.closed .profileInfo,
-    .sidebar.closed .logoutIcon {
-        display: none;
-    }
+    .main-content {
+        margin-left: 250px; // default sidebar open width
+        transition: all 0.3s ease;
 
-    .sidebar.hovered .arrowIcon,
-    .sidebar.hovered .submenu,
-    .sidebar.hovered .profileInfo,
-    .sidebar.hovered .logoutIcon {
-        display: flex;
+        @media (max-width: 760px) {
+            margin-left: 0 !important; // small screens me margin 0
+        }
     }
-
 
 
     .datatable {
@@ -4530,6 +4507,7 @@
                 box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
                 border-radius: 12px;
                 transition: all 0.3s ease;
+                border: 1px solid #333;
 
                 h2 {
                     color: #d6b3f7;

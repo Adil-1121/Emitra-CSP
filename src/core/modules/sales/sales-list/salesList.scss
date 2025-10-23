@@ -1,0 +1,10 @@
+.SalesListHome {
+    display: flex;
+    width: 100%; // Add this
+    overflow-x: hidden; // Prevent horizontal scroll
+
+    .salesListContainer {
+        margin-top: 60px; // ✅ height of fixed Navbar
+        width: 100%;
+    }
+}

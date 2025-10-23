@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,6 @@ import {
     faBell,
     faCommentDots,
 } from '@fortawesome/free-solid-svg-icons';
-// import avatar from '../../../../assets/avatar.png';
 import { DarkModeContext } from "../../../shared/context/darkModeContext";
 import NotificationBox from "../../navbar-components/notification-box/NotificationBox";
 import MessagesBox from "../../navbar-components/message-box/Messages";
@@ -22,6 +21,15 @@ const Navbar = ({ sidebarWidth }) => {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
     const navigate = useNavigate();
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    // ✅ Listen for window resize
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const toggleFullscreen = () => {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
@@ -30,15 +38,20 @@ const Navbar = ({ sidebarWidth }) => {
         }
     };
 
+    // ✅ Calculate dynamic width and left for navbar
+    const effectiveWidth = windowWidth < 760 ? '100%' : `calc(100% - ${sidebarWidth}px)`;
+    const effectiveLeft = windowWidth < 760 ? 0 : `${sidebarWidth}px`;
+
     return (
         <div
             className="navbar"
             style={{
-                width: `calc(100% - ${sidebarWidth}px)`,
-                left: `${sidebarWidth}px`,
+                width: effectiveWidth,
+                left: effectiveLeft,
                 transition: "all 0.3s ease"
             }}
-        >         <div className="wrapper">
+        >
+            <div className="wrapper">
                 {/* Search */}
                 <div className="search">
                     <input type="text" placeholder="Type here to search..." />
@@ -49,16 +62,13 @@ const Navbar = ({ sidebarWidth }) => {
                     {/* Language */}
                     <LanguageDropdown />
 
-
                     {/* Fullscreen */}
                     <div className="item" onClick={toggleFullscreen}>
                         <FontAwesomeIcon icon={faExpand} className="icon" />
                     </div>
+
                     {/* Dark Mode Toggle */}
-                    <div
-                        className="item"
-                        onClick={toggleDarkMode}
-                    >
+                    <div className="item" onClick={toggleDarkMode}>
                         <FontAwesomeIcon icon={darkMode ? faSun : faMoon} className="icon" />
                     </div>
 
@@ -66,6 +76,7 @@ const Navbar = ({ sidebarWidth }) => {
                     <div className="item" onClick={() => navigate("/gn-emitra-ai")}>
                         <span className="text">AI</span>
                     </div>
+
                     {/* Add New */}
                     <AddNewDropdown />
 

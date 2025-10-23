@@ -39,6 +39,7 @@ import EditProfile from "./core/modules/profile/edit-profile/EditProfile";
 import SettingPage from "./core/modules/setting/SettingPage";
 import ProtectedRoutes from "./core/authentication/ProtectedRoutes";
 import ResetPassword from "./core/authentication/reset-password/ResetPassword";
+import SalesList from "./core/modules/sales/sales-list/SalesList";
 
 // Styles
 import "./core/shared/style/dark.scss";
@@ -206,7 +207,10 @@ function MainLayout({
               <Route path="edit-faq/:faqId" element={<EditFaq inputs={userInputs} />} />
               <Route path="view-faq/:faqId" element={<ViewFaq />} />
             </Route>
+            <Route path="/sales">
 
+              <Route index element={<SalesList />} />
+            </Route>
             {/* Contact */}
             <Route path="/contact-us" element={<ContactUs />} />
           </Route>
