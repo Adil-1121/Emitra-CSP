@@ -10,14 +10,13 @@ import {
     faBell,
     faCommentDots,
 } from "@fortawesome/free-solid-svg-icons";
-import { DarkModeContext } from "../../../shared/context/darkModeContext";
 import NotificationBox from "../../navbar-components/notification-box/NotificationBox";
 import MessagesBox from "../../navbar-components/message-box/Messages";
 import LanguageDropdown from "../../navbar-components/language-box/LanguageDropdown";
 import AddNewDropdown from "../../navbar-components/add-dropdown-box/AddNewDropdown";
 import ProfileAvatar from "../../navbar-components/profile-avatar/ProfileAvatar";
 import { userRows } from "../../../../datatablesource";
-
+import { DarkModeContext } from "../../../shared/context/DarkModeContext";
 const Navbar = ({ sidebarWidth }) => {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
     const navigate = useNavigate();
