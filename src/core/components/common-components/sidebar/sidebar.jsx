@@ -256,7 +256,7 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
                                     marginRight: isOpen ? "5px" : "0",
                                 }}
                             />
-                            {(isOpen || isMobile) && "ADMIN PANEL"}
+                            {(isOpen || isMobile) && "GN E-MITRA"}
                         </span>
                     </Link>
                 </div>
