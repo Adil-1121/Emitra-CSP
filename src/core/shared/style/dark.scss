@@ -30,24 +30,69 @@
             padding: 20px;
             margin-left: 25px;
 
-            .search {
-                border: 0.5px solid #555;
-                background-color: #2a2a2d;
+
+            .search-bar {
+                background: #1e1e1e;
+                border-color: #333;
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+                transition: all 0.3s ease;
 
                 input {
-                    color: #eee;
+                    color: #f2f2f2;
 
                     &::placeholder {
                         color: #aaa;
                     }
-
-                    background: transparent;
                 }
 
                 .search-icon {
                     color: #bbb;
+
+                    &:hover {
+                        color: #b06cff;
+                    }
+                }
+
+                &:focus-within {
+                    border-color: #b06cff;
+                    box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+                }
+
+                .search-dropdown {
+                    background: #2a2a2a;
+                    border-color: #444;
+                    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+
+                    .search-item {
+                        border-bottom: 1px solid #333;
+                        transition: background 0.2s ease;
+
+                        &:hover {
+                            background-color: #3a3a3a;
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        .search-avatar {
+                            border: 1px solid #555;
+                        }
+
+                        .search-info {
+                            .search-name {
+                                color: #f1f1f1;
+                            }
+
+                            .search-email {
+                                color: #aaa;
+                            }
+                        }
+                    }
                 }
             }
+
+
 
             .items {
                 .item {
