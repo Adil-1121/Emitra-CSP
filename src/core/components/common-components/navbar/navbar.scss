@@ -18,7 +18,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-left: 25px;
+        margin-left: 30px;
 
 
 
@@ -70,6 +70,194 @@
                     right: -5px;
                 }
             }
+        }
+    }
+}
+
+/* ✅ Fully Responsive SCSS for Navbar */
+@media (max-width: 1200px) {
+    .navbar {
+        height: 58px;
+
+        .wrapper {
+            padding: 16px 18px;
+
+            .items {
+                .item {
+                    margin-right: 16px;
+
+                    .icon {
+                        font-size: 17px;
+                    }
+
+                    .text {
+                        font-size: 18px;
+                    }
+
+                    .avatar {
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        height: 55px;
+
+        .wrapper {
+            padding: 14px 15px;
+            // margin-left: 15px;
+            margin-left: 30px;
+
+            .items {
+                .item {
+                    margin-right: 14px;
+
+                    .icon {
+                        font-size: 16px;
+                    }
+
+                    .text {
+                        font-size: 16px;
+                    }
+
+                    .avatar {
+                        width: 32px;
+                        height: 32px;
+                    }
+
+                    .counter {
+                        width: 13px;
+                        height: 13px;
+                        top: -4px;
+                        right: -4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 52px;
+        font-size: 13px;
+
+        .wrapper {
+            padding: 10px 12px;
+            // margin-left: 10px;
+            margin-left: 30px;
+
+            .items {
+                .item {
+                    margin-right: 10px;
+
+                    .icon {
+                        font-size: 15px;
+                    }
+
+                    .text {
+                        font-size: 15px;
+                    }
+
+                    .avatar {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    .counter {
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        height: 50px;
+        font-size: 12px;
+
+        .wrapper {
+            padding: 8px 10px;
+            // margin-left: 5px;
+            // flex-wrap: wrap;
+            margin-left: 40px;
+
+
+            // .items {
+            //     .item {
+            //         margin-right: 8px;
+
+            //         .icon {
+            //             // font-size: 14px;
+            //         }
+
+            //         .text {
+            //             // font-size: 14px;
+            //             // font-weight: 700;
+            //         }
+
+            //         .avatar {
+            //             width: 28px;
+            //             height: 28px;
+            //         }
+
+            //         .counter {
+            //             width: 11px;
+            //             height: 11px;
+            //         }
+            //     }
+            // }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar {
+        height: 45px;
+        font-size: 12px;
+
+        .wrapper {
+            padding: 6px 8px;
+            margin-left: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+
+            // .items {
+            //     width: 100%;
+            //     justify-content: space-between;
+
+            //     .item {
+            //         margin-right: 6px;
+
+            //         .icon {
+            //             font-size: 13px;
+            //         }
+
+            //         .text {
+            //             font-size: 13px;
+            //             font-weight: 700;
+            //         }
+
+            //         .avatar {
+            //             width: 26px;
+            //             height: 26px;
+            //         }
+
+            //         .counter {
+            //             width: 10px;
+            //             height: 10px;
+            //         }
+            //     }
+            // }
         }
     }
 }

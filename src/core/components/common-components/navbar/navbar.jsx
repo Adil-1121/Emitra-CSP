@@ -58,7 +58,7 @@ const Navbar = ({ sidebarWidth }) => {
                 {/* 🌙 Navbar Items */}
                 <div className="items">
                     {/* Language Dropdown */}
-                    <LanguageDropdown />
+                    {/* <LanguageDropdown /> */}
 
                     {/* Fullscreen Toggle */}
                     <div className="item" onClick={toggleFullscreen}>

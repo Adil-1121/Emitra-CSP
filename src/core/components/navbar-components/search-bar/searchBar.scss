@@ -153,3 +153,197 @@
         transform: translateY(0);
     }
 }
+
+/* ✅ Fully Responsive SCSS for All Devices */
+@media (max-width: 1200px) {
+    .search-bar {
+        width: 230px;
+
+        input {
+            font-size: 12.5px;
+        }
+
+        .search-icon {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .search-bar {
+        width: 200px;
+        padding: 5px 8px;
+
+        input {
+            font-size: 12px;
+            padding-right: 25px;
+
+            &::placeholder {
+                font-size: 11.5px;
+            }
+        }
+
+        .search-icon {
+            right: 8px;
+            font-size: 14px;
+        }
+
+        .search-dropdown {
+            max-height: 200px;
+
+            .search-item {
+                padding: 8px;
+
+                .search-avatar {
+                    width: 28px;
+                    height: 28px;
+                }
+
+                .search-info {
+                    .search-name {
+                        font-size: 13px;
+                    }
+
+                    .search-email {
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        width: 180px;
+        padding: 5px 7px;
+
+        input {
+            font-size: 11.5px;
+            font-weight: 500;
+            padding-right: 22px;
+
+            &::placeholder {
+                font-size: 10.5px;
+            }
+        }
+
+        .search-icon {
+            font-size: 13px;
+            right: 6px;
+        }
+
+        .search-dropdown {
+            top: 110%;
+
+            .search-item {
+                padding: 7px;
+
+                .search-avatar {
+                    width: 26px;
+                    height: 26px;
+                }
+
+                .search-info {
+                    .search-name {
+                        font-size: 12.5px;
+                    }
+
+                    .search-email {
+                        font-size: 10.5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .search-bar {
+        width: 140px;
+        padding: 4px 6px;
+
+        input {
+            font-size: 11px;
+            padding-right: 20px;
+
+            &::placeholder {
+                font-size: 10px;
+            }
+        }
+
+        .search-icon {
+            font-size: 12px;
+            right: 5px;
+        }
+
+        .search-dropdown {
+            max-height: 180px;
+
+            .search-item {
+                padding: 6px;
+
+                .search-avatar {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .search-info {
+                    .search-name {
+                        font-size: 12px;
+                    }
+
+                    .search-email {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .search-bar {
+        width: 140px;
+        padding: 3px 5px;
+        border-radius: 6px;
+
+        input {
+            font-size: 10px;
+            padding-right: 18px;
+
+            &::placeholder {
+                font-size: 9.5px;
+            }
+        }
+
+        .search-icon {
+            font-size: 11px;
+            right: 4px;
+        }
+
+        .search-dropdown {
+            top: 110%;
+            max-height: 160px;
+
+            .search-item {
+                padding: 5px;
+
+                .search-avatar {
+                    width: 22px;
+                    height: 22px;
+                }
+
+                .search-info {
+                    .search-name {
+                        font-size: 11px;
+                    }
+
+                    .search-email {
+                        font-size: 9.5px;
+                    }
+                }
+            }
+        }
+    }
+}
