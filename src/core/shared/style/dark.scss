@@ -27,9 +27,6 @@
         }
 
         .wrapper {
-            padding: 20px;
-            margin-left: 25px;
-
 
             .search-bar {
                 background: #1e1e1e;
@@ -125,20 +122,20 @@
         border-radius: 6px;
     }
 
-    /* Responsive tweaks for small devices */
-    @media (max-width: 480px) {
-        .navbar {
-            height: 50px;
+    // /* Responsive tweaks for small devices */
+    // @media (max-width: 480px) {
+    //     .navbar {
+    //         height: 50px;
 
-            .wrapper {
-                padding: 12px;
+    //         .wrapper {
+    //             padding: 12px;
 
-                .search {
-                    width: 180px;
-                }
-            }
-        }
-    }
+    //             .search {
+    //                 width: 180px;
+    //             }
+    //         }
+    //     }
+    // }
 
 
     /* 🌙 Dark Mode for Sidebar */
@@ -2463,8 +2460,8 @@
                 background-color: brown;
                 color: white;
                 font-size: 12px;
-                width: 18px;
-                height: 18px;
+                // width: 18px;
+                // height: 18px;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
@@ -2589,12 +2586,12 @@
             .counter {
                 position: absolute;
                 top: -5px;
-                right: -5px;
+                right: -3px;
                 background-color: red;
                 color: white;
                 font-size: 12px;
-                width: 18px;
-                height: 18px;
+                // width: 18px;
+                // height: 18px;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
