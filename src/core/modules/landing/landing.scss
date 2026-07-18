@@ -7,6 +7,23 @@
   min-height: 100vh;
   overflow-x: hidden;
   padding-top: 66px;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  &[data-theme='dark'] {
+    background: #0f0a1e;
+    color: #e5e7eb;
+
+    // Sections dark bg
+    .contact-section,
+    .about-section,
+    .services-section,
+    .updates-section,
+    .faq-section,
+    .testimonials-section,
+    .photo-gallery { filter: brightness(0.88) saturate(0.9); }
+
+    .landing-page__second-section { background: #1a1030; }
+  }
 
   // ── Hero wrapper: relative so FloatingSocial can anchor to it ──
   &__hero-wrap {
