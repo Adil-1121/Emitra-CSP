@@ -1,23 +1,15 @@
-// ── useChatStorage — LocalStorage persistence hook ───────────────────────────
+// ── useChatStorage — Session-only storage (clears on refresh) ────────────────
 import { useState, useEffect } from 'react';
 
 const STORAGE_KEY = 'gn_emitra_chat_history';
-const MAX_STORED = 50; // keep last 50 messages
+const MAX_STORED = 50;
 
 export function useChatStorage() {
-  const [messages, setMessages] = useState(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     try {
-      const toStore = messages.slice(-MAX_STORED);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(toStore));
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(messages.slice(-MAX_STORED)));
     } catch {
       // storage full — ignore
     }
@@ -25,7 +17,7 @@ export function useChatStorage() {
 
   const clearHistory = () => {
     setMessages([]);
-    localStorage.removeItem(STORAGE_KEY);
+    sessionStorage.removeItem(STORAGE_KEY);
   };
 
   return { messages, setMessages, clearHistory };

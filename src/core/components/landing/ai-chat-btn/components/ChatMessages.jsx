@@ -6,14 +6,9 @@ import QuickActions from './QuickActions';
 const WelcomeScreen = memo(({ onSelect }) => (
   <div className="chat-welcome">
     <div className="chat-welcome__icon" aria-hidden="true">
-      <svg viewBox="0 0 48 48" fill="none" width="40" height="40">
-        <circle cx="24" cy="24" r="22" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.4)" strokeWidth="1.5" />
-        <path d="M14 20h20M14 25h14M14 30h10" stroke="#7C3AED" strokeWidth="2.2" strokeLinecap="round" />
-        <circle cx="34" cy="14" r="6" fill="#F59E0B" />
-        <path d="M32 14h4M34 12v4" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
+      <img src="/favicon.ico" alt="AI" width="70" height="70" style={{ borderRadius: '50%' }} />
     </div>
-    <h3 className="chat-welcome__title">Namaste! 🙏</h3>
+    <h3 className="chat-welcome__title">Welcome! 👋</h3>
     <p className="chat-welcome__desc">
       I'm your <strong>G.N E-Mitra AI Assistant</strong>. Ask me anything about our services, documents required, working hours, or how to reach us.
     </p>

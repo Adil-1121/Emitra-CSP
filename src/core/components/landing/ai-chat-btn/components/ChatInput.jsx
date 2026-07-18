@@ -6,7 +6,7 @@ const ChatInput = memo(({ value, onChange, onKeyDown, onSend, inputRef, disabled
       <textarea
         ref={inputRef}
         className="chat-input"
-        placeholder="Type your message… (Enter to send)"
+        placeholder="Type your message here…"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={onKeyDown}

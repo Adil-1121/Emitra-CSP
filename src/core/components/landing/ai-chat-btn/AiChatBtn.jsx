@@ -17,12 +17,10 @@ const AiChatBtn = () => {
   return (
     <>
       {/* ── Premium Floating Trigger ── */}
-      <div className="ai-fab" aria-label="Open AI Assistant">
-        {!open && (
-          <span className="ai-fab__label" aria-hidden="true">
-            Ask AI Assistant
-          </span>
-        )}
+      {!open && <div className="ai-fab" aria-label="Open AI Assistant">
+        <span className="ai-fab__label" aria-hidden="true">
+          Ask AI Assistant
+        </span>
 
         <button
           className={`ai-fab__btn ${open ? 'ai-fab__btn--open' : ''}`}
@@ -58,7 +56,7 @@ const AiChatBtn = () => {
             <span className="ai-fab__badge" aria-label="Chat history available" />
           )}
         </button>
-      </div>
+      </div>}
 
       {/* ── Chat Window ── */}
       {open && (

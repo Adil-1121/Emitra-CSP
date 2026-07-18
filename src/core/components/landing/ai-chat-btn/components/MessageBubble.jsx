@@ -42,10 +42,7 @@ const MessageBubble = memo(({ msg, onCopy, onRetry }) => {
     >
       {isBot && (
         <div className="chat-msg__avatar" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-            <circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.2)" />
-            <path d="M8 10h8M8 13h5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
-          </svg>
+          <img src="/favicon.ico" alt="AI" width="28" height="28" style={{ borderRadius: '50%' }} />
         </div>
       )}
 

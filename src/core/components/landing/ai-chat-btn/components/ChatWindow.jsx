@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import ChatHeader from './ChatHeader';
 import ChatMessages from './ChatMessages';
 import ChatInput from './ChatInput';
@@ -7,22 +7,27 @@ const ChatWindow = memo(({ chatHook, onClose }) => {
   const {
     messages, input, setInput, isTyping, followUps,
     bottomRef, inputRef, sendMessage, handleKey,
-    handleFollowUp, copyMessage, clearHistory, retryLast,
+    handleFollowUp, copyMessage, retryLast,
   } = chatHook;
 
-  // Focus input when window opens
+  const [expanded, setExpanded] = useState(false);
+
   useEffect(() => {
     setTimeout(() => inputRef.current?.focus(), 100);
   }, [inputRef]);
 
   return (
     <div
-      className="chat-window"
+      className={`chat-window${expanded ? ' chat-window--expanded' : ''}`}
       role="dialog"
       aria-label="G.N E-Mitra AI Assistant"
       aria-modal="true"
     >
-      <ChatHeader onClose={onClose} onClear={clearHistory} />
+      <ChatHeader
+        onClose={onClose}
+        expanded={expanded}
+        onToggleSize={() => setExpanded(p => !p)}
+      />
 
       <ChatMessages
         messages={messages}
@@ -33,7 +38,6 @@ const ChatWindow = memo(({ chatHook, onClose }) => {
         onFollowUp={handleFollowUp}
         onRetry={retryLast}
       />
-
       <ChatInput
         value={input}
         onChange={setInput}
