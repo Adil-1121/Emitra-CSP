@@ -92,11 +92,11 @@ $icon-color: #8e44ad;
                         height: 2.5rem;
 
                         &::placeholder {
-                            color: lighten($main-color, 30%);
+                            color: color.adjust($main-color, $lightness: 30%);
                         }
 
                         &:focus {
-                            border-color: darken($main-color, 15%);
+                            border-color: color.adjust($main-color, $lightness: -15%);
                             box-shadow: 0 0 4px $main-color;
                             outline: none;
                         }
@@ -127,11 +127,11 @@ $icon-color: #8e44ad;
 
                         &:focus {
                             outline: none;
-                            color: darken($icon-color, 20%);
+                            color: color.adjust($icon-color, $lightness: -20%);
                         }
 
                         &:hover {
-                            color: darken($icon-color, 10%);
+                            color: color.adjust($icon-color, $lightness: -10%);
                         }
                     }
                 }
@@ -142,11 +142,11 @@ $icon-color: #8e44ad;
                     padding-left: 2.5rem;
 
                     &::placeholder {
-                        color: lighten($main-color, 30%);
+                        color: color.adjust($main-color, $lightness: 30%);
                     }
 
                     &:focus {
-                        border-color: darken($main-color, 15%);
+                        border-color: color.adjust($main-color, $lightness: -15%);
                         box-shadow: 0 0 4px $main-color;
                         outline: none;
                     }
