@@ -536,11 +536,60 @@ $shadow-purple: rgba(124, 58, 237, 0.35);
 
   &__text {
     margin: 0;
-    font-size: 13.5px;
-    line-height: 1.7;
+    font-size: 13px;
+    line-height: 1.75;
   }
 
-  &__line { display: inline; }
+  // ── Markdown rendered elements ──────────────────────────────────────────
+  &__p {
+    margin: 0 0 5px;
+    font-size: 13px;
+    line-height: 1.75;
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &__h2 {
+    margin: 8px 0 3px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: $purple;
+    &:first-child { margin-top: 0; }
+  }
+
+  &__h3 {
+    margin: 6px 0 2px;
+    font-size: 13px;
+    font-weight: 700;
+    color: $text-dark;
+    &:first-child { margin-top: 0; }
+  }
+
+  &__list {
+    margin: 3px 0 5px;
+    padding-left: 16px;
+    font-size: 13px;
+    line-height: 1.75;
+    &:last-child { margin-bottom: 0; }
+    li { margin-bottom: 2px; &:last-child { margin-bottom: 0; } }
+    &--ordered { list-style-type: decimal; }
+  }
+
+  &__code {
+    background: rgba(124, 58, 237, 0.08);
+    color: $purple;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: monospace;
+  }
+
+  &__hr {
+    border: none;
+    border-top: 1px solid rgba(124, 58, 237, 0.12);
+    margin: 6px 0;
+  }
+
+  &__spacer { height: 3px; }
 
   &__meta {
     display: flex;

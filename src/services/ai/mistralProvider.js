@@ -44,43 +44,24 @@ function buildMessageHistory(history, maxMessages) {
   }));
 }
 
-// ── Follow-up suggestion extractor ───────────────────────────────────────────
-// Generates contextual follow-up chips based on the AI response content.
-function extractFollowUps(responseText) {
-  const text = responseText.toLowerCase();
-  const suggestions = [];
+// ── Parse AI response that contains embedded follow-ups ──────────────────────
+// AI returns: <answer>\n###FOLLOWUPS###\nQ1|Q2|Q3
+function parseResponseWithFollowUps(raw) {
+  const marker = '###FOLLOWUPS###';
+  const idx = raw.indexOf(marker);
 
-  if (text.includes('aadhaar') || text.includes('aadhar')) {
-    suggestions.push('What documents do I need for Aadhaar update?');
-  }
-  if (text.includes('pan')) {
-    suggestions.push('How long does PAN card take?');
-  }
-  if (text.includes('bill') || text.includes('electricity')) {
-    suggestions.push('What bills can I pay here?');
-  }
-  if (text.includes('certificate') || text.includes('birth') || text.includes('death')) {
-    suggestions.push('What documents for birth certificate?');
-  }
-  if (text.includes('hour') || text.includes('timing') || text.includes('open')) {
-    suggestions.push('Where are you located?');
-  }
-  if (text.includes('address') || text.includes('location') || text.includes('nokha')) {
-    suggestions.push('What are your working hours?');
-  }
-  if (text.includes('money') || text.includes('transfer') || text.includes('aeps')) {
-    suggestions.push('Is money transfer safe?');
-  }
-  if (text.includes('scheme') || text.includes('yojana')) {
-    suggestions.push('What documents for government schemes?');
-  }
+  if (idx === -1) return { text: raw.trim(), followUps: [] };
 
-  // Always offer a contact fallback
-  if (suggestions.length < 2) {
-    suggestions.push('How can I contact you?');
-  }
+  const text = raw.slice(0, idx).trim();
+  const followUps = raw
+    .slice(idx + marker.length)
+    .trim()
+    .split('|')
+    .map((q) => q.trim())
+    .filter(Boolean)
+    .slice(0, 3);
 
-  return suggestions.slice(0, 3);
+  return { text, followUps };
 }
 
 // ── MistralProvider ───────────────────────────────────────────────────────────
@@ -144,10 +125,7 @@ export class MistralProvider extends AIProvider {
         throw new Error('Empty response from Mistral API');
       }
 
-      return {
-        text,
-        followUps: extractFollowUps(text),
-      };
+      return parseResponseWithFollowUps(text);
     } catch (err) {
       const { text } = classifyError(err);
       // Re-throw with user-friendly message so useChat can display it
