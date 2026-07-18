@@ -5,7 +5,7 @@
 // To switch AI providers: edit src/config/ai.js → AI_CONFIG.provider
 // To add a new provider:  edit src/services/ai/providerFactory.js
 
-import { getAIProvider } from '../../../../../services/ai/providerFactory';
+import { getAIProvider } from './providerFactory';
 
 /**
  * Get an AI response for the user's message.

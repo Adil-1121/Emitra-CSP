@@ -3,7 +3,7 @@
 // Edit this file to update what the AI knows or how it responds.
 // Never hardcode this inside components or hooks.
 
-import { EMITRA_INFO, SERVICES, FAQS } from '../../core/components/landing/ai-chat-btn/data/portfolioKnowledge';
+import { EMITRA_INFO, SERVICES, FAQS } from '../../config/portfolioKnowledge';
 
 // Build a rich context string from the knowledge base
 const servicesContext = SERVICES.map(

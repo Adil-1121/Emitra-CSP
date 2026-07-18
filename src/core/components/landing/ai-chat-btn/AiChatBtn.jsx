@@ -1,5 +1,5 @@
 import React, { useState, useCallback, lazy, Suspense } from 'react';
-import { useChat } from './hooks/useChat';
+import { useChat } from '../../../shared/hooks/useChat';
 import './AiChatBtn.scss';
 
 // Lazy-load the heavy chat window — zero impact on page load

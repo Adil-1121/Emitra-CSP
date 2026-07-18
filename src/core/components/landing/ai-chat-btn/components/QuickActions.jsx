@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { QUICK_ACTIONS } from '../data/portfolioKnowledge';
+import { QUICK_ACTIONS } from '../../../../../config/portfolioKnowledge';
 
 const QuickActions = memo(({ onSelect }) => (
   <div className="chat-quick" role="group" aria-label="Quick action suggestions">

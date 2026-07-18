@@ -1,6 +1,6 @@
 // ── useChat — Main chat orchestration hook ───────────────────────────────────
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { getResponse } from '../services/chatEngine';
+import { getResponse } from '../../../services/ai/chatEngine';
 import { useChatStorage } from './useChatStorage';
 
 export function useChat() {

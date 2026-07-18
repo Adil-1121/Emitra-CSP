@@ -99,12 +99,12 @@ export const FAQS = [
 ];
 
 export const QUICK_ACTIONS = [
-  { id: 'services', label: '🛠️ Our Services', query: 'What services do you offer?' },
-  { id: 'aadhaar', label: '🪪 Aadhaar Services', query: 'Tell me about Aadhaar services' },
-  { id: 'bills', label: '💡 Bill Payment', query: 'How can I pay my electricity bill?' },
-  { id: 'certificates', label: '📄 Certificates', query: 'How to apply for birth certificate?' },
-  { id: 'hours', label: '🕐 Working Hours', query: 'What are your working hours?' },
-  { id: 'contact', label: '📞 Contact Us', query: 'How can I contact you?' },
-  { id: 'location', label: '📍 Location', query: 'Where are you located?' },
-  { id: 'money', label: '💸 Money Transfer', query: 'Tell me about money transfer' },
+  { id: 'services',      label: '🛠️ Our Services',      query: 'What services do you offer?' },
+  { id: 'aadhaar',       label: '🪪 Aadhaar Services',   query: 'Tell me about Aadhaar services' },
+  { id: 'bills',         label: '💡 Bill Payment',        query: 'How can I pay my electricity bill?' },
+  { id: 'certificates',  label: '📄 Certificates',        query: 'How to apply for birth certificate?' },
+  { id: 'hours',         label: '🕐 Working Hours',       query: 'What are your working hours?' },
+  { id: 'contact',       label: '📞 Contact Us',          query: 'How can I contact you?' },
+  { id: 'location',      label: '📍 Location',            query: 'Where are you located?' },
+  { id: 'money',         label: '💸 Money Transfer',      query: 'Tell me about money transfer' },
 ];
