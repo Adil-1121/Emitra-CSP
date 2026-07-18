@@ -7,6 +7,7 @@ import Sidebar from "./core/components/common-components/sidebar/sidebar";
 import Navbar from "./core/components/common-components/navbar/navbar";
 
 // Pages / Modules
+import LandingPage from "./core/modules/landing/LandingPage";
 import Home from "./core/modules/home/Home";
 import Login from "./core/authentication/login/Login";
 import Register from "./core/authentication/register/register";
@@ -90,8 +91,9 @@ function MainLayout({
   const token = localStorage.getItem("token");
   const locked = localStorage.getItem("locked");
 
-  // Hide sidebar and navbar on auth pages
+  // Hide sidebar and navbar on auth pages and landing page
   const hideLayout = [
+    "/",
     "/login",
     "/register",
     "/forgot-password",
@@ -153,8 +155,8 @@ function MainLayout({
         }}
       >
         <Routes>
-          {/* Auth routes */}
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          {/* Landing & Auth routes */}
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />

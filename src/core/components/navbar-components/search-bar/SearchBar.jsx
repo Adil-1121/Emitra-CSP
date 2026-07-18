@@ -82,7 +82,7 @@ const SearchBar = ({ darkMode }) => {
                             onMouseDown={() => handleUserClick(user.id)}
                         >
                             <img
-                                src={user.profile_image || "/no-avatar.png"}
+                                src={user.profile_image || "/no-user.png"}
                                 alt={user.full_name}
                                 className="search-avatar"
                             />

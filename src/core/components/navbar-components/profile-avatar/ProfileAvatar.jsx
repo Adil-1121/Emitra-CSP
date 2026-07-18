@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const ProfileAvatar = ({
-    image = "/default-avatar.png",
+    image = "/default-user.png",
     role = "ADMIN",
     altText = "User Avatar",
 }) => {

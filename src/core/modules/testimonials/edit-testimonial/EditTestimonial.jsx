@@ -8,7 +8,7 @@ import { FileUpload } from "primereact/fileupload";
 import { Divider } from "primereact/divider";
 import { Rating } from "primereact/rating";
 import { classNames } from "primereact/utils";
-import noImage from "../../../../assets/noImage.png";
+import noImage from "../../../../assets/avatars/user.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';

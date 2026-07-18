@@ -24,7 +24,7 @@ import {
     faTint,
 } from "@fortawesome/free-solid-svg-icons";
 
-import avatar from "../../../../assets/avatar.png";
+import avatar from "../../../../assets/avatars/user.png";
 
 import "./EditProfile.scss";
 

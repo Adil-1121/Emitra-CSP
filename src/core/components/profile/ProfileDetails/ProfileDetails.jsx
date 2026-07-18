@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProfileDetails.scss";
-import avatar from "../../../../assets/images/avatar.png";
+import avatar from "../../../../assets/avatars/user.png";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { Divider } from "primereact/divider";

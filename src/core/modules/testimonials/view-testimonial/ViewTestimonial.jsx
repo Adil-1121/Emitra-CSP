@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Breadcrumb from "../../../components/common-components/breadcrumb/Breadcrumb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import noImage from "../../../../assets/noImage.png";
+import noImage from "../../../../assets/avatars/user.png";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "");
 import { Toast } from "primereact/toast";
 import "./viewTestimonial.scss";

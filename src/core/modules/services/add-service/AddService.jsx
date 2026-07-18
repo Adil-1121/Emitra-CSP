@@ -9,7 +9,7 @@ import { Divider } from "primereact/divider";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
 import { classNames } from "primereact/utils";
-import noImage from '../../../../assets/noImage.png';
+import noImage from '../../../../assets/avatars/user.png';
 import { useNavigate } from "react-router-dom";
 
 import BreadcrumbReact from "../../../components/common-components/breadcrumb/Breadcrumb";

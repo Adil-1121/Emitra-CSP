@@ -12,7 +12,7 @@ import LoadingSpinner from "../../../components/common-components/loadingSpinner
 
 // 👇 API service import
 import { getAllUsers, deleteUser } from "../../../../services/userService";
-import noImage from "../../../../assets/noImage.png";
+import noImage from "../../../../assets/avatars/user.png";
 
 const DataTableComponent = () => {
     const [data, setData] = useState([]);

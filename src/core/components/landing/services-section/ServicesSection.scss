@@ -1,0 +1,207 @@
+.services-section {
+  background: #f3f0ff;
+  padding: 64px 0 72px;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  // ── Header ────────────────────────────────────────────────────────────────
+  &__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin: 0 0 6px;
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+    position: relative;
+    display: inline-block;
+
+    // Purple underline accent
+    &::after {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 3px;
+      background: #7C3AED;
+      border-radius: 2px;
+      margin: 6px auto 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 15.5px;
+    color: #555;
+    margin: 14px 0 0;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  // ── Grid ──────────────────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+// ── Service Card ─────────────────────────────────────────────────────────────
+.services-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid #e8e3ff;
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  cursor: default;
+
+  &:hover {
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.14);
+    transform: translateY(-4px);
+    border-color: #c4b5fd;
+  }
+
+  // First card in each row gets purple left border accent (matches image)
+  &:nth-child(4n + 1) {
+    border-left: 3px solid #7C3AED;
+  }
+
+  // ── Icon circle ────────────────────────────────────────────────────────────
+  &__icon-wrap {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: #ede9fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+
+    img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #111;
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+
+  &__desc {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.65;
+    margin: 0 0 20px;
+    flex: 1;
+  }
+
+  // ── Read More link-style button ────────────────────────────────────────────
+  &__link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #7C3AED;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease, color 0.2s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    span {
+      font-size: 15px;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      color: #6D28D9;
+      gap: 7px;
+
+      span {
+        transform: translateX(2px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid #7C3AED;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+
+@media (max-width: 1100px) {
+  .services-section {
+    &__inner { padding: 0 28px; }
+    &__grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    &__title { font-size: 36px; }
+  }
+
+  .services-card {
+    padding: 26px 18px 20px;
+    &__icon-wrap { width: 76px; height: 76px; img { width: 44px; height: 44px; } }
+    &__title { font-size: 15px; }
+  }
+}
+
+@media (max-width: 900px) {
+  .services-section {
+    &__grid { grid-template-columns: repeat(2, 1fr); }
+    &__title { font-size: 32px; }
+  }
+
+  .services-card {
+    &:nth-child(4n + 1) { border-left: 1.5px solid #e8e3ff; }
+    &:nth-child(2n + 1) { border-left: 3px solid #7C3AED; }
+  }
+}
+
+@media (max-width: 600px) {
+  .services-section {
+    padding: 44px 0 52px;
+    &__inner { padding: 0 16px; }
+    &__header { margin-bottom: 32px; }
+    &__title { font-size: 26px; }
+    &__subtitle { font-size: 14px; }
+    &__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  }
+
+  .services-card {
+    padding: 20px 14px 16px;
+    &__icon-wrap { width: 64px; height: 64px; img { width: 36px; height: 36px; } }
+    &__title { font-size: 13.5px; }
+    &__desc { font-size: 12.5px; }
+  }
+}
+
+@media (max-width: 400px) {
+  .services-section {
+    &__grid { grid-template-columns: 1fr; }
+  }
+
+  .services-card {
+    &:nth-child(2n + 1) { border-left: 1.5px solid #e8e3ff; }
+    &:nth-child(odd) { border-left: 3px solid #7C3AED; }
+  }
+}

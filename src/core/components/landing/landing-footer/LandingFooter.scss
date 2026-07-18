@@ -1,0 +1,312 @@
+.l-footer {
+  background: #1a0a3c;
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+
+  // ── Decorative glow blobs ────────────────────────────────────────────────────
+  &__blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(60px);
+
+    &--tl {
+      width: 260px;
+      height: 260px;
+      background: rgba(139, 92, 246, 0.28);
+      top: -60px;
+      left: 160px;
+    }
+
+    &--br {
+      width: 320px;
+      height: 200px;
+      background: rgba(109, 40, 217, 0.22);
+      bottom: 60px;
+      right: -40px;
+    }
+  }
+
+  // ── Main grid ────────────────────────────────────────────────────────────────
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 48px 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 48px;
+  }
+
+  // ── Column ───────────────────────────────────────────────────────────────────
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  // ── Brand / About ─────────────────────────────────────────────────────────────
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  &__logo-ring {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(124, 58, 237, 0.15);
+    flex-shrink: 0;
+
+    img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+  }
+
+  &__brand-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #a78bfa;
+    margin: 0;
+    letter-spacing: 0.1px;
+  }
+
+  &__about-text {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  // ── Column title ──────────────────────────────────────────────────────────────
+  &__col-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #a78bfa;
+    margin: 0 0 18px;
+    letter-spacing: 0.1px;
+    position: relative;
+    padding-bottom: 10px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 36px;
+      height: 2px;
+      background: #7C3AED;
+      border-radius: 2px;
+    }
+  }
+
+  // ── Link lists ────────────────────────────────────────────────────────────────
+  &__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    line-height: 1.4;
+
+    &:hover { color: #fff; }
+
+    &--highlight {
+      color: #a78bfa;
+
+      &:hover { color: #c4b5fd; }
+    }
+  }
+
+  // ── Social icons ──────────────────────────────────────────────────────────────
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  &__social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      background: #7C3AED;
+      color: #fff;
+      border-color: #7C3AED;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #a78bfa;
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+  }
+
+  // ── Newsletter ────────────────────────────────────────────────────────────────
+  &__newsletter-label {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+
+  &__newsletter {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  &__newsletter-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 11px 14px;
+    font-size: 13.5px;
+    color: #fff;
+
+    &::placeholder { color: rgba(255,255,255,0.3); }
+  }
+
+  &__newsletter-btn {
+    width: 40px;
+    height: 40px;
+    background: #7C3AED;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+
+    &:hover { background: #6D28D9; }
+    &:focus-visible { outline: 2px solid #a78bfa; }
+  }
+
+  &__govtech-link {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover { color: #fff; }
+  }
+
+  // ── Bottom bar ────────────────────────────────────────────────────────────────
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bottom-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__copyright {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+  }
+
+  &__legal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__legal-link {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover { color: #fff; }
+    &:focus-visible { outline: 1px solid #a78bfa; border-radius: 2px; }
+  }
+
+  &__sparkle {
+    position: absolute;
+    bottom: 20px;
+    right: 48px;
+    font-size: 28px;
+    color: rgba(167, 139, 250, 0.4);
+    pointer-events: none;
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 1100px) {
+  .l-footer {
+    &__inner { padding: 0 32px 48px; }
+    &__grid { grid-template-columns: 1.2fr 1fr 1fr 1.1fr; gap: 32px; }
+    &__bottom-inner { padding: 18px 32px; }
+  }
+}
+
+@media (max-width: 860px) {
+  .l-footer {
+    &__grid { grid-template-columns: 1fr 1fr; gap: 36px 28px; }
+  }
+}
+
+@media (max-width: 600px) {
+  .l-footer {
+    padding-top: 44px;
+    &__inner { padding: 0 20px 40px; }
+    &__grid { grid-template-columns: 1fr; gap: 32px; }
+    &__bottom-inner {
+      padding: 16px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    &__legal { gap: 14px; }
+    &__sparkle { display: none; }
+  }
+}

@@ -13,7 +13,7 @@ import {
     faRobot,
     faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
-import avatar from '../../../assets/images/avatar.png';
+import avatar from '../../../assets/avatars/user.png';
 
 const sidebarOptions = [
     { label: "New Orders", icon: faComments },

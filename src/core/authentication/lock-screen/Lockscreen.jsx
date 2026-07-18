@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./lockscreen.scss";
-import avatar from "../../../assets/images/avatar.png";
+import avatar from "../../../assets/avatars/user.png";
 
 const Lockscreen = () => {
     const [password, setPassword] = useState("");

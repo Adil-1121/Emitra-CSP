@@ -23,8 +23,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Sidebar as PrimeSidebar } from "primereact/sidebar";
 import { Button } from "primereact/button";
 import "./sidebar.scss";
-import logo from "../../../../assets/logo.png";
-import defaultAvatar from "../../../../assets/avatar.png";
+import logo from "../../../../assets/avatars/logo.png";
+import defaultAvatar from "../../../../assets/avatars/user.png";
 
 const Sidebar = ({ sidebarOpen, toggleSidebar, setSidebarHovered }) => {
     const [portfolioOpen, setPortfolioOpen] = useState(false);
